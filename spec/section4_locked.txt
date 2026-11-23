@@ -1,0 +1,307 @@
+**4. Artifact Design and Scoring Specification**
+
+**4.1 Artifact Overview**
+
+The artifact consists of three components: an externalized control repository (Section 4.2), a scoring specification (Sections 4.3 to 4.5) and a research prototype that implements them (Section 4.6). This paper specifies and evaluates the deterministic scoring core only. The core contains no LLM component. An LLM-based semantic mapping layer is declared as the next stage of the work, and any such layer would supply answers that are confirmed by a human reviewer and then processed by the same scoring rules.
+
+The workflow has four steps. The assessor declares the scope of the assessed system, including whether it processes personal data. The assessor then answers a predefined questionnaire with one question per applicable indicator. The scoring engine computes risk, weighted coverage, the worst-case upper bound and the Evidence Confidence Index (ECI) for each domain and each assessment scope. The report presents these results separately, together with a ranked list of indicators.
+
+**4.2 Control Repository**
+
+The repository is an externalized JSON file. It contains 35 indicators, of which 23 belong to the security scope and 12 to the personal-data scope, organized in seven domains (Table A1 in Appendix A). The indicators are drawn from NIST CSF 2.0 [2], CSA CCM v4.1 including its Cryptography, Encryption and Key Management (CEK) domain [3], GDPR Articles 5, 25, 32 and 35 [4] and the NIST Privacy Framework [5]. Each indicator is stored with the fields listed below.
+
+- Identifier, indicator statement and the questionnaire question. The answer options of every question follow the standard set in Table 5, and Appendix A gives the indicator-specific meaning of the two end options (gap scores 0 and 4).
+- Assessment scope, either security or personal data, and one assessment domain. Each domain belongs to exactly one scope, so that security and personal-data results cannot be mixed within a domain.
+- Source references, giving the framework, the item identifier and the version of every source item the indicator draws on.
+- A relationship term and note for each individual source reference, recorded explicitly in the spirit of the mapping approach of NIST IR 8477 [11].
+- Applicability condition.
+- Impact weight from 1 to 5 and a one-line rationale for the weight.
+- Evidence guidance, describing what supporting evidence would be relevant to the indicator.
+
+The indicators are selected and mapped by the following rules.
+
+1. Candidate items are identified in the four sources if they can be assessed from questionnaire answers about a cloud-based SME system. Items that would require automated evidence collection or live scanning are excluded.
+2. Each candidate is classified as security scope or personal-data scope.
+3. Overlapping candidates are merged into a single indicator that keeps all of its source references.
+4. Each indicator is assigned to exactly one domain, and each domain is assigned to exactly one scope. The number of domains is kept small so that each domain contains enough indicators for its results to be interpretable.
+5. Where a security indicator also supports a GDPR provision, such as Article 32, the provision is recorded as an additional source reference and the indicator stays in the security scope.
+6. GDPR-derived indicators that concern the processing of personal data as such, for example the principles of Article 5, data protection by design in Article 25 and impact assessment in Article 35, belong to the personal-data scope.
+7. Every indicator must have at least one source reference, a question, a domain, an impact weight with a rationale and an applicability condition.
+
+The selected indicators and their source items are listed in Appendix A. The selection of indicators from the CEK domain follows the same rules, and it is not taken to establish complete cryptographic coverage. GDPR provisions outside Articles 5, 25, 32 and 35, such as those on lawful bases, processors, the rights of individuals and breach notification, are not covered by the selected indicators, so the personal-data indicators assess readiness for the selected provisions only. The repository records the version of each source framework so that later updates can be traced.
+
+**4.3 Scoring Specification**
+
+*Questionnaire answers and indicator values.* Each indicator k has an impact weight I_k, an integer from 1 to 5. Every question offers the same seven answer options, which Table 5 maps to a gap score G_k, an integer from 0 to 4, or to a status. A gap score of 0 means fully implemented and 4 means not implemented. An indicator has one of three statuses. It is assessed if one of the five implementation options is selected, which records a gap score. It is unassessed if the question is unanswered or answered as unknown. It is not applicable if the assessor selects the not-applicable option, and this option requires a written justification. The engine does not accept it without one. Unknown and not applicable are separate options, so an unknown answer is never silently treated as not applicable.
+
+Table 5. Answer options and their mapping to gap scores and indicator status.
+
+| Answer option | Resulting status | Gap score |
+| --- | --- | --- |
+| Fully implemented | Assessed | 0 |
+| Mostly implemented, with minor gaps | Assessed | 1 |
+| Partially implemented | Assessed | 2 |
+| Implemented only to a minimal extent | Assessed | 3 |
+| Not implemented | Assessed | 4 |
+| Unknown or not answered | Unassessed | None |
+| Not applicable, with written justification | Not applicable | None |
+
+*Impact weights.* The impact weights are researcher-defined and follow the rubric in Table 6. The researcher judges each indicator against three criteria: the consequence of a failure of the control for confidentiality, integrity, availability or personal data protection; the breadth of the assets or processes affected; and the extent to which other controls depend on it. The levels of Table 6 guide an overall judgement and are not rigid mathematical thresholds. Where an indicator could fit two adjacent levels, the researcher assigns the weight from an overall judgement against the three criteria, and the rationale stored in the repository records the reason. The weights are fixed before the scenarios are run and are not adjusted to the results. They are not derived from incident data or expert elicitation. Their influence is examined through sensitivity analysis (Section 5).
+
+Table 6. Impact weight rubric.
+
+| Weight | Description |
+| --- | --- |
+| 5 | A failure could affect the whole assessed system or all of its protected data, or many other controls depend on the indicator |
+| 4 | A failure could seriously affect a critical asset, data store or service |
+| 3 | A failure could cause a significant but contained impact on one component, data set or process |
+| 2 | A failure would have limited impact or mainly weakens another control |
+| 1 | A failure would have minor impact, and the indicator mainly supports good practice or documentation |
+
+*Sets.* Let g denote a group of indicators, which is either a domain or an assessment scope. Let P_g be the applicable indicators of g, that is, the indicators in active scopes that are not declared not applicable. Let A_g be the assessed indicators of g, so that A_g is a subset of P_g. Let U_g be the unassessed indicators, so that U_g equals P_g without A_g.
+
+*Observed risk.* The observed risk of group g is computed over assessed indicators only:
+
+R_g = 100 × Σ(I_k × G_k) / (4 × Σ I_k), with both sums over k in A_g.
+
+This is equivalent to R_g = 25 × Σ(I_k × G_k) / Σ I_k. It ranges from 0, when every assessed indicator has a gap score of 0, to 100, when every assessed indicator has a gap score of 4. If A_g is empty, R_g is undefined, and the report shows the group as not assessed and gives no risk value.
+
+*Weighted coverage.* The weighted coverage of group g is the share of applicable weight that has been assessed:
+
+C_g = 100 × Σ I_k over k in A_g / Σ I_k over k in P_g.
+
+It is undefined if P_g is empty. If P_g is not empty and A_g is empty, C_g is 0.
+
+*Worst-case upper bound.* The worst-case upper bound applies the same formula with every unassessed applicable indicator set to a gap score of 4:
+
+R_g(ub) = 100 × (Σ(I_k × G_k) over k in A_g + 4 × Σ I_k over k in U_g) / (4 × Σ I_k over k in P_g).
+
+It is undefined if P_g is empty. If P_g is not empty and A_g is empty, the bound is 100. If A_g is not empty, the bound equals R_g × C_g / 100 + (100 - C_g). The bound is reported as a sensitivity bound only. It is not an estimate of the actual risk.
+
+*Evidence Confidence Index.* The ECI is defined for each assessed indicator from four dimensions: verification, completeness, relevance and recency. Each dimension is rated by the assessor from 0 to 3 according to the anchors in Table 7, using the documented evidence. The ratings are not inferred by the software. In this study a single assessor assigns the ratings, so no procedure for disagreement between reviewers is needed. Let e_V, e_C, e_R and e_T be the ratings for verification, completeness, relevance and recency. If no evidence information is provided for an assessed answer, all four ratings are 0, which lowers the ECI and never changes the gap score. The dimension weights are fixed a priori as the integers 2 for verification and 1 for each of the other three dimensions, which correspond to the proportions 0.4, 0.2, 0.2 and 0.2. Verification receives the largest weight because it separates a statement that is merely asserted from one that is supported by an artifact. With the integer score s_k = 2 × e_V + e_C + e_R + e_T, the indicator-level ECI is
+
+E_k = 100 × s_k / 15.
+
+The ECI of a group is the impact-weighted mean of the indicator-level ECI over its assessed indicators:
+
+ECI_g = 100 × Σ(I_k × s_k) / (15 × Σ I_k), with both sums over k in A_g.
+
+It is undefined if A_g is empty, so that its denominator is never zero. The alternative with equal dimension weights that is examined in the sensitivity analysis uses s_k = e_V + e_C + e_R + e_T and the denominator 12 instead of 15. The ECI describes the evidence supporting the answers. It does not measure whether a control is effective.
+
+Table 7. ECI rating anchors.
+
+| Dimension | 0 | 1 | 2 | 3 |
+| --- | --- | --- | --- | --- |
+| Verification | Unsupported statement | Self-reported with a stated basis | Supporting artifact referenced | Supporting artifact reviewed by someone other than the respondent |
+| Completeness | No evidence | Covers a small part of the indicator scope | Covers most of the scope | Covers the full scope |
+| Relevance | Unrelated to the indicator | Indirectly related | Related | Directly addresses the requirement |
+| Recency | Date of the evidence unknown | Evidence dated more than 24 months before the assessment | Evidence dated more than 12 months and up to and including 24 months before the assessment | Evidence dated up to and including 12 months before the assessment |
+
+The recency date is the date of the evidence artifact, for example a policy review, a configuration export, a report or a log, measured from the date of the assessment. The thresholds of 12 and 24 months are researcher-defined and fixed a priori.
+
+*Undefined cases.* Table 8 summarizes how each output is reported when a group has no applicable or no assessed indicators. An undefined value is never displayed as zero.
+
+Table 8. Reporting of undefined cases.
+
+| Situation | Risk | Weighted coverage | Upper bound | ECI |
+| --- | --- | --- | --- | --- |
+| P_g is empty (all indicators not applicable) | Not applicable | Not applicable | Not applicable | Not applicable |
+| P_g is not empty and A_g is empty | Not assessed | 0 | 100 | Not assessed |
+| A_g is not empty | Computed | Computed | Computed | Computed |
+| Personal-data scope is undetermined (Section 4.4) | Undetermined | Undetermined | Undetermined | Undetermined |
+
+The last row applies to the personal-data scope and its domains only. The security scope and its domains are calculated according to the other rows regardless of the personal-data declaration.
+
+*Indicator ranking.* Assessed indicators are ranked by the priority score p_k = I_k × G_k in descending order. Ties are broken by ascending indicator identifier, so that the ranking is deterministic.
+
+*Illustrative example.* The following hypothetical numbers explain the formulas and are not results. A domain has four applicable indicators. Indicator a has I = 5 and G = 2, indicator b has I = 3 and G = 0, indicator c has I = 4 and G = 4, and indicator d has I = 2 and is unassessed. The sum of I × G over the assessed indicators is 26 and the assessed weight is 12, so R = 25 × 26 / 12 = 54.2. The applicable weight is 14, so C = 100 × 12 / 14 = 85.7. The upper bound is 100 × (26 + 4 × 2) / (4 × 14) = 60.7. For one assessed indicator rated 3, 2, 3 and 1 on verification, completeness, relevance and recency, s = 2 × 3 + 2 + 3 + 1 = 12 and E = 100 × 12 / 15 = 80.0.
+
+**4.4 Conditional Personal-Data Module**
+
+The assessor declares whether the assessed system processes personal data, and the declaration has three states.
+
+- Yes: the personal-data scope is active, and its indicators are applicable unless an indicator has an additional applicability condition of its own. PG-05 applies where the processing is likely to result in a high risk to individuals. It may be declared not applicable only on the basis of a documented screening, and it remains unassessed if screening has not been performed or its outcome is unknown (Appendix A, Table A3). Activating the module therefore does not by itself activate every individual indicator.
+- No: the personal-data scope is inactive. Its indicators are reported as not applicable with the justification that no personal data processing was declared.
+- Undetermined: the applicability of the personal-data scope is unknown. Its indicators are excluded from all calculations and are not treated as inactive. The report shows the scope as undetermined, gives no risk, coverage, upper bound or ECI for it, and states that privacy readiness cannot be assessed until the declaration is made. The security results are still calculated and reported in full.
+
+Risk, coverage, upper bound and ECI are computed separately for the security scope and the personal-data scope, and for each domain within them. Because every indicator belongs to exactly one scope, every domain belongs to exactly one scope and each formula uses only the indicators of its own group, the security results are independent of the state of the personal-data module. The paired test in Section 5 checks that the implementation preserves this property. The personal-data indicators are readiness indicators. Their results are not a statement of GDPR compliance. The separation of the two scopes is an assessment-design decision, and it does not imply that security and privacy risks are independent in real environments.
+
+**4.5 Interpretation Rules and Reporting**
+
+The following rules apply to every report.
+
+1. Unassessed indicators are never treated as zero risk.
+2. Not-applicable indicators are excluded from the applicable set and carry a written justification.
+3. Every risk value is shown together with weighted coverage, the numbers of assessed and applicable indicators and the upper bound, so that a score based on a small share of a domain is visible as such.
+4. A group with no assessed indicator is reported as not assessed and has no risk value. A group with no applicable indicator is reported as not applicable. A personal-data scope with an undetermined declaration is reported as undetermined, and the security results are reported regardless (Table 8).
+5. Risk, weighted coverage and ECI are always reported separately and are never merged into a composite score.
+6. Report wording is cautious and uses terms such as "supports" and "readiness indicators". The report makes no claim of legal compliance and states that its output is decision support that requires human review.
+
+**4.6 Research Prototype and Verification Support**
+
+The prototype is implemented with Django and SQLite and provides an input form, a result page and a report. The scoring engine is a separate module without dependencies on the web framework or the database. It computes all sums as integers and performs one division for each reported metric, namely risk, weighted coverage, the upper bound, and the indicator-level and group-level ECI. It rounds values to one decimal place for display only. The indicator ranking uses integer products only. The engine uses no randomness and makes no external calls, so identical input produces identical output.
+
+Automated tests verify that the implementation conforms to the specification. They cover the cases in which the specification could fail: repeated runs of identical input give identical output, an empty assessed set, full coverage and all indicators unassessed. Further tests check the empty applicable set and the undetermined personal-data state against Table 8, the relation between R, C and the upper bound given in Section 4.3, the mapping of answer options in Table 5, the rejection of a not-applicable status without a justification, the additional applicability condition of PG-05, the ECI result for all 16 combinations of the end values 0 and 3 of the four ratings, and the independence of the security results from the state of the personal-data module. The rule that an unknown PG-05 screening outcome leaves the indicator unassessed is tested as well. The source code and the repository are to be made publicly available with a README.
+
+**4.7 Relation to the Design Objectives**
+
+Table 9 shows how the design elements address the objectives defined in Section 3.2.
+
+Table 9. Design elements addressing the design objectives.
+
+| Objective | Design element |
+| --- | --- |
+| O1, Traceability | Source references, relationship terms and notes, and weight rationales stored for every indicator |
+| O2, Determinism and repeatability | Separate engine module, integer sums with one division per reported metric, deterministic ranking and automated tests |
+| O3, Explicit treatment of missing assessment | Three indicator statuses, separate unknown and not-applicable options, denominators defined over assessed and applicable sets, worst-case upper bound and the reporting of undefined cases in Table 8 |
+| O4, Separate reporting | Risk, weighted coverage, upper bound and ECI computed and reported as separate outputs |
+| O5, Conditional privacy assessment | Scope isolation, three declaration states with the undetermined state excluded from calculation, indicator-level applicability conditions and separate personal-data results |
+| O6, Lightweight and bounded scope | 35 indicators in a JSON file, questionnaire input, no automated evidence collection or scanning, and cautious report wording |
+
+**Appendix A. Control Repository**
+
+**A.1 Structure and Conventions**
+
+The repository contains 35 indicators in seven domains. Table A1 lists the domains. Indicator identifiers consist of the domain code and a two-digit number, so that the ordering by ascending identifier used in Section 4.3 is deterministic.
+
+Table A1. Domains of the control repository.
+
+| Code | Domain | Scope | Indicators |
+| --- | --- | --- | --- |
+| SG | Governance, Risk and People | Security | 6 |
+| SI | Identity and Access Management | Security | 4 |
+| SC | Cryptography and Key Management | Security | 4 |
+| SO | Security Operations | Security | 6 |
+| SR | Incident Response and Resilience | Security | 3 |
+| PG | Privacy Governance and Accountability | Personal data | 6 |
+| PD | Personal Data Handling and Protection | Personal data | 6 |
+
+Every question uses the answer options of Table 5. Table A2 gives the indicator statements, the questions, the impact weights and the weight rationales. Table A3 gives the meaning of the two end options (gap scores 0 and 4), the applicability conditions and the evidence guidance. Table A4 gives the source references and a summary relationship note for each indicator. The JSON repository stores the relationship term and note for each individual source reference. The impact weights follow the rubric in Table 6, are researcher-defined and are fixed before the scenarios are run. Indicators of the personal-data scope are applicable when the personal-data scope is active (Section 4.4), except where Table A3 states an additional condition, as for PG-05.
+
+CSF 2.0 subcategory identifiers follow the CSF 2.0 Core of February 2024 [2]. CCM identifiers and titles follow CCM v4.1 [3]. GDPR references name the article and, where relevant, the paragraph of Regulation (EU) 2016/679 [4]. Privacy Framework identifiers follow the Core of Version 1.0 of January 2020 [5]. The relationship terms in Table A4 are used as follows. "Supports" means that the source item contributes to the outcome the indicator assesses. "Broader" means that the source item covers more than the indicator, which assesses one aspect of it. "Partial" means that the source item covers only part of what the indicator assesses.
+
+**A.2 Indicators, Questions and Impact Weights**
+
+Table A2. Indicators, questionnaire questions, impact weights and weight rationales.
+
+| ID | Indicator | Question | Weight | Weight rationale |
+| --- | --- | --- | --- | --- |
+| SG-01 | Cybersecurity policy is documented and maintained | Does the organization have a written cybersecurity policy for the assessed system that is approved, communicated to staff and reviewed when requirements or technology change? | 3 | Policy underpins other controls, but a missing policy does not by itself expose a specific asset |
+| SG-02 | Security responsibilities, including the division between the organization and the cloud provider, are defined | Are cybersecurity roles defined, and is it documented which security responsibilities belong to the organization and which to the cloud provider for each service used? | 4 | Unassigned responsibilities can leave critical controls unimplemented across several services |
+| SG-03 | Cloud security risks are assessed and recorded | Are threats, vulnerabilities and their potential impact for the assessed system assessed, recorded and used to prioritize security actions? | 3 | Risk assessment guides priorities across the system, but its absence has an indirect, contained effect |
+| SG-04 | Cloud providers and other suppliers are assessed and bound by security requirements | Before using a cloud provider or other supplier, does the organization check its security assurances and include security requirements in the agreement? | 3 | Weak supplier assurance affects the services of that supplier and is contained to them |
+| SG-05 | Systems, services and data are inventoried | Is there a current inventory of the systems, cloud services and data types of the assessed system, including services provided by suppliers? | 4 | Several other controls depend on knowing which systems, services and data must be protected |
+| SG-06 | Staff receive security awareness training | Do staff with access to the assessed system receive regular security awareness training? | 2 | Awareness mainly supports other controls, and its absence limits their effectiveness |
+| SI-01 | Users and services have unique identities and managed credentials | Does every user and service use a unique identity, and are credentials issued, stored, changed and revoked under defined rules? | 4 | Shared or unmanaged identities weaken accountability and access control across critical services |
+| SI-02 | Strong authentication protects access | Is multi-factor or equivalent strong authentication required for administrative access and for remote access to the system? | 5 | A compromised account without strong authentication can give access to the whole system |
+| SI-03 | Access follows least privilege, separation of duties and controlled privileged roles | Are access rights limited to what each role needs, are conflicting duties separated, and are privileged roles managed and restricted? | 5 | Excessive or privileged rights can extend a single compromise to the whole system, and other controls depend on them |
+| SI-04 | Access is reviewed and revoked promptly | Is user access reviewed periodically and removed promptly when a person changes role or leaves? | 3 | Stale access creates a significant but contained exposure for the accounts concerned |
+| SC-01 | Data at rest is encrypted | Is data stored in the assessed system encrypted at rest using approved cryptographic algorithms? | 4 | Unencrypted stored data can expose a critical data store |
+| SC-02 | Data in transit is encrypted | Is data transmitted between users, services and cloud components protected by encryption in transit? | 4 | Unencrypted transmission can expose critical data between services and users |
+| SC-03 | Cryptographic keys are managed through their life cycle | Are encryption keys generated, stored, rotated, revoked and inventoried under a documented key management policy? | 5 | Key compromise or loss can expose or destroy all data protected by the keys, and other cryptographic controls depend on it |
+| SC-04 | The organization controls its own encryption keys where the service allows it | Where a used cloud service offers customer-managed keys, does the organization manage its own encryption keys? | 3 | Provider-held keys limit control over data, but the indicator applies only to services that offer customer-managed keys |
+| SO-01 | Security-relevant events are logged and monitored | Are security-relevant events in applications and cloud infrastructure logged, protected and monitored, with alerts that are reviewed? | 4 | Without logging and monitoring, attacks on critical assets can go undetected |
+| SO-02 | Vulnerabilities are identified and remediated | Are vulnerabilities in systems and software identified and remediated within defined timeframes? | 4 | Unremediated vulnerabilities can allow compromise of critical components |
+| SO-03 | Configuration and changes are controlled | Are secure baseline configurations defined for cloud resources, and are changes approved, tested and recorded? | 4 | Insecure configuration or uncontrolled change can expose critical cloud resources |
+| SO-04 | Networks and cloud resources are protected from unauthorized access | Is network access to cloud resources restricted and segmented so that only intended services and users can reach them? | 4 | Unrestricted network exposure can allow direct access to critical resources |
+| SO-05 | Endpoints used to access the system are protected | Are devices used to administer or access the system managed and protected against malware? | 3 | A compromised endpoint has a significant but contained effect on the data and accounts it can reach |
+| SO-06 | Security measures are tested regularly | Are security measures, such as vulnerability scans, penetration tests or configuration reviews, tested regularly, and are findings tracked to closure? | 2 | Testing mainly verifies other controls, and its absence delays the discovery of weaknesses |
+| SR-01 | An incident response plan exists and is tested | Is there a documented incident response plan that covers escalation and notification of relevant parties and that has been tested? | 4 | Without a tested plan, an incident affecting a critical service is contained late |
+| SR-02 | Backups are created, protected and tested | Is data backed up, are backups protected from unauthorized change or deletion, and is restoration tested? | 5 | Without usable backups, data loss may be unrecoverable, and recovery depends on them |
+| SR-03 | A business continuity and disaster recovery plan exists | Is there a business continuity and disaster recovery plan for the assessed system that defines recovery priorities and is exercised? | 3 | Continuity planning affects the speed of recovery of services but not the occurrence of incidents |
+| PG-01 | Personal data processing is inventoried and mapped | Does the organization record which personal data it processes, for what purposes, in which systems and locations, and which third parties are involved? | 4 | Other privacy controls depend on knowing which personal data are processed, where and why |
+| PG-02 | Purposes of processing are documented and communicated | Is the purpose of each processing activity documented and communicated to the individuals concerned in a transparent way? | 4 | Processing without documented and communicated purposes affects all processing of the data concerned |
+| PG-03 | Privacy responsibilities and legal requirements are assigned and understood | Are privacy responsibilities assigned, and are the legal and contractual privacy requirements that apply to the system identified? | 3 | Unassigned responsibilities reduce accountability across privacy controls, but the impact is indirect |
+| PG-04 | Data protection is built into design and defaults | When systems or processes that handle personal data are designed or changed, are data protection measures and privacy-friendly default settings considered? | 3 | Neglecting design and defaults creates a significant but contained exposure for the affected processing |
+| PG-05 | A data protection impact assessment is carried out where required | Where processing is likely to result in a high risk to individuals, is an impact assessment carried out before the processing starts? | 3 | A missing assessment leaves high-risk processing unexamined, which is contained to that processing |
+| PG-06 | Staff handling personal data are aware of their duties | Are staff who handle personal data trained on their duties and instructed to process personal data only as authorized? | 2 | Awareness mainly supports other controls |
+| PD-01 | Only necessary personal data are collected and processed | Is the personal data collected and processed limited to what is necessary for each stated purpose? | 4 | Excess data enlarge the exposure of individuals in a breach and the impact of every other failure |
+| PD-02 | Personal data are retained only as long as necessary and then deleted | Are retention periods defined for personal data, and are data deleted or destroyed when the period ends? | 4 | Data kept longer than necessary enlarge the exposure of a critical data store |
+| PD-03 | Personal data are kept accurate, and inaccurate data are corrected or erased | Are personal data kept accurate and up to date where necessary, and can inaccurate data be corrected or erased without delay? | 3 | Inaccurate data cause significant but contained harm |
+| PD-04 | Personal data are pseudonymised or encrypted where appropriate | Are personal data pseudonymised or encrypted where this is appropriate to the risk? | 4 | Without pseudonymisation or encryption, a breach exposes personal data directly |
+| PD-05 | Access to personal data is limited to those who need it | Is access to personal data restricted to the roles that need it for their tasks? | 5 | Uncontrolled access can expose all personal data in the system |
+| PD-06 | Personal data breaches can be detected, handled and communicated | Is there a procedure to detect and handle a personal data breach and to inform the affected individuals and relevant parties? | 3 | Late or missing handling and communication affect the individuals concerned after an incident, which is a contained impact |
+
+**A.3 End Options, Applicability and Evidence Guidance**
+
+Table A3. Meaning of the end options, applicability conditions and evidence guidance.
+
+| ID | Gap score 0 means | Gap score 4 means | Applicability | Evidence guidance |
+| --- | --- | --- | --- | --- |
+| SG-01 | An approved policy exists, is communicated to staff and is kept up to date | No written cybersecurity policy exists | Always applicable | Policy document with approval and review dates, and a record of its communication |
+| SG-02 | Responsibilities are assigned, and the split between the organization and each provider is documented | Neither internal responsibilities nor the provider split is defined | Always applicable | Responsibility matrix, or the provider's shared responsibility documentation with the organization's assignments |
+| SG-03 | A documented risk assessment covers the system, is recorded and drives priorities | No risk assessment has been performed | Always applicable | Risk register or assessment report |
+| SG-04 | Provider assurances are checked before use, and security requirements are in the agreement | Providers are used without any check or contractual security requirements | Applicable when at least one cloud provider or other supplier is used | Provider assurance reports or certifications reviewed, and contract clauses |
+| SG-05 | A current inventory covers systems, cloud services and data types | No inventory exists | Always applicable | Asset and service register, and data inventory |
+| SG-06 | All staff with access receive regular awareness training | No awareness training is provided | Always applicable | Training records and materials |
+| SI-01 | All identities are unique, and credentials are managed under defined rules | Shared or unmanaged accounts are common, and credentials are not managed | Always applicable | Identity provider configuration export and credential rules |
+| SI-02 | Strong authentication is enforced for all administrative and remote access | Passwords alone protect administrative and remote access | Always applicable | Identity provider or cloud console settings showing enforcement |
+| SI-03 | Rights follow least privilege, duties are separated and privileged roles are controlled | Broad or default administrative rights are widely granted | Always applicable | Role and permission export, and list of privileged accounts |
+| SI-04 | Access is reviewed periodically and removed promptly on role change or departure | Access is never reviewed, and leavers keep access | Always applicable | Access review records and offboarding records |
+| SC-01 | All stored data are encrypted at rest with approved algorithms | Stored data are not encrypted | Always applicable | Storage encryption settings or provider documentation |
+| SC-02 | All data in transit are encrypted | Data in transit are not encrypted | Always applicable | Transport encryption configuration evidence and provider settings |
+| SC-03 | A documented policy covers key generation, storage, rotation, revocation and inventory, and is followed | No key management rules exist | Always applicable | Key management policy, key inventory and rotation records |
+| SC-04 | The organization manages its own keys for every used service that offers this option | Customer-managed keys are offered but not used, and the organization does not control keys | Applicable only if at least one used service offers customer-managed keys; otherwise not applicable with justification | Key management service settings and service documentation |
+| SO-01 | Security-relevant events are logged, protected and monitored, and alerts are reviewed | Logging is not enabled, or logs are not monitored | Always applicable | Logging configuration, alert rules and review records |
+| SO-02 | Vulnerabilities are identified and remediated within defined timeframes | No vulnerability identification or remediation process exists | Always applicable | Scan reports and patching records |
+| SO-03 | Secure baselines are defined, and changes are approved, tested and recorded | Cloud resources are configured and changed without baselines or records | Always applicable | Baseline documents and change records |
+| SO-04 | Network access to resources is restricted and segmented | Resources are broadly reachable from the internet or across the environment | Always applicable | Security group or firewall rules and network diagram |
+| SO-05 | Endpoints are managed and protected against malware | Endpoints are unmanaged and unprotected | Applicable if endpoint devices are used to administer or access the system | Endpoint management and anti-malware status |
+| SO-06 | Security measures are tested regularly, and findings are tracked to closure | No security testing is performed | Always applicable | Test reports and remediation tracking |
+| SR-01 | A documented plan covers escalation and notification and has been tested | No incident response plan exists | Always applicable | Plan and exercise or test records |
+| SR-02 | Backups are taken, protected from unauthorized change or deletion, and restoration is tested | No backups are taken | Always applicable | Backup configuration and restoration test records |
+| SR-03 | A continuity and recovery plan exists, defines priorities and is exercised | No continuity or recovery plan exists | Always applicable | Plan and exercise records |
+| PG-01 | Personal data processing, purposes, systems, locations and third parties are recorded and current | No record of personal data processing exists | Personal-data scope active | Record of processing activities or data map |
+| PG-02 | Purposes are documented for every processing activity and communicated to the individuals concerned | Purposes are neither documented nor communicated | Personal-data scope active | Privacy notice and processing records |
+| PG-03 | Responsibilities are assigned, and applicable legal and contractual privacy requirements are identified | Neither responsibilities nor requirements are defined | Personal-data scope active | Role descriptions and requirements register |
+| PG-04 | Data protection and privacy-friendly defaults are considered in all design and change work | They are not considered | Personal-data scope active | Design or change review records |
+| PG-05 | Impact assessments are carried out before high-risk processing starts | High-risk processing takes place without an impact assessment | Personal-data scope active and processing likely to result in a high risk to individuals. It may be declared not applicable only when a documented screening establishes that the processing is not likely to result in such a risk. If screening has not been performed or its outcome is unknown, the indicator remains unassessed | Impact assessment report and screening record |
+| PG-06 | Staff handling personal data are trained and instructed to process data only as authorized | Neither training nor instructions are provided | Personal-data scope active | Training records and written instructions |
+| PD-01 | Collection and processing are limited to what each purpose needs | Data are collected and processed without regard to necessity | Personal-data scope active | Review of collected data fields and forms |
+| PD-02 | Retention periods are defined, and data are deleted when they end | No retention periods exist, and data are kept indefinitely | Personal-data scope active | Retention schedule and deletion records |
+| PD-03 | Accuracy is maintained, and inaccurate data are corrected or erased without delay | Accuracy is not maintained, and inaccurate data cannot be corrected or erased | Personal-data scope active | Data quality procedure and correction or deletion records |
+| PD-04 | Personal data are pseudonymised or encrypted where appropriate to the risk | Personal data are stored and used in clear form without consideration | Personal-data scope active | Encryption or pseudonymisation configuration |
+| PD-05 | Access to personal data is limited to the roles that need it | Personal data are accessible to all users of the system | Personal-data scope active | Access control lists and role mapping |
+| PD-06 | A procedure exists to detect and handle a breach and to inform the individuals and relevant parties concerned | No breach detection, handling or communication procedure exists | Personal-data scope active | Breach procedure and test or log records |
+
+**A.4 Source References and Relationship Notes**
+
+Table A4. Source references and relationship notes.
+
+| ID | NIST CSF 2.0 | CSA CCM v4.1 | GDPR | NIST Privacy Framework | Relationship note |
+| --- | --- | --- | --- | --- | --- |
+| SG-01 | GV.PO-01, GV.PO-02 | GRC-01 (Governance Program Policy and Procedures), GRC-03 (Organizational Policy Reviews) | None | None | Supports. The CSF items and CCM controls together cover establishing and reviewing the policy |
+| SG-02 | GV.RR-02, GV.SC-02 | STA-05 (SSRM Control Ownership), GRC-06 (Governance Responsibility Model) | None | None | The CSF items are broader. The CCM controls specify the ownership of controls between provider and customer |
+| SG-03 | ID.RA-05, ID.RA-06 | GRC-02 (Risk Management Program) | None | None | Supports. The indicator assesses whether a risk assessment exists and guides priorities, not its method |
+| SG-04 | GV.SC-05, GV.SC-06 | STA-11 (Primary Service and Contractual Agreement), STA-13 (Supply Chain Compliance Assessment) | None | None | Supports. The CSF items cover requirements and due diligence, and the CCM controls specify agreement and assurance review |
+| SG-05 | ID.AM-02, ID.AM-04, ID.AM-07 | STA-08 (Supply Chain Inventory), DSP-03 (Data Inventory), DSP-04 (Data Classification) | None | None | Supports. One indicator combines the system, service and data inventories of the sources |
+| SG-06 | PR.AT-01 | HRS-11 (Security Awareness Training) | None | None | Supports. The items are equivalent in intent |
+| SI-01 | PR.AA-01 | IAM-12 (Unique Identities), IAM-14 (Credentials Management), IAM-03 (Identity Inventory) | None | None | Supports. The CCM controls specify unique identities, credentials and identity inventory |
+| SI-02 | PR.AA-03 | IAM-13 (Strong Authentication) | None | None | The CSF item is broader. The CCM control specifies strong authentication |
+| SI-03 | PR.AA-05 | IAM-05 (Least Privilege), IAM-04 (Separation of Duties), IAM-10 (Management of Privileged Access Roles) | None | None | The CSF item is broader. The CCM controls specify least privilege, separation of duties and privileged roles, which the indicator combines |
+| SI-04 | PR.AA-05 | IAM-08 (Access Review), IAM-07 (Access Changes and Revocation) | None | None | The CSF item is broader. The CCM controls specify access review and revocation |
+| SC-01 | PR.DS-01 | CEK-03 (Data Protection) | Art. 32(1)(a) | None | Supports. Article 32(1)(a) names encryption as an example of an appropriate measure |
+| SC-02 | PR.DS-02 | CEK-03 (Data Protection) | Art. 32(1)(a) | None | Supports. Article 32(1)(a) names encryption as an example of an appropriate measure |
+| SC-03 | PR.DS-01, PR.DS-02 | CEK-01 (Encryption and Key Management Policy and Procedures), CEK-10 (Key Generation), CEK-12 (Key Rotation), CEK-13 (Key Revocation), CEK-21 (Key Inventory Management) | Art. 32(1)(a) | None | The CSF items are broader, because the CSF has no key management subcategory. The CCM controls specify the key life cycle |
+| SC-04 | PR.DS-01 | CEK-08 (Service Customer Key Management Capability) | None | None | The CSF item is broader. The CCM control specifies the customer key management capability |
+| SO-01 | PR.PS-04, DE.CM-01, DE.CM-09, DE.AE-02 | LOG-07 (Logging Scope), LOG-03 (Security Monitoring and Alerting), LOG-05 (Audit Logs Monitoring and Response) | None | None | Supports. The items together cover logging scope, monitoring and the response to alerts |
+| SO-02 | ID.RA-01, PR.PS-02 | TVM-03 (Vulnerability Identification), TVM-08 (Vulnerability Remediation Schedule) | None | None | Supports. The CCM controls specify identification and remediation scheduling |
+| SO-03 | PR.PS-01, ID.RA-07 | CCC-01 (Change Management Policy and Procedures), CCC-06 (Change Management Baseline) | None | None | Supports. The CCM controls specify the change policy and the configuration baseline |
+| SO-04 | PR.IR-01 | I&S-03 (Network Security), I&S-06 (Segmentation and Segregation) | None | None | Supports. The CCM controls specify network security and segmentation |
+| SO-05 | PR.PS-05, DE.CM-09 | UEM-05 (Endpoint Management), UEM-09 (Anti-Malware Detection and Prevention) | None | None | Supports. The CCM controls specify endpoint management and malware protection |
+| SO-06 | ID.IM-02, ID.RA-01 | TVM-07 (Penetration Testing), AIS-05 (Application Security Testing) | Art. 32(1)(d) | None | Supports. Article 32(1)(d) calls for a process for regularly testing the effectiveness of measures |
+| SR-01 | RS.MA-01, RS.MA-04, RS.CO-02, ID.IM-04 | SEF-03 (Incident Response Plans), SEF-04 (Incident Response Testing), SEF-08 (Security Breach Notification) | None | None | Supports. The CCM controls specify the plan, its testing and notification |
+| SR-02 | PR.DS-11, RC.RP-03 | BCR-08 (Backup) | Art. 32(1)(c) | None | Supports. Article 32(1)(c) refers to the ability to restore availability and access to personal data |
+| SR-03 | RC.RP-01, PR.IR-03 | BCR-04 (Business Continuity Planning), BCR-09 (Disaster Response Plan), BCR-10 (Response Plan Exercise) | Art. 32(1)(b), Art. 32(1)(c) | None | Supports. Article 32(1)(b) and (c) refer to resilience and restoration |
+| PG-01 | None | DSP-03 (Data Inventory), DSP-05 (Data Flow Documentation), DSP-19 (Data Location) | Art. 5(2) | ID.IM-P4, ID.IM-P5, ID.IM-P6, ID.IM-P7 | Supports. The Privacy Framework and CCM items cover the inventory. Article 5(2) is partial, because it places accountability on the controller and does not itself prescribe an inventory |
+| PG-02 | None | DSP-12 (Limitation of Purpose in Personal Data Processing) | Art. 5(1)(a), Art. 5(1)(b) | ID.IM-P5, CM.PO-P1 | Supports. Article 5(1)(a) and (b) set transparency and purpose limitation. The lawful bases for processing are set in a provision outside the selection and are not assessed |
+| PG-03 | None | GRC-07 (Information System Regulatory Mapping), DSP-06 (Data Ownership and Stewardship) | Art. 5(2) | GV.PO-P3, GV.PO-P5 | Supports. The Privacy Framework and CCM items cover responsibilities and requirements. Article 5(2) is partial, because it places accountability on the controller and does not itself assign privacy responsibilities |
+| PG-04 | None | DSP-07 (Data Protection by Design and Default), DSP-08 (Data Privacy by Design and Default) | Art. 25(1), Art. 25(2) | GV.PO-P2, CT.PO-P4 | Supports. The indicator corresponds to data protection by design and by default in Article 25 |
+| PG-05 | None | DSP-09 (Data Protection Impact Assessment) | Art. 35(1), Art. 35(3), Art. 35(7) | ID.RA-P3, ID.RA-P4 | Supports. Article 35 sets when an impact assessment is required, and the indicator assesses readiness to carry one out |
+| PG-06 | None | HRS-12 (Personal and Sensitive Data Awareness and Training) | Art. 32(4) | GV.AT-P1 | Partial. Article 32(4) concerns processing on instructions, and the indicator also covers training |
+| PD-01 | None | DSP-07 (Data Protection by Design and Default) | Art. 5(1)(c), Art. 25(2) | CT.DP-P4, CT.DP-P2 | Supports. Article 5(1)(c) sets data minimisation, and Article 25(2) applies it by default |
+| PD-02 | None | DSP-16 (Data Retention and Deletion), DSP-02 (Secure Disposal) | Art. 5(1)(e), Art. 25(2) | CT.DM-P5, CT.PO-P2 | Supports. Article 5(1)(e) sets storage limitation |
+| PD-03 | None | DSP-11 (Personal Data Access, Reversal, Rectification and Deletion) | Art. 5(1)(d) | CT.DM-P1, CT.DM-P3, CT.DM-P4 | Supports. Article 5(1)(d) sets accuracy and the correction or erasure of inaccurate data. The rights of individuals to rectification and erasure are set in other provisions outside the selection and are not assessed |
+| PD-04 | None | DSP-17 (Sensitive Data Protection), CEK-03 (Data Protection) | Art. 32(1)(a), Art. 25(1) | CT.DP-P2, PR.DS-P1, PR.DS-P2 | Supports. Articles 25(1) and 32(1)(a) name pseudonymisation, and Article 32(1)(a) names encryption |
+| PD-05 | None | IAM-05 (Least Privilege), DSP-17 (Sensitive Data Protection) | Art. 25(2), Art. 5(1)(f) | PR.AC-P4 | Supports. Article 25(2) supports limiting the accessibility of personal data by default, and Article 5(1)(f) addresses integrity and confidentiality. The role-based access restriction itself is supported mainly by the CCM controls |
+| PD-06 | None | SEF-08 (Security Breach Notification) | Art. 5(1)(f), Art. 32(2) | CM.AW-P7 | Partial. The GDPR references cover only the security of processing against personal data breaches. The notification part is mapped to the Privacy Framework and the CCM only, because the GDPR notification provisions are outside the selected articles |

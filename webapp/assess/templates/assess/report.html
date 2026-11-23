@@ -1,0 +1,9 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Assessment report (research prototype)</title></head><body>
+<h1>Assessment report</h1><p>{{ r.notice }}</p><p>Personal-data declaration: {{ r.declaration }}. Risk, coverage, upper bound and ECI are reported separately.</p>
+<table border="1"><tr><th>Group</th><th>State</th><th>Applicable/assessed/unassessed</th><th>Risk</th><th>Coverage</th><th>Upper bound</th><th>ECI</th></tr>
+{% for g in groups %}<tr><td>{{ g.group }}</td><td>{{ g.label }}</td><td>{% if g.n_applicable != None %}{{ g.n_applicable }}/{{ g.n_assessed }}/{{ g.n_unassessed }}{% endif %}</td>
+<td>{{ g.risk.display|default:"-" }}</td><td>{{ g.coverage.display|default:"-" }}</td><td>{{ g.upper_bound.display|default:"-" }}</td><td>{{ g.eci.display|default:"-" }}</td></tr>{% endfor %}</table>
+<h2>Indicators</h2><table border="1"><tr><th>ID</th><th>Status</th><th>Gap</th><th>ECI</th><th>Source references and relationship</th></tr>
+{% for i in indicators %}<tr><td>{{ i.id }}</td><td>{{ i.status }}{% if i.justification %}: {{ i.justification }}{% endif %}</td><td>{{ i.gap|default_if_none:"-" }}</td><td>{{ i.eci.display|default:"-" }}</td>
+<td>{{ i.relationship_term }}: {{ i.sources.nist_csf_2_0|join:", " }} {{ i.sources.csa_ccm_v4_1|join:", " }} {{ i.sources.gdpr|join:", " }} {{ i.sources.nist_privacy_framework|join:", " }}</td></tr>{% endfor %}</table>
+<h2>Ranking of assessed indicators</h2><ol>{% for x in ranking %}<li>{{ x.id }} (priority {{ x.priority }})</li>{% endfor %}</ol></body></html>

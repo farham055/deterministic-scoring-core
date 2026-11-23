@@ -1,0 +1,14 @@
+**5.7 Manual Comparison**
+
+The manual comparison uses scenarios S2, S6 and S7. S2 contains extreme values and priority ties, S6 contains unassessed, not-applicable and undefined cases, and S7 exercises the personal-data scope. All three are compared under declaration Yes.
+
+The comparison follows these steps.
+
+1. The researcher calculates all outputs of the scenario by hand with a calculator, using only the written scoring specification and the scenario inputs. The outputs are the numbers of applicable, assessed and unassessed indicators, risk, weighted coverage, the upper bound and the ECI for every domain and scope, and the ranking of the assessed indicators.
+2. The hand results are recorded in a dated file in the repository history before the tool outputs for these scenarios are generated or opened.
+3. The tool outputs are then generated and compared with the hand results value by value, as integer numerators and denominators and as displayed values.
+4. Each discrepancy is logged and classified as a hand calculation error or an implementation defect.
+5. An implementation defect is corrected, and all evaluation activities are repeated on the corrected version.
+6. Section 6 reports the number of compared values, the number of discrepancies before and after resolution, and their classification.
+
+The manual calculation is independent of the software implementation. It is not performed by a second assessor, so the independence concerns the implementation and not the person.

@@ -1,0 +1,328 @@
+{
+ "answers": {
+  "PD-01": {
+   "evidence": {
+    "completeness": 1,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 1
+   },
+   "evidence_profile": "D",
+   "option": "partially_implemented"
+  },
+  "PD-02": {
+   "evidence": {
+    "completeness": 1,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 1
+   },
+   "evidence_profile": "D",
+   "option": "implemented_minimally"
+  },
+  "PD-03": {
+   "evidence": {
+    "completeness": 1,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 1
+   },
+   "evidence_profile": "D",
+   "option": "partially_implemented"
+  },
+  "PD-04": {
+   "option": "unknown"
+  },
+  "PD-05": {
+   "evidence": {
+    "completeness": 1,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 1
+   },
+   "evidence_profile": "D",
+   "option": "partially_implemented"
+  },
+  "PD-06": {
+   "evidence": {
+    "completeness": 1,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 1
+   },
+   "evidence_profile": "D",
+   "option": "implemented_minimally"
+  },
+  "PG-01": {
+   "evidence": {
+    "completeness": 1,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 1
+   },
+   "evidence_profile": "D",
+   "option": "implemented_minimally"
+  },
+  "PG-02": {
+   "evidence": {
+    "completeness": 1,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 1
+   },
+   "evidence_profile": "D",
+   "option": "partially_implemented"
+  },
+  "PG-03": {
+   "evidence": {
+    "completeness": 1,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 1
+   },
+   "evidence_profile": "D",
+   "option": "implemented_minimally"
+  },
+  "PG-04": {
+   "evidence": {
+    "completeness": 1,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 1
+   },
+   "evidence_profile": "D",
+   "option": "partially_implemented"
+  },
+  "PG-05": {
+   "option": "unknown",
+   "screening": "unknown",
+   "screening_code": "J4"
+  },
+  "PG-06": {
+   "evidence": {
+    "completeness": 1,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 1
+   },
+   "evidence_profile": "D",
+   "option": "partially_implemented"
+  },
+  "SC-01": {
+   "evidence": {
+    "completeness": 1,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 1
+   },
+   "evidence_profile": "D",
+   "option": "mostly_implemented"
+  },
+  "SC-02": {
+   "evidence": {
+    "completeness": 1,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 1
+   },
+   "evidence_profile": "D",
+   "option": "mostly_implemented"
+  },
+  "SC-03": {
+   "option": "unknown"
+  },
+  "SC-04": {
+   "evidence": {
+    "completeness": 1,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 1
+   },
+   "evidence_profile": "D",
+   "option": "not_implemented"
+  },
+  "SG-01": {
+   "evidence": {
+    "completeness": 2,
+    "recency": 2,
+    "relevance": 3,
+    "verification": 2
+   },
+   "evidence_profile": "B",
+   "option": "mostly_implemented"
+  },
+  "SG-02": {
+   "evidence": {
+    "completeness": 1,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 1
+   },
+   "evidence_profile": "D",
+   "option": "not_implemented"
+  },
+  "SG-03": {
+   "evidence": {
+    "completeness": 1,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 1
+   },
+   "evidence_profile": "D",
+   "option": "partially_implemented"
+  },
+  "SG-04": {
+   "evidence": {
+    "completeness": 1,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 1
+   },
+   "evidence_profile": "D",
+   "option": "not_implemented"
+  },
+  "SG-05": {
+   "evidence": {
+    "completeness": 1,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 1
+   },
+   "evidence_profile": "D",
+   "option": "implemented_minimally"
+  },
+  "SG-06": {
+   "evidence": {
+    "completeness": 1,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 1
+   },
+   "evidence_profile": "D",
+   "option": "partially_implemented"
+  },
+  "SI-01": {
+   "evidence": {
+    "completeness": 2,
+    "recency": 2,
+    "relevance": 3,
+    "verification": 2
+   },
+   "evidence_profile": "B",
+   "option": "mostly_implemented"
+  },
+  "SI-02": {
+   "evidence": {
+    "completeness": 1,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 1
+   },
+   "evidence_profile": "D",
+   "option": "partially_implemented"
+  },
+  "SI-03": {
+   "evidence": {
+    "completeness": 1,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 1
+   },
+   "evidence_profile": "D",
+   "option": "partially_implemented"
+  },
+  "SI-04": {
+   "evidence": {
+    "completeness": 1,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 1
+   },
+   "evidence_profile": "D",
+   "option": "implemented_minimally"
+  },
+  "SO-01": {
+   "evidence": {
+    "completeness": 1,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 1
+   },
+   "evidence_profile": "D",
+   "option": "implemented_minimally"
+  },
+  "SO-02": {
+   "option": "unknown"
+  },
+  "SO-03": {
+   "evidence": {
+    "completeness": 1,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 1
+   },
+   "evidence_profile": "D",
+   "option": "partially_implemented"
+  },
+  "SO-04": {
+   "option": "unknown"
+  },
+  "SO-05": {
+   "evidence": {
+    "completeness": 1,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 1
+   },
+   "evidence_profile": "D",
+   "option": "mostly_implemented"
+  },
+  "SO-06": {
+   "evidence": {
+    "completeness": 1,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 1
+   },
+   "evidence_profile": "D",
+   "option": "implemented_minimally"
+  },
+  "SR-01": {
+   "evidence": {
+    "completeness": 1,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 1
+   },
+   "evidence_profile": "D",
+   "option": "implemented_minimally"
+  },
+  "SR-02": {
+   "option": "unknown"
+  },
+  "SR-03": {
+   "evidence": {
+    "completeness": 1,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 1
+   },
+   "evidence_profile": "D",
+   "option": "implemented_minimally"
+  }
+ },
+ "context": {
+  "customer_keys_offered": true,
+  "endpoints_used": true,
+  "supplier_used": true
+ },
+ "evidence_profile_default": "D",
+ "evidence_profile_exceptions": {
+  "SG-01": "B",
+  "SI-01": "B"
+ },
+ "scenario_id": "S5",
+ "synthetic": true,
+ "title": "Third-party reliance and shared responsibility",
+ "version": "1.0"
+}

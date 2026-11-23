@@ -1,0 +1,359 @@
+{
+ "answers": {
+  "PD-01": {
+   "evidence": {
+    "completeness": 2,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 2
+   },
+   "evidence_profile": "C",
+   "option": "mostly_implemented"
+  },
+  "PD-02": {
+   "evidence": {
+    "completeness": 2,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 2
+   },
+   "evidence_profile": "C",
+   "option": "partially_implemented"
+  },
+  "PD-03": {
+   "evidence": {
+    "completeness": 2,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 2
+   },
+   "evidence_profile": "C",
+   "option": "mostly_implemented"
+  },
+  "PD-04": {
+   "evidence": {
+    "completeness": 2,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 2
+   },
+   "evidence_profile": "C",
+   "option": "partially_implemented"
+  },
+  "PD-05": {
+   "evidence": {
+    "completeness": 2,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 2
+   },
+   "evidence_profile": "C",
+   "option": "mostly_implemented"
+  },
+  "PD-06": {
+   "evidence": {
+    "completeness": 2,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 2
+   },
+   "evidence_profile": "C",
+   "option": "partially_implemented"
+  },
+  "PG-01": {
+   "evidence": {
+    "completeness": 2,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 2
+   },
+   "evidence_profile": "C",
+   "option": "partially_implemented"
+  },
+  "PG-02": {
+   "evidence": {
+    "completeness": 2,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 2
+   },
+   "evidence_profile": "C",
+   "option": "mostly_implemented"
+  },
+  "PG-03": {
+   "evidence": {
+    "completeness": 2,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 2
+   },
+   "evidence_profile": "C",
+   "option": "partially_implemented"
+  },
+  "PG-04": {
+   "evidence": {
+    "completeness": 2,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 2
+   },
+   "evidence_profile": "C",
+   "option": "partially_implemented"
+  },
+  "PG-05": {
+   "justification": "A documented screening established that the processing is not likely to result in a high risk to the rights and freedoms of natural persons",
+   "justification_code": "J2",
+   "option": "not_applicable",
+   "screening": "not_high_risk"
+  },
+  "PG-06": {
+   "evidence": {
+    "completeness": 2,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 2
+   },
+   "evidence_profile": "C",
+   "option": "partially_implemented"
+  },
+  "SC-01": {
+   "evidence": {
+    "completeness": 2,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 2
+   },
+   "evidence_profile": "C",
+   "option": "mostly_implemented"
+  },
+  "SC-02": {
+   "evidence": {
+    "completeness": 2,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 2
+   },
+   "evidence_profile": "C",
+   "option": "mostly_implemented"
+  },
+  "SC-03": {
+   "evidence": {
+    "completeness": 2,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 2
+   },
+   "evidence_profile": "C",
+   "option": "partially_implemented"
+  },
+  "SC-04": {
+   "justification": "Only provider-managed keys are available for the services used",
+   "justification_code": "J1",
+   "option": "not_applicable"
+  },
+  "SG-01": {
+   "evidence": {
+    "completeness": 2,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 2
+   },
+   "evidence_profile": "C",
+   "option": "partially_implemented"
+  },
+  "SG-02": {
+   "evidence": {
+    "completeness": 2,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 2
+   },
+   "evidence_profile": "C",
+   "option": "partially_implemented"
+  },
+  "SG-03": {
+   "evidence": {
+    "completeness": 2,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 2
+   },
+   "evidence_profile": "C",
+   "option": "implemented_minimally"
+  },
+  "SG-04": {
+   "evidence": {
+    "completeness": 2,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 2
+   },
+   "evidence_profile": "C",
+   "option": "partially_implemented"
+  },
+  "SG-05": {
+   "evidence": {
+    "completeness": 2,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 2
+   },
+   "evidence_profile": "C",
+   "option": "implemented_minimally"
+  },
+  "SG-06": {
+   "evidence": {
+    "completeness": 2,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 2
+   },
+   "evidence_profile": "C",
+   "option": "partially_implemented"
+  },
+  "SI-01": {
+   "evidence": {
+    "completeness": 2,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 2
+   },
+   "evidence_profile": "C",
+   "option": "mostly_implemented"
+  },
+  "SI-02": {
+   "evidence": {
+    "completeness": 2,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 2
+   },
+   "evidence_profile": "C",
+   "option": "mostly_implemented"
+  },
+  "SI-03": {
+   "evidence": {
+    "completeness": 2,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 2
+   },
+   "evidence_profile": "C",
+   "option": "partially_implemented"
+  },
+  "SI-04": {
+   "evidence": {
+    "completeness": 2,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 2
+   },
+   "evidence_profile": "C",
+   "option": "partially_implemented"
+  },
+  "SO-01": {
+   "evidence": {
+    "completeness": 2,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 2
+   },
+   "evidence_profile": "C",
+   "option": "implemented_minimally"
+  },
+  "SO-02": {
+   "evidence": {
+    "completeness": 0,
+    "recency": 0,
+    "relevance": 0,
+    "verification": 0
+   },
+   "evidence_profile": "E",
+   "option": "not_implemented"
+  },
+  "SO-03": {
+   "evidence": {
+    "completeness": 2,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 2
+   },
+   "evidence_profile": "C",
+   "option": "implemented_minimally"
+  },
+  "SO-04": {
+   "evidence": {
+    "completeness": 2,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 2
+   },
+   "evidence_profile": "C",
+   "option": "implemented_minimally"
+  },
+  "SO-05": {
+   "evidence": {
+    "completeness": 2,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 2
+   },
+   "evidence_profile": "C",
+   "option": "implemented_minimally"
+  },
+  "SO-06": {
+   "evidence": {
+    "completeness": 0,
+    "recency": 0,
+    "relevance": 0,
+    "verification": 0
+   },
+   "evidence_profile": "E",
+   "option": "not_implemented"
+  },
+  "SR-01": {
+   "evidence": {
+    "completeness": 2,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 2
+   },
+   "evidence_profile": "C",
+   "option": "partially_implemented"
+  },
+  "SR-02": {
+   "evidence": {
+    "completeness": 2,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 2
+   },
+   "evidence_profile": "C",
+   "option": "mostly_implemented"
+  },
+  "SR-03": {
+   "evidence": {
+    "completeness": 2,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 2
+   },
+   "evidence_profile": "C",
+   "option": "partially_implemented"
+  }
+ },
+ "context": {
+  "customer_keys_offered": false,
+  "endpoints_used": true,
+  "supplier_used": true
+ },
+ "evidence_profile_default": "C",
+ "evidence_profile_exceptions": {
+  "SO-02": "E",
+  "SO-06": "E"
+ },
+ "scenario_id": "S8",
+ "synthetic": true,
+ "title": "Exploitation of unpatched vulnerabilities",
+ "version": "1.0"
+}

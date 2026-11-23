@@ -1,0 +1,222 @@
+{
+ "answers": {
+  "PD-01": {
+   "evidence": {
+    "completeness": 2,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 2
+   },
+   "evidence_profile": "C",
+   "option": "mostly_implemented"
+  },
+  "PD-02": {
+   "option": "unknown"
+  },
+  "PD-03": {
+   "option": "unknown"
+  },
+  "PD-04": {
+   "option": "unknown"
+  },
+  "PD-05": {
+   "evidence": {
+    "completeness": 2,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 2
+   },
+   "evidence_profile": "C",
+   "option": "partially_implemented"
+  },
+  "PD-06": {
+   "option": "unknown"
+  },
+  "PG-01": {
+   "option": "unknown"
+  },
+  "PG-02": {
+   "evidence": {
+    "completeness": 2,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 2
+   },
+   "evidence_profile": "C",
+   "option": "mostly_implemented"
+  },
+  "PG-03": {
+   "option": "unknown"
+  },
+  "PG-04": {
+   "option": "unknown"
+  },
+  "PG-05": {
+   "option": "unknown",
+   "screening": "unknown",
+   "screening_code": "J4"
+  },
+  "PG-06": {
+   "evidence": {
+    "completeness": 2,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 2
+   },
+   "evidence_profile": "C",
+   "option": "partially_implemented"
+  },
+  "SC-01": {
+   "evidence": {
+    "completeness": 2,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 2
+   },
+   "evidence_profile": "C",
+   "option": "mostly_implemented"
+  },
+  "SC-02": {
+   "evidence": {
+    "completeness": 2,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 2
+   },
+   "evidence_profile": "C",
+   "option": "fully_implemented"
+  },
+  "SC-03": {
+   "option": "unknown"
+  },
+  "SC-04": {
+   "justification": "Only provider-managed keys are available for the services used",
+   "justification_code": "J1",
+   "option": "not_applicable"
+  },
+  "SG-01": {
+   "evidence": {
+    "completeness": 2,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 2
+   },
+   "evidence_profile": "C",
+   "option": "mostly_implemented"
+  },
+  "SG-02": {
+   "option": "unknown"
+  },
+  "SG-03": {
+   "option": "unknown"
+  },
+  "SG-04": {
+   "evidence": {
+    "completeness": 2,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 2
+   },
+   "evidence_profile": "C",
+   "option": "mostly_implemented"
+  },
+  "SG-05": {
+   "option": "unknown"
+  },
+  "SG-06": {
+   "evidence": {
+    "completeness": 2,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 2
+   },
+   "evidence_profile": "C",
+   "option": "partially_implemented"
+  },
+  "SI-01": {
+   "evidence": {
+    "completeness": 2,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 2
+   },
+   "evidence_profile": "C",
+   "option": "mostly_implemented"
+  },
+  "SI-02": {
+   "option": "unknown"
+  },
+  "SI-03": {
+   "option": "unknown"
+  },
+  "SI-04": {
+   "evidence": {
+    "completeness": 2,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 2
+   },
+   "evidence_profile": "C",
+   "option": "partially_implemented"
+  },
+  "SO-01": {
+   "evidence": {
+    "completeness": 2,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 2
+   },
+   "evidence_profile": "C",
+   "option": "partially_implemented"
+  },
+  "SO-02": {
+   "option": "unknown"
+  },
+  "SO-03": {
+   "option": "unknown"
+  },
+  "SO-04": {
+   "evidence": {
+    "completeness": 2,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 2
+   },
+   "evidence_profile": "C",
+   "option": "mostly_implemented"
+  },
+  "SO-05": {
+   "evidence": {
+    "completeness": 2,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 2
+   },
+   "evidence_profile": "C",
+   "option": "partially_implemented"
+  },
+  "SO-06": {
+   "option": "unknown"
+  },
+  "SR-01": {
+   "option": "unknown"
+  },
+  "SR-02": {
+   "option": "unknown"
+  },
+  "SR-03": {
+   "option": "unknown"
+  }
+ },
+ "context": {
+  "customer_keys_offered": false,
+  "endpoints_used": true,
+  "supplier_used": true
+ },
+ "evidence_profile_default": "C",
+ "evidence_profile_exceptions": {},
+ "scenario_id": "S6",
+ "synthetic": true,
+ "title": "Partial assessment",
+ "version": "1.0"
+}

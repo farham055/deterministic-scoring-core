@@ -1,0 +1,1821 @@
+{
+ "declaration": "yes",
+ "produced_at_utc": "2026-11-23T14:03:59+00:00",
+ "produced_by": "independent reference calculation (exact rational arithmetic), not a hand calculation by the researcher",
+ "scenarios": {
+  "S2": {
+   "groups": {
+    "PD": {
+     "applicable": 6,
+     "assessed": 6,
+     "coverage": [
+      "100",
+      "100.0"
+     ],
+     "eci": [
+      "40",
+      "40.0"
+     ],
+     "risk": [
+      "1775/23",
+      "77.2"
+     ],
+     "state": "computed",
+     "unassessed": 0,
+     "upper_bound": [
+      "1775/23",
+      "77.2"
+     ]
+    },
+    "PG": {
+     "applicable": 6,
+     "assessed": 5,
+     "coverage": [
+      "1600/19",
+      "84.2"
+     ],
+     "eci": [
+      "40",
+      "40.0"
+     ],
+     "risk": [
+      "275/4",
+      "68.8"
+     ],
+     "state": "computed",
+     "unassessed": 1,
+     "upper_bound": [
+      "1400/19",
+      "73.7"
+     ]
+    },
+    "SC": {
+     "applicable": 4,
+     "assessed": 4,
+     "coverage": [
+      "100",
+      "100.0"
+     ],
+     "eci": [
+      "40",
+      "40.0"
+     ],
+     "risk": [
+      "225/4",
+      "56.3"
+     ],
+     "state": "computed",
+     "unassessed": 0,
+     "upper_bound": [
+      "225/4",
+      "56.3"
+     ]
+    },
+    "SG": {
+     "applicable": 6,
+     "assessed": 6,
+     "coverage": [
+      "100",
+      "100.0"
+     ],
+     "eci": [
+      "40",
+      "40.0"
+     ],
+     "risk": [
+      "1175/19",
+      "61.8"
+     ],
+     "state": "computed",
+     "unassessed": 0,
+     "upper_bound": [
+      "1175/19",
+      "61.8"
+     ]
+    },
+    "SI": {
+     "applicable": 4,
+     "assessed": 4,
+     "coverage": [
+      "100",
+      "100.0"
+     ],
+     "eci": [
+      "320/17",
+      "18.8"
+     ],
+     "risk": [
+      "100",
+      "100.0"
+     ],
+     "state": "computed",
+     "unassessed": 0,
+     "upper_bound": [
+      "100",
+      "100.0"
+     ]
+    },
+    "SO": {
+     "applicable": 6,
+     "assessed": 6,
+     "coverage": [
+      "100",
+      "100.0"
+     ],
+     "eci": [
+      "40",
+      "40.0"
+     ],
+     "risk": [
+      "425/7",
+      "60.7"
+     ],
+     "state": "computed",
+     "unassessed": 0,
+     "upper_bound": [
+      "425/7",
+      "60.7"
+     ]
+    },
+    "SR": {
+     "applicable": 3,
+     "assessed": 3,
+     "coverage": [
+      "100",
+      "100.0"
+     ],
+     "eci": [
+      "40",
+      "40.0"
+     ],
+     "risk": [
+      "775/12",
+      "64.6"
+     ],
+     "state": "computed",
+     "unassessed": 0,
+     "upper_bound": [
+      "775/12",
+      "64.6"
+     ]
+    },
+    "personal_data": {
+     "applicable": 12,
+     "assessed": 11,
+     "coverage": [
+      "650/7",
+      "92.9"
+     ],
+     "eci": [
+      "40",
+      "40.0"
+     ],
+     "risk": [
+      "2875/39",
+      "73.7"
+     ],
+     "state": "computed",
+     "unassessed": 1,
+     "upper_bound": [
+      "3175/42",
+      "75.6"
+     ]
+    },
+    "security": {
+     "applicable": 23,
+     "assessed": 23,
+     "coverage": [
+      "100",
+      "100.0"
+     ],
+     "eci": [
+      "608/17",
+      "35.8"
+     ],
+     "risk": [
+      "1165/17",
+      "68.5"
+     ],
+     "state": "computed",
+     "unassessed": 0,
+     "upper_bound": [
+      "1165/17",
+      "68.5"
+     ]
+    }
+   },
+   "indicators": {
+    "PD-01": {
+     "eci": [
+      "40",
+      "40.0"
+     ],
+     "gap": 3,
+     "s": 6,
+     "status": "A"
+    },
+    "PD-02": {
+     "eci": [
+      "40",
+      "40.0"
+     ],
+     "gap": 3,
+     "s": 6,
+     "status": "A"
+    },
+    "PD-03": {
+     "eci": [
+      "40",
+      "40.0"
+     ],
+     "gap": 2,
+     "s": 6,
+     "status": "A"
+    },
+    "PD-04": {
+     "eci": [
+      "40",
+      "40.0"
+     ],
+     "gap": 3,
+     "s": 6,
+     "status": "A"
+    },
+    "PD-05": {
+     "eci": [
+      "40",
+      "40.0"
+     ],
+     "gap": 4,
+     "s": 6,
+     "status": "A"
+    },
+    "PD-06": {
+     "eci": [
+      "40",
+      "40.0"
+     ],
+     "gap": 3,
+     "s": 6,
+     "status": "A"
+    },
+    "PG-01": {
+     "eci": [
+      "40",
+      "40.0"
+     ],
+     "gap": 3,
+     "s": 6,
+     "status": "A"
+    },
+    "PG-02": {
+     "eci": [
+      "40",
+      "40.0"
+     ],
+     "gap": 2,
+     "s": 6,
+     "status": "A"
+    },
+    "PG-03": {
+     "eci": [
+      "40",
+      "40.0"
+     ],
+     "gap": 3,
+     "s": 6,
+     "status": "A"
+    },
+    "PG-04": {
+     "eci": [
+      "40",
+      "40.0"
+     ],
+     "gap": 3,
+     "s": 6,
+     "status": "A"
+    },
+    "PG-05": {
+     "eci": null,
+     "gap": null,
+     "s": null,
+     "status": "U"
+    },
+    "PG-06": {
+     "eci": [
+      "40",
+      "40.0"
+     ],
+     "gap": 3,
+     "s": 6,
+     "status": "A"
+    },
+    "SC-01": {
+     "eci": [
+      "40",
+      "40.0"
+     ],
+     "gap": 2,
+     "s": 6,
+     "status": "A"
+    },
+    "SC-02": {
+     "eci": [
+      "40",
+      "40.0"
+     ],
+     "gap": 1,
+     "s": 6,
+     "status": "A"
+    },
+    "SC-03": {
+     "eci": [
+      "40",
+      "40.0"
+     ],
+     "gap": 3,
+     "s": 6,
+     "status": "A"
+    },
+    "SC-04": {
+     "eci": [
+      "40",
+      "40.0"
+     ],
+     "gap": 3,
+     "s": 6,
+     "status": "A"
+    },
+    "SG-01": {
+     "eci": [
+      "40",
+      "40.0"
+     ],
+     "gap": 2,
+     "s": 6,
+     "status": "A"
+    },
+    "SG-02": {
+     "eci": [
+      "40",
+      "40.0"
+     ],
+     "gap": 2,
+     "s": 6,
+     "status": "A"
+    },
+    "SG-03": {
+     "eci": [
+      "40",
+      "40.0"
+     ],
+     "gap": 3,
+     "s": 6,
+     "status": "A"
+    },
+    "SG-04": {
+     "eci": [
+      "40",
+      "40.0"
+     ],
+     "gap": 2,
+     "s": 6,
+     "status": "A"
+    },
+    "SG-05": {
+     "eci": [
+      "40",
+      "40.0"
+     ],
+     "gap": 3,
+     "s": 6,
+     "status": "A"
+    },
+    "SG-06": {
+     "eci": [
+      "40",
+      "40.0"
+     ],
+     "gap": 3,
+     "s": 6,
+     "status": "A"
+    },
+    "SI-01": {
+     "eci": [
+      "0",
+      "0.0"
+     ],
+     "gap": 4,
+     "s": 0,
+     "status": "A"
+    },
+    "SI-02": {
+     "eci": [
+      "0",
+      "0.0"
+     ],
+     "gap": 4,
+     "s": 0,
+     "status": "A"
+    },
+    "SI-03": {
+     "eci": [
+      "40",
+      "40.0"
+     ],
+     "gap": 4,
+     "s": 6,
+     "status": "A"
+    },
+    "SI-04": {
+     "eci": [
+      "40",
+      "40.0"
+     ],
+     "gap": 4,
+     "s": 6,
+     "status": "A"
+    },
+    "SO-01": {
+     "eci": [
+      "40",
+      "40.0"
+     ],
+     "gap": 3,
+     "s": 6,
+     "status": "A"
+    },
+    "SO-02": {
+     "eci": [
+      "40",
+      "40.0"
+     ],
+     "gap": 2,
+     "s": 6,
+     "status": "A"
+    },
+    "SO-03": {
+     "eci": [
+      "40",
+      "40.0"
+     ],
+     "gap": 2,
+     "s": 6,
+     "status": "A"
+    },
+    "SO-04": {
+     "eci": [
+      "40",
+      "40.0"
+     ],
+     "gap": 2,
+     "s": 6,
+     "status": "A"
+    },
+    "SO-05": {
+     "eci": [
+      "40",
+      "40.0"
+     ],
+     "gap": 3,
+     "s": 6,
+     "status": "A"
+    },
+    "SO-06": {
+     "eci": [
+      "40",
+      "40.0"
+     ],
+     "gap": 3,
+     "s": 6,
+     "status": "A"
+    },
+    "SR-01": {
+     "eci": [
+      "40",
+      "40.0"
+     ],
+     "gap": 3,
+     "s": 6,
+     "status": "A"
+    },
+    "SR-02": {
+     "eci": [
+      "40",
+      "40.0"
+     ],
+     "gap": 2,
+     "s": 6,
+     "status": "A"
+    },
+    "SR-03": {
+     "eci": [
+      "40",
+      "40.0"
+     ],
+     "gap": 3,
+     "s": 6,
+     "status": "A"
+    }
+   },
+   "ranking": [
+    [
+     "PD-05",
+     20
+    ],
+    [
+     "SI-02",
+     20
+    ],
+    [
+     "SI-03",
+     20
+    ],
+    [
+     "SI-01",
+     16
+    ],
+    [
+     "SC-03",
+     15
+    ],
+    [
+     "PD-01",
+     12
+    ],
+    [
+     "PD-02",
+     12
+    ],
+    [
+     "PD-04",
+     12
+    ],
+    [
+     "PG-01",
+     12
+    ],
+    [
+     "SG-05",
+     12
+    ],
+    [
+     "SI-04",
+     12
+    ],
+    [
+     "SO-01",
+     12
+    ],
+    [
+     "SR-01",
+     12
+    ],
+    [
+     "SR-02",
+     10
+    ],
+    [
+     "PD-06",
+     9
+    ],
+    [
+     "PG-03",
+     9
+    ],
+    [
+     "PG-04",
+     9
+    ],
+    [
+     "SC-04",
+     9
+    ],
+    [
+     "SG-03",
+     9
+    ],
+    [
+     "SO-05",
+     9
+    ],
+    [
+     "SR-03",
+     9
+    ],
+    [
+     "PG-02",
+     8
+    ],
+    [
+     "SC-01",
+     8
+    ],
+    [
+     "SG-02",
+     8
+    ],
+    [
+     "SO-02",
+     8
+    ],
+    [
+     "SO-03",
+     8
+    ],
+    [
+     "SO-04",
+     8
+    ],
+    [
+     "PD-03",
+     6
+    ],
+    [
+     "PG-06",
+     6
+    ],
+    [
+     "SG-01",
+     6
+    ],
+    [
+     "SG-04",
+     6
+    ],
+    [
+     "SG-06",
+     6
+    ],
+    [
+     "SO-06",
+     6
+    ],
+    [
+     "SC-02",
+     4
+    ]
+   ]
+  },
+  "S6": {
+   "groups": {
+    "PD": {
+     "applicable": 6,
+     "assessed": 2,
+     "coverage": [
+      "900/23",
+      "39.1"
+     ],
+     "eci": [
+      "60",
+      "60.0"
+     ],
+     "risk": [
+      "350/9",
+      "38.9"
+     ],
+     "state": "computed",
+     "unassessed": 4,
+     "upper_bound": [
+      "1750/23",
+      "76.1"
+     ]
+    },
+    "PG": {
+     "applicable": 6,
+     "assessed": 2,
+     "coverage": [
+      "600/19",
+      "31.6"
+     ],
+     "eci": [
+      "60",
+      "60.0"
+     ],
+     "risk": [
+      "100/3",
+      "33.3"
+     ],
+     "state": "computed",
+     "unassessed": 4,
+     "upper_bound": [
+      "1500/19",
+      "78.9"
+     ]
+    },
+    "SC": {
+     "applicable": 3,
+     "assessed": 2,
+     "coverage": [
+      "800/13",
+      "61.5"
+     ],
+     "eci": [
+      "60",
+      "60.0"
+     ],
+     "risk": [
+      "25/2",
+      "12.5"
+     ],
+     "state": "computed",
+     "unassessed": 1,
+     "upper_bound": [
+      "600/13",
+      "46.2"
+     ]
+    },
+    "SG": {
+     "applicable": 6,
+     "assessed": 3,
+     "coverage": [
+      "800/19",
+      "42.1"
+     ],
+     "eci": [
+      "60",
+      "60.0"
+     ],
+     "risk": [
+      "125/4",
+      "31.3"
+     ],
+     "state": "computed",
+     "unassessed": 3,
+     "upper_bound": [
+      "1350/19",
+      "71.1"
+     ]
+    },
+    "SI": {
+     "applicable": 4,
+     "assessed": 2,
+     "coverage": [
+      "700/17",
+      "41.2"
+     ],
+     "eci": [
+      "60",
+      "60.0"
+     ],
+     "risk": [
+      "250/7",
+      "35.7"
+     ],
+     "state": "computed",
+     "unassessed": 2,
+     "upper_bound": [
+      "1250/17",
+      "73.5"
+     ]
+    },
+    "SO": {
+     "applicable": 6,
+     "assessed": 3,
+     "coverage": [
+      "1100/21",
+      "52.4"
+     ],
+     "eci": [
+      "60",
+      "60.0"
+     ],
+     "risk": [
+      "450/11",
+      "40.9"
+     ],
+     "state": "computed",
+     "unassessed": 3,
+     "upper_bound": [
+      "1450/21",
+      "69.0"
+     ]
+    },
+    "SR": {
+     "applicable": 3,
+     "assessed": 0,
+     "coverage": [
+      "0",
+      "0.0"
+     ],
+     "state": "not_assessed",
+     "unassessed": 3,
+     "upper_bound": [
+      "100",
+      "100.0"
+     ]
+    },
+    "personal_data": {
+     "applicable": 12,
+     "assessed": 4,
+     "coverage": [
+      "250/7",
+      "35.7"
+     ],
+     "eci": [
+      "60",
+      "60.0"
+     ],
+     "risk": [
+      "110/3",
+      "36.7"
+     ],
+     "state": "computed",
+     "unassessed": 8,
+     "upper_bound": [
+      "1625/21",
+      "77.4"
+     ]
+    },
+    "security": {
+     "applicable": 22,
+     "assessed": 10,
+     "coverage": [
+      "1700/41",
+      "41.5"
+     ],
+     "eci": [
+      "60",
+      "60.0"
+     ],
+     "risk": [
+      "525/17",
+      "30.9"
+     ],
+     "state": "computed",
+     "unassessed": 12,
+     "upper_bound": [
+      "2925/41",
+      "71.3"
+     ]
+    }
+   },
+   "indicators": {
+    "PD-01": {
+     "eci": [
+      "60",
+      "60.0"
+     ],
+     "gap": 1,
+     "s": 9,
+     "status": "A"
+    },
+    "PD-02": {
+     "eci": null,
+     "gap": null,
+     "s": null,
+     "status": "U"
+    },
+    "PD-03": {
+     "eci": null,
+     "gap": null,
+     "s": null,
+     "status": "U"
+    },
+    "PD-04": {
+     "eci": null,
+     "gap": null,
+     "s": null,
+     "status": "U"
+    },
+    "PD-05": {
+     "eci": [
+      "60",
+      "60.0"
+     ],
+     "gap": 2,
+     "s": 9,
+     "status": "A"
+    },
+    "PD-06": {
+     "eci": null,
+     "gap": null,
+     "s": null,
+     "status": "U"
+    },
+    "PG-01": {
+     "eci": null,
+     "gap": null,
+     "s": null,
+     "status": "U"
+    },
+    "PG-02": {
+     "eci": [
+      "60",
+      "60.0"
+     ],
+     "gap": 1,
+     "s": 9,
+     "status": "A"
+    },
+    "PG-03": {
+     "eci": null,
+     "gap": null,
+     "s": null,
+     "status": "U"
+    },
+    "PG-04": {
+     "eci": null,
+     "gap": null,
+     "s": null,
+     "status": "U"
+    },
+    "PG-05": {
+     "eci": null,
+     "gap": null,
+     "s": null,
+     "status": "U"
+    },
+    "PG-06": {
+     "eci": [
+      "60",
+      "60.0"
+     ],
+     "gap": 2,
+     "s": 9,
+     "status": "A"
+    },
+    "SC-01": {
+     "eci": [
+      "60",
+      "60.0"
+     ],
+     "gap": 1,
+     "s": 9,
+     "status": "A"
+    },
+    "SC-02": {
+     "eci": [
+      "60",
+      "60.0"
+     ],
+     "gap": 0,
+     "s": 9,
+     "status": "A"
+    },
+    "SC-03": {
+     "eci": null,
+     "gap": null,
+     "s": null,
+     "status": "U"
+    },
+    "SC-04": {
+     "eci": null,
+     "gap": null,
+     "s": null,
+     "status": "NA"
+    },
+    "SG-01": {
+     "eci": [
+      "60",
+      "60.0"
+     ],
+     "gap": 1,
+     "s": 9,
+     "status": "A"
+    },
+    "SG-02": {
+     "eci": null,
+     "gap": null,
+     "s": null,
+     "status": "U"
+    },
+    "SG-03": {
+     "eci": null,
+     "gap": null,
+     "s": null,
+     "status": "U"
+    },
+    "SG-04": {
+     "eci": [
+      "60",
+      "60.0"
+     ],
+     "gap": 1,
+     "s": 9,
+     "status": "A"
+    },
+    "SG-05": {
+     "eci": null,
+     "gap": null,
+     "s": null,
+     "status": "U"
+    },
+    "SG-06": {
+     "eci": [
+      "60",
+      "60.0"
+     ],
+     "gap": 2,
+     "s": 9,
+     "status": "A"
+    },
+    "SI-01": {
+     "eci": [
+      "60",
+      "60.0"
+     ],
+     "gap": 1,
+     "s": 9,
+     "status": "A"
+    },
+    "SI-02": {
+     "eci": null,
+     "gap": null,
+     "s": null,
+     "status": "U"
+    },
+    "SI-03": {
+     "eci": null,
+     "gap": null,
+     "s": null,
+     "status": "U"
+    },
+    "SI-04": {
+     "eci": [
+      "60",
+      "60.0"
+     ],
+     "gap": 2,
+     "s": 9,
+     "status": "A"
+    },
+    "SO-01": {
+     "eci": [
+      "60",
+      "60.0"
+     ],
+     "gap": 2,
+     "s": 9,
+     "status": "A"
+    },
+    "SO-02": {
+     "eci": null,
+     "gap": null,
+     "s": null,
+     "status": "U"
+    },
+    "SO-03": {
+     "eci": null,
+     "gap": null,
+     "s": null,
+     "status": "U"
+    },
+    "SO-04": {
+     "eci": [
+      "60",
+      "60.0"
+     ],
+     "gap": 1,
+     "s": 9,
+     "status": "A"
+    },
+    "SO-05": {
+     "eci": [
+      "60",
+      "60.0"
+     ],
+     "gap": 2,
+     "s": 9,
+     "status": "A"
+    },
+    "SO-06": {
+     "eci": null,
+     "gap": null,
+     "s": null,
+     "status": "U"
+    },
+    "SR-01": {
+     "eci": null,
+     "gap": null,
+     "s": null,
+     "status": "U"
+    },
+    "SR-02": {
+     "eci": null,
+     "gap": null,
+     "s": null,
+     "status": "U"
+    },
+    "SR-03": {
+     "eci": null,
+     "gap": null,
+     "s": null,
+     "status": "U"
+    }
+   },
+   "ranking": [
+    [
+     "PD-05",
+     10
+    ],
+    [
+     "SO-01",
+     8
+    ],
+    [
+     "SI-04",
+     6
+    ],
+    [
+     "SO-05",
+     6
+    ],
+    [
+     "PD-01",
+     4
+    ],
+    [
+     "PG-02",
+     4
+    ],
+    [
+     "PG-06",
+     4
+    ],
+    [
+     "SC-01",
+     4
+    ],
+    [
+     "SG-06",
+     4
+    ],
+    [
+     "SI-01",
+     4
+    ],
+    [
+     "SO-04",
+     4
+    ],
+    [
+     "SG-01",
+     3
+    ],
+    [
+     "SG-04",
+     3
+    ],
+    [
+     "SC-02",
+     0
+    ]
+   ]
+  },
+  "S7": {
+   "groups": {
+    "PD": {
+     "applicable": 6,
+     "assessed": 6,
+     "coverage": [
+      "100",
+      "100.0"
+     ],
+     "eci": [
+      "220/3",
+      "73.3"
+     ],
+     "risk": [
+      "2000/23",
+      "87.0"
+     ],
+     "state": "computed",
+     "unassessed": 0,
+     "upper_bound": [
+      "2000/23",
+      "87.0"
+     ]
+    },
+    "PG": {
+     "applicable": 6,
+     "assessed": 6,
+     "coverage": [
+      "100",
+      "100.0"
+     ],
+     "eci": [
+      "1100/57",
+      "19.3"
+     ],
+     "risk": [
+      "1775/19",
+      "93.4"
+     ],
+     "state": "computed",
+     "unassessed": 0,
+     "upper_bound": [
+      "1775/19",
+      "93.4"
+     ]
+    },
+    "SC": {
+     "applicable": 3,
+     "assessed": 3,
+     "coverage": [
+      "100",
+      "100.0"
+     ],
+     "eci": [
+      "220/3",
+      "73.3"
+     ],
+     "risk": [
+      "450/13",
+      "34.6"
+     ],
+     "state": "computed",
+     "unassessed": 0,
+     "upper_bound": [
+      "450/13",
+      "34.6"
+     ]
+    },
+    "SG": {
+     "applicable": 6,
+     "assessed": 6,
+     "coverage": [
+      "100",
+      "100.0"
+     ],
+     "eci": [
+      "220/3",
+      "73.3"
+     ],
+     "risk": [
+      "650/19",
+      "34.2"
+     ],
+     "state": "computed",
+     "unassessed": 0,
+     "upper_bound": [
+      "650/19",
+      "34.2"
+     ]
+    },
+    "SI": {
+     "applicable": 4,
+     "assessed": 4,
+     "coverage": [
+      "100",
+      "100.0"
+     ],
+     "eci": [
+      "220/3",
+      "73.3"
+     ],
+     "risk": [
+      "625/17",
+      "36.8"
+     ],
+     "state": "computed",
+     "unassessed": 0,
+     "upper_bound": [
+      "625/17",
+      "36.8"
+     ]
+    },
+    "SO": {
+     "applicable": 6,
+     "assessed": 6,
+     "coverage": [
+      "100",
+      "100.0"
+     ],
+     "eci": [
+      "220/3",
+      "73.3"
+     ],
+     "risk": [
+      "775/21",
+      "36.9"
+     ],
+     "state": "computed",
+     "unassessed": 0,
+     "upper_bound": [
+      "775/21",
+      "36.9"
+     ]
+    },
+    "SR": {
+     "applicable": 3,
+     "assessed": 3,
+     "coverage": [
+      "100",
+      "100.0"
+     ],
+     "eci": [
+      "220/3",
+      "73.3"
+     ],
+     "risk": [
+      "475/12",
+      "39.6"
+     ],
+     "state": "computed",
+     "unassessed": 0,
+     "upper_bound": [
+      "475/12",
+      "39.6"
+     ]
+    },
+    "personal_data": {
+     "applicable": 12,
+     "assessed": 12,
+     "coverage": [
+      "100",
+      "100.0"
+     ],
+     "eci": [
+      "440/9",
+      "48.9"
+     ],
+     "risk": [
+      "3775/42",
+      "89.9"
+     ],
+     "state": "computed",
+     "unassessed": 0,
+     "upper_bound": [
+      "3775/42",
+      "89.9"
+     ]
+    },
+    "security": {
+     "applicable": 22,
+     "assessed": 22,
+     "coverage": [
+      "100",
+      "100.0"
+     ],
+     "eci": [
+      "220/3",
+      "73.3"
+     ],
+     "risk": [
+      "2975/82",
+      "36.3"
+     ],
+     "state": "computed",
+     "unassessed": 0,
+     "upper_bound": [
+      "2975/82",
+      "36.3"
+     ]
+    }
+   },
+   "indicators": {
+    "PD-01": {
+     "eci": [
+      "220/3",
+      "73.3"
+     ],
+     "gap": 4,
+     "s": 11,
+     "status": "A"
+    },
+    "PD-02": {
+     "eci": [
+      "220/3",
+      "73.3"
+     ],
+     "gap": 4,
+     "s": 11,
+     "status": "A"
+    },
+    "PD-03": {
+     "eci": [
+      "220/3",
+      "73.3"
+     ],
+     "gap": 3,
+     "s": 11,
+     "status": "A"
+    },
+    "PD-04": {
+     "eci": [
+      "220/3",
+      "73.3"
+     ],
+     "gap": 3,
+     "s": 11,
+     "status": "A"
+    },
+    "PD-05": {
+     "eci": [
+      "220/3",
+      "73.3"
+     ],
+     "gap": 3,
+     "s": 11,
+     "status": "A"
+    },
+    "PD-06": {
+     "eci": [
+      "220/3",
+      "73.3"
+     ],
+     "gap": 4,
+     "s": 11,
+     "status": "A"
+    },
+    "PG-01": {
+     "eci": [
+      "0",
+      "0.0"
+     ],
+     "gap": 4,
+     "s": 0,
+     "status": "A"
+    },
+    "PG-02": {
+     "eci": [
+      "0",
+      "0.0"
+     ],
+     "gap": 4,
+     "s": 0,
+     "status": "A"
+    },
+    "PG-03": {
+     "eci": [
+      "0",
+      "0.0"
+     ],
+     "gap": 4,
+     "s": 0,
+     "status": "A"
+    },
+    "PG-04": {
+     "eci": [
+      "220/3",
+      "73.3"
+     ],
+     "gap": 3,
+     "s": 11,
+     "status": "A"
+    },
+    "PG-05": {
+     "eci": [
+      "0",
+      "0.0"
+     ],
+     "gap": 4,
+     "s": 0,
+     "status": "A"
+    },
+    "PG-06": {
+     "eci": [
+      "220/3",
+      "73.3"
+     ],
+     "gap": 3,
+     "s": 11,
+     "status": "A"
+    },
+    "SC-01": {
+     "eci": [
+      "220/3",
+      "73.3"
+     ],
+     "gap": 1,
+     "s": 11,
+     "status": "A"
+    },
+    "SC-02": {
+     "eci": [
+      "220/3",
+      "73.3"
+     ],
+     "gap": 1,
+     "s": 11,
+     "status": "A"
+    },
+    "SC-03": {
+     "eci": [
+      "220/3",
+      "73.3"
+     ],
+     "gap": 2,
+     "s": 11,
+     "status": "A"
+    },
+    "SC-04": {
+     "eci": null,
+     "gap": null,
+     "s": null,
+     "status": "NA"
+    },
+    "SG-01": {
+     "eci": [
+      "220/3",
+      "73.3"
+     ],
+     "gap": 1,
+     "s": 11,
+     "status": "A"
+    },
+    "SG-02": {
+     "eci": [
+      "220/3",
+      "73.3"
+     ],
+     "gap": 1,
+     "s": 11,
+     "status": "A"
+    },
+    "SG-03": {
+     "eci": [
+      "220/3",
+      "73.3"
+     ],
+     "gap": 2,
+     "s": 11,
+     "status": "A"
+    },
+    "SG-04": {
+     "eci": [
+      "220/3",
+      "73.3"
+     ],
+     "gap": 1,
+     "s": 11,
+     "status": "A"
+    },
+    "SG-05": {
+     "eci": [
+      "220/3",
+      "73.3"
+     ],
+     "gap": 2,
+     "s": 11,
+     "status": "A"
+    },
+    "SG-06": {
+     "eci": [
+      "220/3",
+      "73.3"
+     ],
+     "gap": 1,
+     "s": 11,
+     "status": "A"
+    },
+    "SI-01": {
+     "eci": [
+      "220/3",
+      "73.3"
+     ],
+     "gap": 1,
+     "s": 11,
+     "status": "A"
+    },
+    "SI-02": {
+     "eci": [
+      "220/3",
+      "73.3"
+     ],
+     "gap": 1,
+     "s": 11,
+     "status": "A"
+    },
+    "SI-03": {
+     "eci": [
+      "220/3",
+      "73.3"
+     ],
+     "gap": 2,
+     "s": 11,
+     "status": "A"
+    },
+    "SI-04": {
+     "eci": [
+      "220/3",
+      "73.3"
+     ],
+     "gap": 2,
+     "s": 11,
+     "status": "A"
+    },
+    "SO-01": {
+     "eci": [
+      "220/3",
+      "73.3"
+     ],
+     "gap": 2,
+     "s": 11,
+     "status": "A"
+    },
+    "SO-02": {
+     "eci": [
+      "220/3",
+      "73.3"
+     ],
+     "gap": 2,
+     "s": 11,
+     "status": "A"
+    },
+    "SO-03": {
+     "eci": [
+      "220/3",
+      "73.3"
+     ],
+     "gap": 1,
+     "s": 11,
+     "status": "A"
+    },
+    "SO-04": {
+     "eci": [
+      "220/3",
+      "73.3"
+     ],
+     "gap": 1,
+     "s": 11,
+     "status": "A"
+    },
+    "SO-05": {
+     "eci": [
+      "220/3",
+      "73.3"
+     ],
+     "gap": 1,
+     "s": 11,
+     "status": "A"
+    },
+    "SO-06": {
+     "eci": [
+      "220/3",
+      "73.3"
+     ],
+     "gap": 2,
+     "s": 11,
+     "status": "A"
+    },
+    "SR-01": {
+     "eci": [
+      "220/3",
+      "73.3"
+     ],
+     "gap": 2,
+     "s": 11,
+     "status": "A"
+    },
+    "SR-02": {
+     "eci": [
+      "220/3",
+      "73.3"
+     ],
+     "gap": 1,
+     "s": 11,
+     "status": "A"
+    },
+    "SR-03": {
+     "eci": [
+      "220/3",
+      "73.3"
+     ],
+     "gap": 2,
+     "s": 11,
+     "status": "A"
+    }
+   },
+   "ranking": [
+    [
+     "PD-01",
+     16
+    ],
+    [
+     "PD-02",
+     16
+    ],
+    [
+     "PG-01",
+     16
+    ],
+    [
+     "PG-02",
+     16
+    ],
+    [
+     "PD-05",
+     15
+    ],
+    [
+     "PD-04",
+     12
+    ],
+    [
+     "PD-06",
+     12
+    ],
+    [
+     "PG-03",
+     12
+    ],
+    [
+     "PG-05",
+     12
+    ],
+    [
+     "SC-03",
+     10
+    ],
+    [
+     "SI-03",
+     10
+    ],
+    [
+     "PD-03",
+     9
+    ],
+    [
+     "PG-04",
+     9
+    ],
+    [
+     "SG-05",
+     8
+    ],
+    [
+     "SO-01",
+     8
+    ],
+    [
+     "SO-02",
+     8
+    ],
+    [
+     "SR-01",
+     8
+    ],
+    [
+     "PG-06",
+     6
+    ],
+    [
+     "SG-03",
+     6
+    ],
+    [
+     "SI-04",
+     6
+    ],
+    [
+     "SR-03",
+     6
+    ],
+    [
+     "SI-02",
+     5
+    ],
+    [
+     "SR-02",
+     5
+    ],
+    [
+     "SC-01",
+     4
+    ],
+    [
+     "SC-02",
+     4
+    ],
+    [
+     "SG-02",
+     4
+    ],
+    [
+     "SI-01",
+     4
+    ],
+    [
+     "SO-03",
+     4
+    ],
+    [
+     "SO-04",
+     4
+    ],
+    [
+     "SO-06",
+     4
+    ],
+    [
+     "SG-01",
+     3
+    ],
+    [
+     "SG-04",
+     3
+    ],
+    [
+     "SO-05",
+     3
+    ],
+    [
+     "SG-06",
+     2
+    ]
+   ]
+  }
+ }
+}

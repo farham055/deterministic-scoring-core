@@ -1,0 +1,240 @@
+**5. Evaluation Design**
+
+**5.1 Objectives and Criteria**
+
+This section specifies how the artifact is evaluated. It defines the inputs, procedures, comparison rules and reporting rules before any evaluation run is performed, so that Section 6 can report results against a fixed protocol. The evaluation follows the activities of Table 4. It addresses RQ1 and RQ2 through five technical activities and RQ3 through a conditional usability evaluation.
+
+The technical evaluation checks that the implementation conforms to the specification of Section 4 and that its outputs behave as specified on synthetic inputs. It does not test whether the scores predict incidents, and it does not test whether the impact weights are correct for real organizations. Table 10 states the evidence and the criterion for each research question.
+
+Table 10. Research questions, evidence and criteria.
+
+| Research question | Evidence | Criterion |
+| --- | --- | --- |
+| RQ1, traceable | Scenario runs (Section 5.4) | Every indicator reported in a scenario output carries at least one source reference and relationship term from the repository |
+| RQ1, arithmetically correct | Automated verification (Section 5.3) and manual comparison (Section 5.7) | All automated tests pass, and every discrepancy found in the manual comparison is resolved and documented |
+| RQ1, repeatable | Repeated runs (Section 5.3) | Repeated runs of identical input produce identical output |
+| RQ1, sensitivity to weights | Sensitivity analysis (Section 5.6) | Changes in scores and rankings are reported descriptively, and no pass or fail threshold is applied |
+| RQ2, activation and reporting | Paired personal-data test (Section 5.5) | Personal-data outputs follow Tables 8 and A3 in each declaration state, and privacy gaps are reported when the module is active |
+| RQ2, security invariance | Paired personal-data test (Section 5.5) | Security outputs are identical in all declaration states |
+| RQ3, perceived usability | SUS (Section 5.8) | Reported descriptively, and only if the conditions of Section 5.8 are met |
+
+**5.2 Synthetic Scenarios**
+
+*Purpose.* The scenarios are the inputs of the scenario runs, the paired test, the sensitivity analysis and the manual comparison. Eight scenarios are used. Five are constructed with reference to publicly documented incident patterns. Three are design scenarios that exercise features of the specification, namely a consistently mature organization (S1), a partial assessment with unknown and not-applicable answers (S6) and weak privacy governance (S7). The scenarios are synthetic, are labelled as synthetic wherever they are reported, and do not reproduce real incidents. They are not intended to represent the prevalence of the patterns in the cited sources.
+
+*Public patterns.* The 2026 Data Breach Investigations Report (DBIR) states that exploiting vulnerabilities surpassed stolen credentials as the most common breach entry point for the first time in the 19 years of the report, that this accounted for 31% of breaches, and that third-party involvement in breaches rose by 60% and now accounts for 48% of breaches [16]. The CSA Top Threats to Cloud Computing Survey Report 2026, based on a survey of 507 security professionals who ranked 23 issues, ranks inadequate identity and access management first, insecure third-party resources third, and misconfiguration and inadequate change control fifth, down from first in 2024 [17]. The #StopRansomware Guide recommends offline, encrypted backups whose availability and integrity are tested, because many ransomware variants attempt to delete or encrypt accessible backups, and recommends an incident response plan that is regularly exercised [18]. The SME literature reports that SMEs may misunderstand the shared responsibility model [1].
+
+*Construction procedure.* The scenarios are constructed in the following steps.
+
+1. A publicly documented pattern is selected from [1], [16], [17] and [18], or a design purpose is stated.
+2. The weaknesses that the scenario assumes are written down explicitly, and the indicators that they specify as failed are listed in Table 11.
+3. In the pattern scenarios, each indicator that the explicit scenario assumptions specify as failed receives a gap score of 4, and every other indicator receives a gap score from 0 to 3 that reflects a plausible overall maturity for a small organization that uses cloud services.
+4. Unknown and not-applicable answers are used only where the purpose of the scenario requires them. Not-applicable answers are limited to SC-04 and PG-05, with the standard justifications of Table B2.
+5. An evidence profile from Table 12 is assigned, with the listed exceptions.
+6. The scenario inputs are written to versioned JSON files and are frozen before any run. A defect in a scenario definition found after the first run is corrected only by creating a new version, and both versions and the reason are reported.
+
+The cited sources motivate the threat patterns used to construct the scenarios. They do not establish that any particular control has failed. Gap scores are assigned according to the explicit assumptions of each synthetic scenario. Accordingly, an indicator assigned a gap score of 4 represents a deliberately specified scenario condition, not an empirical conclusion drawn from the cited incident or survey data.
+
+*Scenario assumptions.* The following assumptions define the indicators with a gap score of 4. Each assumption corresponds to the meaning of gap score 4 in Table A3.
+
+- S2: Accounts are shared or unmanaged and credentials are not managed (SI-01), passwords alone protect administrative and remote access (SI-02), broad or default administrative rights are widely granted (SI-03), access is never reviewed and leavers keep access (SI-04), and personal data are accessible to all users of the system (PD-05).
+- S3: Resources are configured and changed without baselines or records (SO-03), resources are broadly reachable from the internet or across the environment (SO-04), no inventory of systems, services and data exists (SG-05), logging is not enabled (SO-01), stored data are not encrypted (SC-01), and personal data are stored in clear form (PD-04) and are accessible to all users of the system (PD-05).
+- S4: No backups are taken (SR-02), no incident response plan exists (SR-01), no continuity or recovery plan exists (SR-03), and endpoints are unmanaged and unprotected (SO-05).
+- S5: Neither internal responsibilities nor the split with the provider are defined (SG-02), providers are used without any check or contractual security requirements (SG-04), and the data-sensitivity requirements of the organization call for customer-controlled key management, but the organization continues to use provider-managed keys without an approved risk-based exception although the services offer customer-managed keys (SC-04).
+- S7: No record of personal data processing exists (PG-01), purposes are neither documented nor communicated (PG-02), neither privacy responsibilities nor legal requirements are defined (PG-03), high-risk processing takes place without an impact assessment (PG-05), data are collected and processed without regard to necessity (PD-01), no retention periods exist and data are kept indefinitely (PD-02), and no breach detection, handling or communication procedure exists (PD-06).
+- S8: No vulnerability identification or remediation process exists (SO-02), and no security testing is performed (SO-06).
+
+The remaining gap scores, from 0 to 3, are also researcher-defined synthetic inputs intended to provide varied maturity conditions. They are not derived from measured SME performance or from statistically representative organizational data.
+
+S1 and S6 have no indicator with a gap score of 4. The complete answer matrix is given in Appendix B (Table B1). Table 11 summarizes the scenario set.
+
+Table 11. Scenario set.
+
+| ID | Scenario | Basis | Indicators with gap score 4 | Evidence profile |
+| --- | --- | --- | --- | --- |
+| S1 | Reference organization | Design scenario with consistently low gaps and no incident pattern | None | A, with SG-05 and SO-06 at B |
+| S2 | Identity weaknesses | Identity and access management ranked first [17], and stolen credentials as a breach entry point, now behind vulnerability exploitation [16] | SI-01, SI-02, SI-03, SI-04, PD-05 | D, with SI-01 and SI-02 at E |
+| S3 | Misconfiguration and uncontrolled change | Misconfiguration and inadequate change control ranked fifth [17] | SG-05, SC-01, SO-01, SO-03, SO-04, PD-04, PD-05 | C, with SG-05 and SO-03 at E |
+| S4 | Ransomware without recoverability | Backup and incident response recommendations [18] | SO-05, SR-01, SR-02, SR-03 | D, with SR-02 at E |
+| S5 | Third-party reliance and shared responsibility | Third-party involvement in breaches [16], insecure third-party resources ranked third [17] and shared responsibility misunderstanding [1] | SG-02, SG-04, SC-04 | D, with SG-01 and SI-01 at B |
+| S6 | Partial assessment | Design scenario with unknown and not-applicable answers | None | C |
+| S7 | Weak privacy governance | Design scenario with high privacy gaps and moderate security gaps | PG-01, PG-02, PG-03, PG-05, PD-01, PD-02, PD-06 | B, with PG-01, PG-02, PG-03 and PG-05 at E |
+| S8 | Exploitation of unpatched vulnerabilities | Vulnerability exploitation as the leading breach entry point [16] | SO-02, SO-06 | C, with SO-02 and SO-06 at E |
+
+*Evidence ratings.* Evidence ratings are fixed by profile so that they are reproducible. A profile gives the four ratings applied to every assessed indicator of a scenario, except for the listed exceptions. Unassessed and not-applicable indicators carry no evidence rating. Table 12 gives the profiles together with the resulting integer score and indicator-level ECI, which follow from the definitions of Section 4.3.
+
+Table 12. Evidence profiles.
+
+| Profile | Verification | Completeness | Relevance | Recency | Integer score s | Indicator ECI |
+| --- | --- | --- | --- | --- | --- | --- |
+| A | 3 | 3 | 3 | 3 | 15 | 100.0 |
+| B | 2 | 2 | 3 | 2 | 11 | 73.3 |
+| C | 2 | 2 | 2 | 1 | 9 | 60.0 |
+| D | 1 | 1 | 2 | 1 | 6 | 40.0 |
+| E | 0 | 0 | 0 | 0 | 0 | 0.0 |
+
+**5.3 Automated Verification**
+
+The automated tests verify that the implementation conforms to the scoring specification. They do not establish that the scoring model is correct in general. The expected values of every test are derived by hand from the formulas of Section 4.3 and recorded in the test definitions before the tests are run against the implementation. A test passes when the integer numerators and denominators of the engine result equal the expected values, and when the displayed values equal the expected values rounded to one decimal place. Table 13 lists the test groups.
+
+Table 13. Automated verification test groups.
+
+| Group | What is tested |
+| --- | --- |
+| V1 | Mapping of the seven answer options of Table 5 to status and gap score |
+| V2 | Observed risk, weighted coverage and upper bound on hand-derived cases, including the illustrative example of Section 4.3 |
+| V3 | Boundary cases: empty assessed set, full coverage, and all applicable indicators unassessed |
+| V4 | Empty applicable set and every row of Table 8, including the undetermined personal-data state |
+| V5 | The relation between risk, coverage and upper bound given in Section 4.3, checked on all test cases |
+| V6 | ECI for all 16 combinations of the end values 0 and 3 of the four ratings, the profiles of Table 12 and the group-level ECI |
+| V7 | Rejection of a not-applicable answer without a written justification |
+| V8 | PG-05 rules: applicable with a documented screening, not applicable only with a documented screening, and unassessed when screening is missing or unknown |
+| V9 | Priority scores and the ranking, including the tie-break by ascending identifier |
+| V10 | Repeatability: each of the eight scenarios is executed 10 times under declaration Yes, and the serialized outputs are compared for exact equality |
+| V11 | Independence of the security results from the personal-data declaration |
+
+**5.4 Scenario Runs**
+
+Each of the eight scenarios is run once under declaration Yes, so that all indicators are in play. For every scenario and for every domain and scope, the run records the numbers of applicable, assessed and unassessed indicators, risk, weighted coverage, the upper bound, the ECI and the ranking of the assessed indicators. The report is also checked for the following properties: every reported indicator lists its source references and relationship terms, risk, coverage and ECI appear as separate values and never as a composite, and the report states that its output is decision support that requires human review and makes no claim of legal compliance.
+
+The following expectations are fixed before the runs. They follow from the scenario inputs of Table B1 and the impact weights of Table A2, and they were checked arithmetically against those inputs before the protocol was frozen. They are not adjusted after any run. Section 6 reports whether each holds in the outputs of the implementation.
+
+1. In S6, the SR domain is reported as not assessed, with weighted coverage 0, upper bound 100, and no risk or ECI value.
+2. In S2, the risk of the SI domain is 100, because all four indicators are assessed with gap score 4.
+3. In S1, SC-04 and PG-05 are excluded from the applicable sets, and their justifications appear in the report.
+4. In S6, PG-05 remains in the applicable set and is unassessed.
+5. For every group with at least one assessed indicator, the upper bound is not lower than the observed risk.
+6. S1 has the lowest security-scope risk of the eight scenarios.
+7. In S7, the risk of the personal-data scope is higher than the risk of the security scope.
+
+**5.5 Paired Personal-Data Test**
+
+Each scenario is run three times with identical answers and different personal-data declarations: Yes, No and Undetermined. The Yes run is the run of Section 5.4. Table 14 lists the comparisons.
+
+Table 14. Comparisons of the paired personal-data test.
+
+| Check | Comparison | Pass criterion |
+| --- | --- | --- |
+| P1 | Security outputs across the three declarations: numbers of applicable, assessed and unassessed indicators, risk, coverage, upper bound and ECI for every security domain and for the security scope, and the ranking restricted to the security-scope indicators | Exact equality |
+| P2 | Declaration No | All personal-data indicators are reported as not applicable with the declared justification, and the personal-data domains and scope are reported as not applicable |
+| P3 | Declaration Undetermined | The personal-data indicators are excluded, the personal-data domains and scope are reported as undetermined, no value is displayed as zero, and no text states that the module is inactive |
+| P4 | Declaration Yes | The personal-data indicators are applicable except where Table A3 states otherwise, and the personal-data outputs are computed |
+| P5 | PG-05 by scenario | Not applicable in S1, S4 and S8, unassessed in S2, S5 and S6, and assessed in S3 and S7 |
+
+For RQ2, the effect of activating the module on privacy-gap reporting is described for each scenario under declaration Yes by the number of applicable and assessed personal-data indicators, the number of assessed personal-data indicators with a gap score of at least 3, the personal-data scope values of risk, coverage, upper bound and ECI, and the three personal-data indicators with the highest priority scores. Under declaration No and Undetermined, no privacy gap is reported.
+
+**5.6 Sensitivity Analysis**
+
+*Baseline.* The baseline is the run of each scenario under declaration Yes. The baseline ranking orders the assessed indicators of the active scopes by the priority score I × G in descending order, with ties broken by ascending identifier (Section 4.3).
+
+*Configurations.* The analysis is one-at-a-time. Table 15 lists the configurations. A perturbation that would move a weight outside the range 1 to 5 is not applied and is not capped. All 35 indicators are perturbed in every scenario, including indicators that are unassessed in that scenario, because the weight of an unassessed applicable indicator affects weighted coverage and the upper bound. Perturbations of indicators that are not applicable in a scenario are retained for consistency but are expected to have no effect on that scenario's outputs. The 35 indicators have weights from 2 to 5, so all 35 can be decreased by 1, and the 30 indicators with a weight below 5 can be increased by 1.
+
+Table 15. Sensitivity configurations for each scenario.
+
+| Configuration | Change | Number |
+| --- | --- | --- |
+| W-minus | The weight of one indicator decreased by 1 | 35 |
+| W-plus | The weight of one indicator increased by 1, for indicators with weight below 5 | 30 |
+| EQ | Equal ECI dimension weights, with s = e_V + e_C + e_R + e_T and denominator 12 | 1 |
+
+This gives 66 configurations for each scenario and 528 perturbed runs for the eight scenarios.
+
+*Outputs.* For every configuration, the change in risk, weighted coverage and upper bound is recorded for every domain and scope, and the change in ECI is recorded for the EQ configuration. For the weight configurations, the perturbed ranking is compared with the baseline ranking using Spearman's rank correlation, calculated on the final ordinal positions of the deterministic ranking:
+
+ρ = 1 - 6 × Σd_i² / (n × (n² - 1)),
+
+where d_i is the difference between the baseline and perturbed ordinal positions of indicator i and n is the number of assessed indicators. Because the final ordinal positions include the identifier-based tie-break, tied priority scores are not given average ranks, and the coefficient measures changes in the complete deterministic ranking, including changes caused by that tie-break. The coefficient is not defined for n below 2, and it is then reported as not defined. The EQ configuration does not change priority scores, so no ranking comparison applies to it. For each scenario and overall, the analysis reports the maximum and the median absolute change in domain risk, the minimum value of ρ, the number of configurations in which the set of the five highest-ranked indicators changes, and the indicators whose perturbation causes the largest changes.
+
+*Interpretation.* No threshold is used to declare the results robust, because no accepted threshold exists for researcher-defined weights. Results are reported as observed. Two cases are examined explicitly. In S8, SO-06 has gap score 4 and weight 2, with priority score 8, whereas SO-01 has gap score 3 and weight 4, with priority score 12, so a higher gap with a lower weight ranks below a lower gap with a higher weight. In S2, several indicators share the priority score 6, among them SG-01 and SO-06, which exercises the tie-break rule. The analysis does not examine combined perturbations of several weights, which is stated as a limitation in Section 7.
+
+**5.7 Manual Comparison**
+
+The manual comparison uses scenarios S2, S6 and S7. S2 contains extreme values and priority ties, S6 contains unassessed, not-applicable and undefined cases, and S7 exercises the personal-data scope. All three are compared under declaration Yes.
+
+The comparison follows these steps.
+
+1. The researcher calculates all outputs of the scenario by hand with a calculator, using only the written scoring specification and the scenario inputs. The outputs are the numbers of applicable, assessed and unassessed indicators, risk, weighted coverage, the upper bound and the ECI for every domain and scope, and the ranking of the assessed indicators.
+2. The hand results are recorded in a dated file in the repository history before the tool outputs for these scenarios are generated or opened.
+3. The tool outputs are then generated and compared with the hand results value by value, as integer numerators and denominators and as displayed values.
+4. Each discrepancy is logged and classified as a hand calculation error or an implementation defect.
+5. An implementation defect is corrected, and all evaluation activities are repeated on the corrected version.
+6. Section 6 reports the number of compared values, the number of discrepancies before and after resolution, and their classification.
+
+The manual calculation is independent of the software implementation. It is not performed by a second assessor, so the independence concerns the implementation and not the person.
+
+**5.8 Usability Evaluation (Conditional)**
+
+The usability evaluation is conducted only if ethics approval and participants are available. Otherwise it is not conducted, usability is reported as future work and RQ3 is not answered in this paper.
+
+If it is conducted, it follows this design. Practitioners who work or have worked in IT, security or compliance roles in small or medium organizations are invited to take part. The target is 5 to 8 participants, and the number that actually take part is reported. Participation follows informed consent. The data are collected anonymously with no name, and only the role category is recorded. Each participant receives a standard introduction to the tool and then completes an assessment of a written description of a synthetic organization that corresponds to scenario S3. The participant then answers the ten-item System Usability Scale, rated on a five-point scale, and gives short open comments on what was unclear and what was missing. The SUS score of each participant is computed as defined by Brooke [15]: one is subtracted from the rating of each odd-numbered item, the rating of each even-numbered item is subtracted from five, and the sum is multiplied by 2.5, which gives a value from 0 to 100.
+
+The results are reported descriptively as the individual scores, the mean, the median and the range. The open comments are grouped into themes by a single coder. No inferential statistics are applied, no comparison with published benchmarks is made because of the small sample, and the results are not generalized.
+
+**5.9 Reporting and Scope of Claims**
+
+Section 6 reports for each activity the inputs used, deviations from this protocol, the observed outputs and the comparison with the criteria and expectations fixed in this section. Failed tests, violated expectations and discrepancies are reported as found. A change to a scenario, a weight, an expectation or a procedure made after the first run is reported together with its reason, and the affected activities are repeated. Every run is performed on a recorded version of the source code, the repository and the scenario files, together with the versions of Python, Django, SQLite and the operating system. A change to the code after the evaluation runs requires all runs to be repeated.
+
+The results support statements about the conformity of the implementation to the specification, the repeatability of its outputs and the behavior of its outputs under the declared inputs and perturbations. They do not support statements about the predictive validity of the scores, the correctness of the weights in real organizations, or compliance with GDPR.
+
+**Appendix B. Scenario Inputs**
+
+**B.1 Conventions**
+
+Table B1 gives the answer for every indicator in each scenario. A digit from 0 to 4 is the gap score of an assessed indicator. U means unknown, so the indicator is unassessed. N means not applicable, with the standard justification of Table B2. The personal-data answers are used only under declaration Yes.
+
+Table B1. Scenario answer matrix.
+
+| ID | S1 | S2 | S3 | S4 | S5 | S6 | S7 | S8 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| SG-01 | 0 | 2 | 2 | 2 | 1 | 1 | 1 | 2 |
+| SG-02 | 0 | 2 | 3 | 2 | 4 | U | 1 | 2 |
+| SG-03 | 1 | 3 | 3 | 3 | 2 | U | 2 | 3 |
+| SG-04 | 0 | 2 | 2 | 2 | 4 | 1 | 1 | 2 |
+| SG-05 | 1 | 3 | 4 | 3 | 3 | U | 2 | 3 |
+| SG-06 | 0 | 3 | 3 | 3 | 2 | 2 | 1 | 2 |
+| SI-01 | 0 | 4 | 2 | 2 | 1 | 1 | 1 | 1 |
+| SI-02 | 0 | 4 | 2 | 3 | 2 | U | 1 | 1 |
+| SI-03 | 1 | 4 | 3 | 3 | 2 | U | 2 | 2 |
+| SI-04 | 1 | 4 | 3 | 3 | 3 | 2 | 2 | 2 |
+| SC-01 | 0 | 2 | 4 | 2 | 1 | 1 | 1 | 1 |
+| SC-02 | 0 | 1 | 2 | 1 | 1 | 0 | 1 | 1 |
+| SC-03 | 1 | 3 | 3 | 2 | U | U | 2 | 2 |
+| SC-04 | N | 3 | 3 | N | 4 | N | N | N |
+| SO-01 | 1 | 3 | 4 | 3 | 3 | 2 | 2 | 3 |
+| SO-02 | 1 | 2 | 3 | 3 | U | U | 2 | 4 |
+| SO-03 | 0 | 2 | 4 | 3 | 2 | U | 1 | 3 |
+| SO-04 | 0 | 2 | 4 | 3 | U | 1 | 1 | 3 |
+| SO-05 | 0 | 3 | 2 | 4 | 1 | 2 | 1 | 3 |
+| SO-06 | 1 | 3 | 3 | 3 | 3 | U | 2 | 4 |
+| SR-01 | 1 | 3 | 3 | 4 | 3 | U | 2 | 2 |
+| SR-02 | 0 | 2 | 3 | 4 | U | U | 1 | 1 |
+| SR-03 | 1 | 3 | 3 | 4 | 3 | U | 2 | 2 |
+| PG-01 | 1 | 3 | 3 | 3 | 3 | U | 4 | 2 |
+| PG-02 | 0 | 2 | 3 | 2 | 2 | 1 | 4 | 1 |
+| PG-03 | 0 | 3 | 3 | 3 | 3 | U | 4 | 2 |
+| PG-04 | 1 | 3 | 3 | 3 | 2 | U | 3 | 2 |
+| PG-05 | N | U | 3 | N | U | U | 4 | N |
+| PG-06 | 0 | 3 | 3 | 3 | 2 | 2 | 3 | 2 |
+| PD-01 | 1 | 3 | 3 | 2 | 2 | 1 | 4 | 1 |
+| PD-02 | 1 | 3 | 3 | 3 | 3 | U | 4 | 2 |
+| PD-03 | 0 | 2 | 3 | 2 | 2 | U | 3 | 1 |
+| PD-04 | 1 | 3 | 4 | 3 | U | U | 3 | 2 |
+| PD-05 | 0 | 4 | 4 | 2 | 2 | 2 | 3 | 1 |
+| PD-06 | 1 | 3 | 3 | 3 | 3 | U | 4 | 2 |
+
+Table B2. Standard justifications for not-applicable answers and screening outcomes.
+
+| Code | Indicator | Justification or outcome |
+| --- | --- | --- |
+| J1 | SC-04 | Only provider-managed keys are available for the services used |
+| J2 | PG-05 | A documented screening established that the processing is not likely to result in a high risk to the rights and freedoms of natural persons |
+| J3 | PG-05 assessed | In S3 and S7, a documented screening established that the processing is likely to result in a high risk to the rights and freedoms of natural persons, so the indicator is assessed |
+| J4 | PG-05 unassessed | In S2, S5 and S6, screening has not been performed or its outcome is unknown, so the indicator is unassessed |
+
+**References (new entries, continuing from Section 3)**
+
+[16] Verizon, "Vulnerability exploitation top breach entry point, 2026 industry-wide DBIR finds," press release on the 2026 Data Breach Investigations Report, May 19, 2026. [Online]. Available: https://www.verizon.com/about/news/breach-industry-wide-dbir-finds
+
+[17] Cloud Security Alliance, "Top Threats to Cloud Computing Survey Report 2026," Aug. 2026. [Online]. Available: https://cloudsecurityalliance.org/artifacts/top-threats-cloud-computing-2026
+
+[18] CISA, FBI, NSA and MS-ISAC, "#StopRansomware Guide," Sep. 2023. [Online]. Available: https://www.cisa.gov/stopransomware/ransomware-guide

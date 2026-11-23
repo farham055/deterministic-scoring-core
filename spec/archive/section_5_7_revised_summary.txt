@@ -1,0 +1,2 @@
+5.7 Independent Reference Implementation Comparison (revised after the runs; see DEVIATIONS.md D5)
+Reference implementation written separately from the engine, exact rational arithmetic, results stored in a dated file with SHA-256 before engine output is generated or opened, value-by-value comparison, discrepancies classified as reference or engine defects, engine defects corrected and all activities repeated. Not a hand calculation and not a second assessor.

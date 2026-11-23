@@ -1,0 +1,1918 @@
+{
+ "S7_pd_vs_sec_risk": [
+  "89.9",
+  "36.3"
+ ],
+ "exact_rounding_ties": [
+  [
+   "S2",
+   "yes",
+   "PG",
+   "risk",
+   "68.8"
+  ],
+  [
+   "S2",
+   "yes",
+   "SC",
+   "risk",
+   "56.3"
+  ],
+  [
+   "S2",
+   "yes",
+   "SC",
+   "upper_bound",
+   "56.3"
+  ],
+  [
+   "S2",
+   "no",
+   "SC",
+   "risk",
+   "56.3"
+  ],
+  [
+   "S2",
+   "no",
+   "SC",
+   "upper_bound",
+   "56.3"
+  ],
+  [
+   "S2",
+   "undetermined",
+   "SC",
+   "risk",
+   "56.3"
+  ],
+  [
+   "S2",
+   "undetermined",
+   "SC",
+   "upper_bound",
+   "56.3"
+  ],
+  [
+   "S4",
+   "yes",
+   "PG",
+   "risk",
+   "68.8"
+  ],
+  [
+   "S4",
+   "yes",
+   "PG",
+   "upper_bound",
+   "68.8"
+  ],
+  [
+   "S5",
+   "yes",
+   "SC",
+   "coverage",
+   "68.8"
+  ],
+  [
+   "S5",
+   "no",
+   "SC",
+   "coverage",
+   "68.8"
+  ],
+  [
+   "S5",
+   "undetermined",
+   "SC",
+   "coverage",
+   "68.8"
+  ],
+  [
+   "S6",
+   "yes",
+   "SG",
+   "risk",
+   "31.3"
+  ],
+  [
+   "S6",
+   "no",
+   "SG",
+   "risk",
+   "31.3"
+  ],
+  [
+   "S6",
+   "undetermined",
+   "SG",
+   "risk",
+   "31.3"
+  ],
+  [
+   "S8",
+   "yes",
+   "PG",
+   "risk",
+   "43.8"
+  ],
+  [
+   "S8",
+   "yes",
+   "PG",
+   "upper_bound",
+   "43.8"
+  ]
+ ],
+ "expectations": {
+  "1": true,
+  "2": true,
+  "3": true,
+  "4": true,
+  "5": true,
+  "6": true,
+  "7": true
+ },
+ "explicit_cases": {
+  "S2_SG01_SO06": [
+   [
+    6,
+    30
+   ],
+   [
+    6,
+    33
+   ]
+  ],
+  "S2_priority6": [
+   [
+    "PD-03",
+    28
+   ],
+   [
+    "PG-06",
+    29
+   ],
+   [
+    "SG-01",
+    30
+   ],
+   [
+    "SG-04",
+    31
+   ],
+   [
+    "SG-06",
+    32
+   ],
+   [
+    "SO-06",
+    33
+   ]
+  ],
+  "S8": {
+   "SO-01": [
+    12,
+    3
+   ],
+   "SO-06": [
+    8,
+    14
+   ]
+  }
+ },
+ "manual_comparison": {
+  "compared_values": 406,
+  "discrepancies": [],
+  "hand_file": "manual/hand_results_2026-11-23.json",
+  "n_discrepancies": 0
+ },
+ "paired_checks": {
+  "P1": {
+   "S1": true,
+   "S2": true,
+   "S3": true,
+   "S4": true,
+   "S5": true,
+   "S6": true,
+   "S7": true,
+   "S8": true
+  },
+  "P2": {
+   "S1": true,
+   "S2": true,
+   "S3": true,
+   "S4": true,
+   "S5": true,
+   "S6": true,
+   "S7": true,
+   "S8": true
+  },
+  "P3": {
+   "S1": true,
+   "S2": true,
+   "S3": true,
+   "S4": true,
+   "S5": true,
+   "S6": true,
+   "S7": true,
+   "S8": true
+  },
+  "P4": {
+   "S1": true,
+   "S2": true,
+   "S3": true,
+   "S4": true,
+   "S5": true,
+   "S6": true,
+   "S7": true,
+   "S8": true
+  },
+  "P5": {
+   "S1": true,
+   "S2": true,
+   "S3": true,
+   "S4": true,
+   "S5": true,
+   "S6": true,
+   "S7": true,
+   "S8": true
+  }
+ },
+ "report_properties": {
+  "all_indicators_list_sources_and_terms": true,
+  "no_compliance_claim": true,
+  "notice_present": true,
+  "separate_values_no_composite": true
+ },
+ "rq2_pd_summary_yes": {
+  "S1": {
+   "applicable": 11,
+   "assessed": 11,
+   "assessed_gap_ge_3": 0,
+   "coverage": "100.0",
+   "eci": "100.0",
+   "risk": "14.1",
+   "top3": [
+    [
+     "PD-01",
+     4
+    ],
+    [
+     "PD-02",
+     4
+    ],
+    [
+     "PD-04",
+     4
+    ]
+   ],
+   "upper_bound": "14.1"
+  },
+  "S2": {
+   "applicable": 12,
+   "assessed": 11,
+   "assessed_gap_ge_3": 9,
+   "coverage": "92.9",
+   "eci": "40.0",
+   "risk": "73.7",
+   "top3": [
+    [
+     "PD-05",
+     20
+    ],
+    [
+     "PD-01",
+     12
+    ],
+    [
+     "PD-02",
+     12
+    ]
+   ],
+   "upper_bound": "75.6"
+  },
+  "S3": {
+   "applicable": 12,
+   "assessed": 12,
+   "assessed_gap_ge_3": 12,
+   "coverage": "100.0",
+   "eci": "60.0",
+   "risk": "80.4",
+   "top3": [
+    [
+     "PD-05",
+     20
+    ],
+    [
+     "PD-04",
+     16
+    ],
+    [
+     "PD-01",
+     12
+    ]
+   ],
+   "upper_bound": "80.4"
+  },
+  "S4": {
+   "applicable": 11,
+   "assessed": 11,
+   "assessed_gap_ge_3": 7,
+   "coverage": "100.0",
+   "eci": "40.0",
+   "risk": "64.7",
+   "top3": [
+    [
+     "PD-02",
+     12
+    ],
+    [
+     "PD-04",
+     12
+    ],
+    [
+     "PG-01",
+     12
+    ]
+   ],
+   "upper_bound": "64.7"
+  },
+  "S5": {
+   "applicable": 12,
+   "assessed": 10,
+   "assessed_gap_ge_3": 4,
+   "coverage": "83.3",
+   "eci": "40.0",
+   "risk": "60.0",
+   "top3": [
+    [
+     "PD-02",
+     12
+    ],
+    [
+     "PG-01",
+     12
+    ],
+    [
+     "PD-05",
+     10
+    ]
+   ],
+   "upper_bound": "66.7"
+  },
+  "S6": {
+   "applicable": 12,
+   "assessed": 4,
+   "assessed_gap_ge_3": 0,
+   "coverage": "35.7",
+   "eci": "60.0",
+   "risk": "36.7",
+   "top3": [
+    [
+     "PD-05",
+     10
+    ],
+    [
+     "PD-01",
+     4
+    ],
+    [
+     "PG-02",
+     4
+    ]
+   ],
+   "upper_bound": "77.4"
+  },
+  "S7": {
+   "applicable": 12,
+   "assessed": 12,
+   "assessed_gap_ge_3": 12,
+   "coverage": "100.0",
+   "eci": "48.9",
+   "risk": "89.9",
+   "top3": [
+    [
+     "PD-01",
+     16
+    ],
+    [
+     "PD-02",
+     16
+    ],
+    [
+     "PG-01",
+     16
+    ]
+   ],
+   "upper_bound": "89.9"
+  },
+  "S8": {
+   "applicable": 11,
+   "assessed": 11,
+   "assessed_gap_ge_3": 0,
+   "coverage": "100.0",
+   "eci": "60.0",
+   "risk": "39.7",
+   "top3": [
+    [
+     "PD-02",
+     8
+    ],
+    [
+     "PD-04",
+     8
+    ],
+    [
+     "PG-01",
+     8
+    ]
+   ],
+   "upper_bound": "39.7"
+  }
+ },
+ "scenario_runs": {
+  "S1": {
+   "PD": {
+    "coverage": "100.0",
+    "eci": "100.0",
+    "group": "PD",
+    "n_applicable": 6,
+    "n_assessed": 6,
+    "n_unassessed": 0,
+    "risk": "16.3",
+    "state": "computed",
+    "upper_bound": "16.3"
+   },
+   "PG": {
+    "coverage": "100.0",
+    "eci": "100.0",
+    "group": "PG",
+    "n_applicable": 5,
+    "n_assessed": 5,
+    "n_unassessed": 0,
+    "risk": "10.9",
+    "state": "computed",
+    "upper_bound": "10.9"
+   },
+   "SC": {
+    "coverage": "100.0",
+    "eci": "100.0",
+    "group": "SC",
+    "n_applicable": 3,
+    "n_assessed": 3,
+    "n_unassessed": 0,
+    "risk": "9.6",
+    "state": "computed",
+    "upper_bound": "9.6"
+   },
+   "SG": {
+    "coverage": "100.0",
+    "eci": "94.4",
+    "group": "SG",
+    "n_applicable": 6,
+    "n_assessed": 6,
+    "n_unassessed": 0,
+    "risk": "9.2",
+    "state": "computed",
+    "upper_bound": "9.2"
+   },
+   "SI": {
+    "coverage": "100.0",
+    "eci": "100.0",
+    "group": "SI",
+    "n_applicable": 4,
+    "n_assessed": 4,
+    "n_unassessed": 0,
+    "risk": "11.8",
+    "state": "computed",
+    "upper_bound": "11.8"
+   },
+   "SO": {
+    "coverage": "100.0",
+    "eci": "97.5",
+    "group": "SO",
+    "n_applicable": 6,
+    "n_assessed": 6,
+    "n_unassessed": 0,
+    "risk": "11.9",
+    "state": "computed",
+    "upper_bound": "11.9"
+   },
+   "SR": {
+    "coverage": "100.0",
+    "eci": "100.0",
+    "group": "SR",
+    "n_applicable": 3,
+    "n_assessed": 3,
+    "n_unassessed": 0,
+    "risk": "14.6",
+    "state": "computed",
+    "upper_bound": "14.6"
+   },
+   "personal_data": {
+    "coverage": "100.0",
+    "eci": "100.0",
+    "group": "personal_data",
+    "n_applicable": 11,
+    "n_assessed": 11,
+    "n_unassessed": 0,
+    "risk": "14.1",
+    "state": "computed",
+    "upper_bound": "14.1"
+   },
+   "ranking_top5": [
+    [
+     "SC-03",
+     5
+    ],
+    [
+     "SI-03",
+     5
+    ],
+    [
+     "PD-01",
+     4
+    ],
+    [
+     "PD-02",
+     4
+    ],
+    [
+     "PD-04",
+     4
+    ]
+   ],
+   "security": {
+    "coverage": "100.0",
+    "eci": "98.0",
+    "group": "security",
+    "n_applicable": 22,
+    "n_assessed": 22,
+    "n_unassessed": 0,
+    "risk": "11.3",
+    "state": "computed",
+    "upper_bound": "11.3"
+   }
+  },
+  "S2": {
+   "PD": {
+    "coverage": "100.0",
+    "eci": "40.0",
+    "group": "PD",
+    "n_applicable": 6,
+    "n_assessed": 6,
+    "n_unassessed": 0,
+    "risk": "77.2",
+    "state": "computed",
+    "upper_bound": "77.2"
+   },
+   "PG": {
+    "coverage": "84.2",
+    "eci": "40.0",
+    "group": "PG",
+    "n_applicable": 6,
+    "n_assessed": 5,
+    "n_unassessed": 1,
+    "risk": "68.8",
+    "state": "computed",
+    "upper_bound": "73.7"
+   },
+   "SC": {
+    "coverage": "100.0",
+    "eci": "40.0",
+    "group": "SC",
+    "n_applicable": 4,
+    "n_assessed": 4,
+    "n_unassessed": 0,
+    "risk": "56.3",
+    "state": "computed",
+    "upper_bound": "56.3"
+   },
+   "SG": {
+    "coverage": "100.0",
+    "eci": "40.0",
+    "group": "SG",
+    "n_applicable": 6,
+    "n_assessed": 6,
+    "n_unassessed": 0,
+    "risk": "61.8",
+    "state": "computed",
+    "upper_bound": "61.8"
+   },
+   "SI": {
+    "coverage": "100.0",
+    "eci": "18.8",
+    "group": "SI",
+    "n_applicable": 4,
+    "n_assessed": 4,
+    "n_unassessed": 0,
+    "risk": "100.0",
+    "state": "computed",
+    "upper_bound": "100.0"
+   },
+   "SO": {
+    "coverage": "100.0",
+    "eci": "40.0",
+    "group": "SO",
+    "n_applicable": 6,
+    "n_assessed": 6,
+    "n_unassessed": 0,
+    "risk": "60.7",
+    "state": "computed",
+    "upper_bound": "60.7"
+   },
+   "SR": {
+    "coverage": "100.0",
+    "eci": "40.0",
+    "group": "SR",
+    "n_applicable": 3,
+    "n_assessed": 3,
+    "n_unassessed": 0,
+    "risk": "64.6",
+    "state": "computed",
+    "upper_bound": "64.6"
+   },
+   "personal_data": {
+    "coverage": "92.9",
+    "eci": "40.0",
+    "group": "personal_data",
+    "n_applicable": 12,
+    "n_assessed": 11,
+    "n_unassessed": 1,
+    "risk": "73.7",
+    "state": "computed",
+    "upper_bound": "75.6"
+   },
+   "ranking_top5": [
+    [
+     "PD-05",
+     20
+    ],
+    [
+     "SI-02",
+     20
+    ],
+    [
+     "SI-03",
+     20
+    ],
+    [
+     "SI-01",
+     16
+    ],
+    [
+     "SC-03",
+     15
+    ]
+   ],
+   "security": {
+    "coverage": "100.0",
+    "eci": "35.8",
+    "group": "security",
+    "n_applicable": 23,
+    "n_assessed": 23,
+    "n_unassessed": 0,
+    "risk": "68.5",
+    "state": "computed",
+    "upper_bound": "68.5"
+   }
+  },
+  "S3": {
+   "PD": {
+    "coverage": "100.0",
+    "eci": "60.0",
+    "group": "PD",
+    "n_applicable": 6,
+    "n_assessed": 6,
+    "n_unassessed": 0,
+    "risk": "84.8",
+    "state": "computed",
+    "upper_bound": "84.8"
+   },
+   "PG": {
+    "coverage": "100.0",
+    "eci": "60.0",
+    "group": "PG",
+    "n_applicable": 6,
+    "n_assessed": 6,
+    "n_unassessed": 0,
+    "risk": "75.0",
+    "state": "computed",
+    "upper_bound": "75.0"
+   },
+   "SC": {
+    "coverage": "100.0",
+    "eci": "60.0",
+    "group": "SC",
+    "n_applicable": 4,
+    "n_assessed": 4,
+    "n_unassessed": 0,
+    "risk": "75.0",
+    "state": "computed",
+    "upper_bound": "75.0"
+   },
+   "SG": {
+    "coverage": "100.0",
+    "eci": "47.4",
+    "group": "SG",
+    "n_applicable": 6,
+    "n_assessed": 6,
+    "n_unassessed": 0,
+    "risk": "72.4",
+    "state": "computed",
+    "upper_bound": "72.4"
+   },
+   "SI": {
+    "coverage": "100.0",
+    "eci": "60.0",
+    "group": "SI",
+    "n_applicable": 4,
+    "n_assessed": 4,
+    "n_unassessed": 0,
+    "risk": "61.8",
+    "state": "computed",
+    "upper_bound": "61.8"
+   },
+   "SO": {
+    "coverage": "100.0",
+    "eci": "48.6",
+    "group": "SO",
+    "n_applicable": 6,
+    "n_assessed": 6,
+    "n_unassessed": 0,
+    "risk": "85.7",
+    "state": "computed",
+    "upper_bound": "85.7"
+   },
+   "SR": {
+    "coverage": "100.0",
+    "eci": "60.0",
+    "group": "SR",
+    "n_applicable": 3,
+    "n_assessed": 3,
+    "n_unassessed": 0,
+    "risk": "75.0",
+    "state": "computed",
+    "upper_bound": "75.0"
+   },
+   "personal_data": {
+    "coverage": "100.0",
+    "eci": "60.0",
+    "group": "personal_data",
+    "n_applicable": 12,
+    "n_assessed": 12,
+    "n_unassessed": 0,
+    "risk": "80.4",
+    "state": "computed",
+    "upper_bound": "80.4"
+   },
+   "ranking_top5": [
+    [
+     "PD-05",
+     20
+    ],
+    [
+     "PD-04",
+     16
+    ],
+    [
+     "SC-01",
+     16
+    ],
+    [
+     "SG-05",
+     16
+    ],
+    [
+     "SO-01",
+     16
+    ]
+   ],
+   "security": {
+    "coverage": "100.0",
+    "eci": "54.4",
+    "group": "security",
+    "n_applicable": 23,
+    "n_assessed": 23,
+    "n_unassessed": 0,
+    "risk": "74.4",
+    "state": "computed",
+    "upper_bound": "74.4"
+   }
+  },
+  "S4": {
+   "PD": {
+    "coverage": "100.0",
+    "eci": "40.0",
+    "group": "PD",
+    "n_applicable": 6,
+    "n_assessed": 6,
+    "n_unassessed": 0,
+    "risk": "62.0",
+    "state": "computed",
+    "upper_bound": "62.0"
+   },
+   "PG": {
+    "coverage": "100.0",
+    "eci": "40.0",
+    "group": "PG",
+    "n_applicable": 5,
+    "n_assessed": 5,
+    "n_unassessed": 0,
+    "risk": "68.8",
+    "state": "computed",
+    "upper_bound": "68.8"
+   },
+   "SC": {
+    "coverage": "100.0",
+    "eci": "40.0",
+    "group": "SC",
+    "n_applicable": 3,
+    "n_assessed": 3,
+    "n_unassessed": 0,
+    "risk": "42.3",
+    "state": "computed",
+    "upper_bound": "42.3"
+   },
+   "SG": {
+    "coverage": "100.0",
+    "eci": "40.0",
+    "group": "SG",
+    "n_applicable": 6,
+    "n_assessed": 6,
+    "n_unassessed": 0,
+    "risk": "61.8",
+    "state": "computed",
+    "upper_bound": "61.8"
+   },
+   "SI": {
+    "coverage": "100.0",
+    "eci": "40.0",
+    "group": "SI",
+    "n_applicable": 4,
+    "n_assessed": 4,
+    "n_unassessed": 0,
+    "risk": "69.1",
+    "state": "computed",
+    "upper_bound": "69.1"
+   },
+   "SO": {
+    "coverage": "100.0",
+    "eci": "40.0",
+    "group": "SO",
+    "n_applicable": 6,
+    "n_assessed": 6,
+    "n_unassessed": 0,
+    "risk": "78.6",
+    "state": "computed",
+    "upper_bound": "78.6"
+   },
+   "SR": {
+    "coverage": "100.0",
+    "eci": "23.3",
+    "group": "SR",
+    "n_applicable": 3,
+    "n_assessed": 3,
+    "n_unassessed": 0,
+    "risk": "100.0",
+    "state": "computed",
+    "upper_bound": "100.0"
+   },
+   "personal_data": {
+    "coverage": "100.0",
+    "eci": "40.0",
+    "group": "personal_data",
+    "n_applicable": 11,
+    "n_assessed": 11,
+    "n_unassessed": 0,
+    "risk": "64.7",
+    "state": "computed",
+    "upper_bound": "64.7"
+   },
+   "ranking_top5": [
+    [
+     "SR-02",
+     20
+    ],
+    [
+     "SR-01",
+     16
+    ],
+    [
+     "SI-02",
+     15
+    ],
+    [
+     "SI-03",
+     15
+    ],
+    [
+     "PD-02",
+     12
+    ]
+   ],
+   "security": {
+    "coverage": "100.0",
+    "eci": "37.6",
+    "group": "security",
+    "n_applicable": 22,
+    "n_assessed": 22,
+    "n_unassessed": 0,
+    "risk": "70.1",
+    "state": "computed",
+    "upper_bound": "70.1"
+   }
+  },
+  "S5": {
+   "PD": {
+    "coverage": "82.6",
+    "eci": "40.0",
+    "group": "PD",
+    "n_applicable": 6,
+    "n_assessed": 5,
+    "n_unassessed": 1,
+    "risk": "59.2",
+    "state": "computed",
+    "upper_bound": "66.3"
+   },
+   "PG": {
+    "coverage": "84.2",
+    "eci": "40.0",
+    "group": "PG",
+    "n_applicable": 6,
+    "n_assessed": 5,
+    "n_unassessed": 1,
+    "risk": "60.9",
+    "state": "computed",
+    "upper_bound": "67.1"
+   },
+   "SC": {
+    "coverage": "68.8",
+    "eci": "40.0",
+    "group": "SC",
+    "n_applicable": 4,
+    "n_assessed": 3,
+    "n_unassessed": 1,
+    "risk": "45.5",
+    "state": "computed",
+    "upper_bound": "62.5"
+   },
+   "SG": {
+    "coverage": "100.0",
+    "eci": "45.3",
+    "group": "SG",
+    "n_applicable": 6,
+    "n_assessed": 6,
+    "n_unassessed": 0,
+    "risk": "69.7",
+    "state": "computed",
+    "upper_bound": "69.7"
+   },
+   "SI": {
+    "coverage": "100.0",
+    "eci": "47.8",
+    "group": "SI",
+    "n_applicable": 4,
+    "n_assessed": 4,
+    "n_unassessed": 0,
+    "risk": "48.5",
+    "state": "computed",
+    "upper_bound": "48.5"
+   },
+   "SO": {
+    "coverage": "61.9",
+    "eci": "40.0",
+    "group": "SO",
+    "n_applicable": 6,
+    "n_assessed": 4,
+    "n_unassessed": 2,
+    "risk": "55.8",
+    "state": "computed",
+    "upper_bound": "72.6"
+   },
+   "SR": {
+    "coverage": "58.3",
+    "eci": "40.0",
+    "group": "SR",
+    "n_applicable": 3,
+    "n_assessed": 2,
+    "n_unassessed": 1,
+    "risk": "75.0",
+    "state": "computed",
+    "upper_bound": "85.4"
+   },
+   "personal_data": {
+    "coverage": "83.3",
+    "eci": "40.0",
+    "group": "personal_data",
+    "n_applicable": 12,
+    "n_assessed": 10,
+    "n_unassessed": 2,
+    "risk": "60.0",
+    "state": "computed",
+    "upper_bound": "66.7"
+   },
+   "ranking_top5": [
+    [
+     "SG-02",
+     16
+    ],
+    [
+     "PD-02",
+     12
+    ],
+    [
+     "PG-01",
+     12
+    ],
+    [
+     "SC-04",
+     12
+    ],
+    [
+     "SG-04",
+     12
+    ]
+   ],
+   "security": {
+    "coverage": "78.8",
+    "eci": "43.5",
+    "group": "security",
+    "n_applicable": 23,
+    "n_assessed": 19,
+    "n_unassessed": 4,
+    "risk": "58.2",
+    "state": "computed",
+    "upper_bound": "67.1"
+   }
+  },
+  "S6": {
+   "PD": {
+    "coverage": "39.1",
+    "eci": "60.0",
+    "group": "PD",
+    "n_applicable": 6,
+    "n_assessed": 2,
+    "n_unassessed": 4,
+    "risk": "38.9",
+    "state": "computed",
+    "upper_bound": "76.1"
+   },
+   "PG": {
+    "coverage": "31.6",
+    "eci": "60.0",
+    "group": "PG",
+    "n_applicable": 6,
+    "n_assessed": 2,
+    "n_unassessed": 4,
+    "risk": "33.3",
+    "state": "computed",
+    "upper_bound": "78.9"
+   },
+   "SC": {
+    "coverage": "61.5",
+    "eci": "60.0",
+    "group": "SC",
+    "n_applicable": 3,
+    "n_assessed": 2,
+    "n_unassessed": 1,
+    "risk": "12.5",
+    "state": "computed",
+    "upper_bound": "46.2"
+   },
+   "SG": {
+    "coverage": "42.1",
+    "eci": "60.0",
+    "group": "SG",
+    "n_applicable": 6,
+    "n_assessed": 3,
+    "n_unassessed": 3,
+    "risk": "31.3",
+    "state": "computed",
+    "upper_bound": "71.1"
+   },
+   "SI": {
+    "coverage": "41.2",
+    "eci": "60.0",
+    "group": "SI",
+    "n_applicable": 4,
+    "n_assessed": 2,
+    "n_unassessed": 2,
+    "risk": "35.7",
+    "state": "computed",
+    "upper_bound": "73.5"
+   },
+   "SO": {
+    "coverage": "52.4",
+    "eci": "60.0",
+    "group": "SO",
+    "n_applicable": 6,
+    "n_assessed": 3,
+    "n_unassessed": 3,
+    "risk": "40.9",
+    "state": "computed",
+    "upper_bound": "69.0"
+   },
+   "SR": {
+    "coverage": "0.0",
+    "eci": null,
+    "group": "SR",
+    "n_applicable": 3,
+    "n_assessed": 0,
+    "n_unassessed": 3,
+    "risk": null,
+    "state": "not_assessed",
+    "upper_bound": "100.0"
+   },
+   "personal_data": {
+    "coverage": "35.7",
+    "eci": "60.0",
+    "group": "personal_data",
+    "n_applicable": 12,
+    "n_assessed": 4,
+    "n_unassessed": 8,
+    "risk": "36.7",
+    "state": "computed",
+    "upper_bound": "77.4"
+   },
+   "ranking_top5": [
+    [
+     "PD-05",
+     10
+    ],
+    [
+     "SO-01",
+     8
+    ],
+    [
+     "SI-04",
+     6
+    ],
+    [
+     "SO-05",
+     6
+    ],
+    [
+     "PD-01",
+     4
+    ]
+   ],
+   "security": {
+    "coverage": "41.5",
+    "eci": "60.0",
+    "group": "security",
+    "n_applicable": 22,
+    "n_assessed": 10,
+    "n_unassessed": 12,
+    "risk": "30.9",
+    "state": "computed",
+    "upper_bound": "71.3"
+   }
+  },
+  "S7": {
+   "PD": {
+    "coverage": "100.0",
+    "eci": "73.3",
+    "group": "PD",
+    "n_applicable": 6,
+    "n_assessed": 6,
+    "n_unassessed": 0,
+    "risk": "87.0",
+    "state": "computed",
+    "upper_bound": "87.0"
+   },
+   "PG": {
+    "coverage": "100.0",
+    "eci": "19.3",
+    "group": "PG",
+    "n_applicable": 6,
+    "n_assessed": 6,
+    "n_unassessed": 0,
+    "risk": "93.4",
+    "state": "computed",
+    "upper_bound": "93.4"
+   },
+   "SC": {
+    "coverage": "100.0",
+    "eci": "73.3",
+    "group": "SC",
+    "n_applicable": 3,
+    "n_assessed": 3,
+    "n_unassessed": 0,
+    "risk": "34.6",
+    "state": "computed",
+    "upper_bound": "34.6"
+   },
+   "SG": {
+    "coverage": "100.0",
+    "eci": "73.3",
+    "group": "SG",
+    "n_applicable": 6,
+    "n_assessed": 6,
+    "n_unassessed": 0,
+    "risk": "34.2",
+    "state": "computed",
+    "upper_bound": "34.2"
+   },
+   "SI": {
+    "coverage": "100.0",
+    "eci": "73.3",
+    "group": "SI",
+    "n_applicable": 4,
+    "n_assessed": 4,
+    "n_unassessed": 0,
+    "risk": "36.8",
+    "state": "computed",
+    "upper_bound": "36.8"
+   },
+   "SO": {
+    "coverage": "100.0",
+    "eci": "73.3",
+    "group": "SO",
+    "n_applicable": 6,
+    "n_assessed": 6,
+    "n_unassessed": 0,
+    "risk": "36.9",
+    "state": "computed",
+    "upper_bound": "36.9"
+   },
+   "SR": {
+    "coverage": "100.0",
+    "eci": "73.3",
+    "group": "SR",
+    "n_applicable": 3,
+    "n_assessed": 3,
+    "n_unassessed": 0,
+    "risk": "39.6",
+    "state": "computed",
+    "upper_bound": "39.6"
+   },
+   "personal_data": {
+    "coverage": "100.0",
+    "eci": "48.9",
+    "group": "personal_data",
+    "n_applicable": 12,
+    "n_assessed": 12,
+    "n_unassessed": 0,
+    "risk": "89.9",
+    "state": "computed",
+    "upper_bound": "89.9"
+   },
+   "ranking_top5": [
+    [
+     "PD-01",
+     16
+    ],
+    [
+     "PD-02",
+     16
+    ],
+    [
+     "PG-01",
+     16
+    ],
+    [
+     "PG-02",
+     16
+    ],
+    [
+     "PD-05",
+     15
+    ]
+   ],
+   "security": {
+    "coverage": "100.0",
+    "eci": "73.3",
+    "group": "security",
+    "n_applicable": 22,
+    "n_assessed": 22,
+    "n_unassessed": 0,
+    "risk": "36.3",
+    "state": "computed",
+    "upper_bound": "36.3"
+   }
+  },
+  "S8": {
+   "PD": {
+    "coverage": "100.0",
+    "eci": "60.0",
+    "group": "PD",
+    "n_applicable": 6,
+    "n_assessed": 6,
+    "n_unassessed": 0,
+    "risk": "37.0",
+    "state": "computed",
+    "upper_bound": "37.0"
+   },
+   "PG": {
+    "coverage": "100.0",
+    "eci": "60.0",
+    "group": "PG",
+    "n_applicable": 5,
+    "n_assessed": 5,
+    "n_unassessed": 0,
+    "risk": "43.8",
+    "state": "computed",
+    "upper_bound": "43.8"
+   },
+   "SC": {
+    "coverage": "100.0",
+    "eci": "60.0",
+    "group": "SC",
+    "n_applicable": 3,
+    "n_assessed": 3,
+    "n_unassessed": 0,
+    "risk": "34.6",
+    "state": "computed",
+    "upper_bound": "34.6"
+   },
+   "SG": {
+    "coverage": "100.0",
+    "eci": "60.0",
+    "group": "SG",
+    "n_applicable": 6,
+    "n_assessed": 6,
+    "n_unassessed": 0,
+    "risk": "59.2",
+    "state": "computed",
+    "upper_bound": "59.2"
+   },
+   "SI": {
+    "coverage": "100.0",
+    "eci": "60.0",
+    "group": "SI",
+    "n_applicable": 4,
+    "n_assessed": 4,
+    "n_unassessed": 0,
+    "risk": "36.8",
+    "state": "computed",
+    "upper_bound": "36.8"
+   },
+   "SO": {
+    "coverage": "100.0",
+    "eci": "42.9",
+    "group": "SO",
+    "n_applicable": 6,
+    "n_assessed": 6,
+    "n_unassessed": 0,
+    "risk": "82.1",
+    "state": "computed",
+    "upper_bound": "82.1"
+   },
+   "SR": {
+    "coverage": "100.0",
+    "eci": "60.0",
+    "group": "SR",
+    "n_applicable": 3,
+    "n_assessed": 3,
+    "n_unassessed": 0,
+    "risk": "39.6",
+    "state": "computed",
+    "upper_bound": "39.6"
+   },
+   "personal_data": {
+    "coverage": "100.0",
+    "eci": "60.0",
+    "group": "personal_data",
+    "n_applicable": 11,
+    "n_assessed": 11,
+    "n_unassessed": 0,
+    "risk": "39.7",
+    "state": "computed",
+    "upper_bound": "39.7"
+   },
+   "ranking_top5": [
+    [
+     "SO-02",
+     16
+    ],
+    [
+     "SG-05",
+     12
+    ],
+    [
+     "SO-01",
+     12
+    ],
+    [
+     "SO-03",
+     12
+    ],
+    [
+     "SO-04",
+     12
+    ]
+   ],
+   "security": {
+    "coverage": "100.0",
+    "eci": "55.6",
+    "group": "security",
+    "n_applicable": 22,
+    "n_assessed": 22,
+    "n_unassessed": 0,
+    "risk": "53.7",
+    "state": "computed",
+    "upper_bound": "53.7"
+   }
+  }
+ },
+ "security_risk_by_scenario": {
+  "S1": "11.3",
+  "S2": "68.5",
+  "S3": "74.4",
+  "S4": "70.1",
+  "S5": "58.2",
+  "S6": "30.9",
+  "S7": "36.3",
+  "S8": "53.7"
+ },
+ "sensitivity": {
+  "S1": {
+   "configs": 66,
+   "eq_eci_change": {
+    "PD": "0.000",
+    "PG": "0.000",
+    "SC": "0.000",
+    "SG": "0.351",
+    "SI": "0.000",
+    "SO": "0.159",
+    "SR": "0.000",
+    "personal_data": "0.000",
+    "security": "0.122"
+   },
+   "largest_domain_risk_changes": [
+    [
+     "1.326",
+     "W-minus",
+     "SR-02"
+    ],
+    [
+     "1.282",
+     "W-minus",
+     "SC-03"
+    ],
+    [
+     "0.947",
+     "W-minus",
+     "SR-01"
+    ],
+    [
+     "0.947",
+     "W-minus",
+     "SR-03"
+    ],
+    [
+     "0.938",
+     "W-minus",
+     "PG-01"
+    ]
+   ],
+   "max_abs_domain_risk_change_weights": "1.326",
+   "median_abs_domain_risk_change_weights": "0.000",
+   "min_rho": "0.991",
+   "min_rho_config": [
+    [
+     "PD-01",
+     "W-minus"
+    ],
+    [
+     "SR-01",
+     "W-plus"
+    ]
+   ],
+   "n_rho_below_1": 29,
+   "na_perturbations_no_effect": [
+    true,
+    4
+   ],
+   "top5_changed": 10
+  },
+  "S2": {
+   "configs": 66,
+   "eq_eci_change": {
+    "PD": "1.667",
+    "PG": "1.667",
+    "SC": "1.667",
+    "SG": "1.667",
+    "SI": "0.784",
+    "SO": "1.667",
+    "SR": "1.667",
+    "personal_data": "1.667",
+    "security": "1.490"
+   },
+   "largest_domain_risk_changes": [
+    [
+     "2.083",
+     "W-minus",
+     "SC-02"
+    ],
+    [
+     "1.838",
+     "W-plus",
+     "SC-02"
+    ],
+    [
+     "1.326",
+     "W-minus",
+     "SR-02"
+    ],
+    [
+     "1.250",
+     "W-minus",
+     "PG-02"
+    ],
+    [
+     "1.250",
+     "W-minus",
+     "SC-03"
+    ]
+   ],
+   "max_abs_domain_risk_change_weights": "2.083",
+   "median_abs_domain_risk_change_weights": "0.000",
+   "min_rho": "0.972",
+   "min_rho_config": [
+    [
+     "PD-06",
+     "W-minus"
+    ],
+    [
+     "SI-04",
+     "W-minus"
+    ],
+    [
+     "SR-02",
+     "W-minus"
+    ],
+    [
+     "SO-04",
+     "W-plus"
+    ]
+   ],
+   "n_rho_below_1": 61,
+   "na_perturbations_no_effect": [
+    true,
+    0
+   ],
+   "top5_changed": 7
+  },
+  "S3": {
+   "configs": 66,
+   "eq_eci_change": {
+    "PD": "-1.667",
+    "PG": "-1.667",
+    "SC": "-1.667",
+    "SG": "-1.316",
+    "SI": "-1.667",
+    "SO": "-1.349",
+    "SR": "-1.667",
+    "personal_data": "-1.667",
+    "security": "-1.510"
+   },
+   "largest_domain_risk_changes": [
+    [
+     "1.786",
+     "W-minus",
+     "SO-05"
+    ],
+    [
+     "1.667",
+     "W-minus",
+     "SC-01"
+    ],
+    [
+     "1.667",
+     "W-minus",
+     "SC-02"
+    ],
+    [
+     "1.623",
+     "W-plus",
+     "SO-05"
+    ],
+    [
+     "1.535",
+     "W-minus",
+     "SG-05"
+    ]
+   ],
+   "max_abs_domain_risk_change_weights": "1.786",
+   "median_abs_domain_risk_change_weights": "0.000",
+   "min_rho": "0.982",
+   "min_rho_config": [
+    [
+     "SC-01",
+     "W-minus"
+    ],
+    [
+     "SG-05",
+     "W-minus"
+    ],
+    [
+     "SI-02",
+     "W-minus"
+    ],
+    [
+     "SI-01",
+     "W-plus"
+    ]
+   ],
+   "n_rho_below_1": 64,
+   "na_perturbations_no_effect": [
+    true,
+    0
+   ],
+   "top5_changed": 6
+  },
+  "S4": {
+   "configs": 66,
+   "eq_eci_change": {
+    "PD": "1.667",
+    "PG": "1.667",
+    "SC": "1.667",
+    "SG": "1.667",
+    "SI": "1.667",
+    "SO": "1.667",
+    "SR": "0.972",
+    "personal_data": "1.667",
+    "security": "1.565"
+   },
+   "largest_domain_risk_changes": [
+    [
+     "1.442",
+     "W-minus",
+     "SC-02"
+    ],
+    [
+     "1.250",
+     "W-minus",
+     "PG-02"
+    ],
+    [
+     "1.236",
+     "W-plus",
+     "SC-02"
+    ],
+    [
+     "1.195",
+     "W-minus",
+     "SI-01"
+    ],
+    [
+     "1.103",
+     "W-plus",
+     "PG-02"
+    ]
+   ],
+   "max_abs_domain_risk_change_weights": "1.442",
+   "median_abs_domain_risk_change_weights": "0.000",
+   "min_rho": "0.970",
+   "min_rho_config": [
+    [
+     "SO-05",
+     "W-minus"
+    ]
+   ],
+   "n_rho_below_1": 59,
+   "na_perturbations_no_effect": [
+    true,
+    4
+   ],
+   "top5_changed": 13
+  },
+  "S5": {
+   "configs": 66,
+   "eq_eci_change": {
+    "PD": "1.667",
+    "PG": "1.667",
+    "SC": "1.667",
+    "SG": "1.667",
+    "SI": "1.667",
+    "SO": "1.667",
+    "SR": "1.667",
+    "personal_data": "1.667",
+    "security": "1.667"
+   },
+   "largest_domain_risk_changes": [
+    [
+     "5.455",
+     "W-minus",
+     "SC-04"
+    ],
+    [
+     "4.545",
+     "W-plus",
+     "SC-04"
+    ],
+    [
+     "2.564",
+     "W-minus",
+     "SO-05"
+    ],
+    [
+     "2.485",
+     "W-minus",
+     "SG-01"
+    ],
+    [
+     "2.237",
+     "W-plus",
+     "SG-01"
+    ]
+   ],
+   "max_abs_domain_risk_change_weights": "5.455",
+   "median_abs_domain_risk_change_weights": "0.000",
+   "min_rho": "0.955",
+   "min_rho_config": [
+    [
+     "SC-04",
+     "W-minus"
+    ]
+   ],
+   "n_rho_below_1": 52,
+   "na_perturbations_no_effect": [
+    true,
+    0
+   ],
+   "top5_changed": 9
+  },
+  "S6": {
+   "configs": 66,
+   "eq_eci_change": {
+    "PD": "-1.667",
+    "PG": "-1.667",
+    "SC": "-1.667",
+    "SG": "-1.667",
+    "SI": "-1.667",
+    "SO": "-1.667",
+    "personal_data": "-1.667",
+    "security": "-1.667"
+   },
+   "largest_domain_risk_changes": [
+    [
+     "3.333",
+     "W-minus",
+     "PG-06"
+    ],
+    [
+     "2.679",
+     "W-minus",
+     "SG-06"
+    ],
+    [
+     "2.381",
+     "W-plus",
+     "PG-06"
+    ],
+    [
+     "2.381",
+     "W-minus",
+     "SI-04"
+    ],
+    [
+     "2.083",
+     "W-plus",
+     "SG-06"
+    ]
+   ],
+   "max_abs_domain_risk_change_weights": "3.333",
+   "median_abs_domain_risk_change_weights": "0.000",
+   "min_rho": "0.877",
+   "min_rho_config": [
+    [
+     "SI-04",
+     "W-minus"
+    ],
+    [
+     "SO-05",
+     "W-minus"
+    ]
+   ],
+   "n_rho_below_1": 21,
+   "na_perturbations_no_effect": [
+    true,
+    2
+   ],
+   "top5_changed": 9
+  },
+  "S7": {
+   "configs": 66,
+   "eq_eci_change": {
+    "PD": "1.667",
+    "PG": "0.439",
+    "SC": "1.667",
+    "SG": "1.667",
+    "SI": "1.667",
+    "SO": "1.667",
+    "SR": "1.667",
+    "personal_data": "1.111",
+    "security": "1.667"
+   },
+   "largest_domain_risk_changes": [
+    [
+     "1.326",
+     "W-minus",
+     "SR-02"
+    ],
+    [
+     "1.282",
+     "W-minus",
+     "SC-03"
+    ],
+    [
+     "1.023",
+     "W-minus",
+     "PG-04"
+    ],
+    [
+     "1.023",
+     "W-minus",
+     "PG-06"
+    ],
+    [
+     "0.947",
+     "W-minus",
+     "SR-01"
+    ]
+   ],
+   "max_abs_domain_risk_change_weights": "1.326",
+   "median_abs_domain_risk_change_weights": "0.000",
+   "min_rho": "0.976",
+   "min_rho_config": [
+    [
+     "PG-06",
+     "W-minus"
+    ]
+   ],
+   "n_rho_below_1": 61,
+   "na_perturbations_no_effect": [
+    true,
+    2
+   ],
+   "top5_changed": 7
+  },
+  "S8": {
+   "configs": 66,
+   "eq_eci_change": {
+    "PD": "-1.667",
+    "PG": "-1.667",
+    "SC": "-1.667",
+    "SG": "-1.667",
+    "SI": "-1.667",
+    "SO": "-1.190",
+    "SR": "-1.667",
+    "personal_data": "-1.667",
+    "security": "-1.545"
+   },
+   "largest_domain_risk_changes": [
+    [
+     "1.326",
+     "W-minus",
+     "SR-02"
+    ],
+    [
+     "1.282",
+     "W-minus",
+     "SC-03"
+    ],
+    [
+     "1.250",
+     "W-minus",
+     "PG-02"
+    ],
+    [
+     "1.103",
+     "W-plus",
+     "PG-02"
+    ],
+    [
+     "0.947",
+     "W-minus",
+     "SR-01"
+    ]
+   ],
+   "max_abs_domain_risk_change_weights": "1.326",
+   "median_abs_domain_risk_change_weights": "0.000",
+   "min_rho": "0.943",
+   "min_rho_config": [
+    [
+     "SO-06",
+     "W-minus"
+    ]
+   ],
+   "n_rho_below_1": 58,
+   "na_perturbations_no_effect": [
+    true,
+    4
+   ],
+   "top5_changed": 5
+  }
+ },
+ "sensitivity_overall": {
+  "max_abs_domain_risk_change": "5.455",
+  "median_abs_domain_risk_change": "0.000",
+  "min_rho_overall": "0.877",
+  "top5_changed_total": 66
+ },
+ "sensitivity_runs": 528
+}

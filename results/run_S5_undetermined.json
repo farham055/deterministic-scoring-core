@@ -1,0 +1,1526 @@
+{
+ "declaration": "undetermined",
+ "eci_mode": "weighted",
+ "groups": {
+  "PD": {
+   "coverage": null,
+   "eci": null,
+   "group": "PD",
+   "n_applicable": null,
+   "n_assessed": null,
+   "n_unassessed": null,
+   "risk": null,
+   "state": "undetermined",
+   "upper_bound": null
+  },
+  "PG": {
+   "coverage": null,
+   "eci": null,
+   "group": "PG",
+   "n_applicable": null,
+   "n_assessed": null,
+   "n_unassessed": null,
+   "risk": null,
+   "state": "undetermined",
+   "upper_bound": null
+  },
+  "SC": {
+   "coverage": {
+    "den": 16,
+    "display": "68.8",
+    "exact_rounding_tie": true,
+    "num": 1100
+   },
+   "eci": {
+    "den": 165,
+    "display": "40.0",
+    "exact_rounding_tie": false,
+    "num": 6600
+   },
+   "group": "SC",
+   "n_applicable": 4,
+   "n_assessed": 3,
+   "n_unassessed": 1,
+   "risk": {
+    "den": 11,
+    "display": "45.5",
+    "exact_rounding_tie": false,
+    "num": 500
+   },
+   "state": "computed",
+   "upper_bound": {
+    "den": 16,
+    "display": "62.5",
+    "exact_rounding_tie": false,
+    "num": 1000
+   }
+  },
+  "SG": {
+   "coverage": {
+    "den": 19,
+    "display": "100.0",
+    "exact_rounding_tie": false,
+    "num": 1900
+   },
+   "eci": {
+    "den": 285,
+    "display": "45.3",
+    "exact_rounding_tie": false,
+    "num": 12900
+   },
+   "group": "SG",
+   "n_applicable": 6,
+   "n_assessed": 6,
+   "n_unassessed": 0,
+   "risk": {
+    "den": 19,
+    "display": "69.7",
+    "exact_rounding_tie": false,
+    "num": 1325
+   },
+   "state": "computed",
+   "upper_bound": {
+    "den": 19,
+    "display": "69.7",
+    "exact_rounding_tie": false,
+    "num": 1325
+   }
+  },
+  "SI": {
+   "coverage": {
+    "den": 17,
+    "display": "100.0",
+    "exact_rounding_tie": false,
+    "num": 1700
+   },
+   "eci": {
+    "den": 255,
+    "display": "47.8",
+    "exact_rounding_tie": false,
+    "num": 12200
+   },
+   "group": "SI",
+   "n_applicable": 4,
+   "n_assessed": 4,
+   "n_unassessed": 0,
+   "risk": {
+    "den": 17,
+    "display": "48.5",
+    "exact_rounding_tie": false,
+    "num": 825
+   },
+   "state": "computed",
+   "upper_bound": {
+    "den": 17,
+    "display": "48.5",
+    "exact_rounding_tie": false,
+    "num": 825
+   }
+  },
+  "SO": {
+   "coverage": {
+    "den": 21,
+    "display": "61.9",
+    "exact_rounding_tie": false,
+    "num": 1300
+   },
+   "eci": {
+    "den": 195,
+    "display": "40.0",
+    "exact_rounding_tie": false,
+    "num": 7800
+   },
+   "group": "SO",
+   "n_applicable": 6,
+   "n_assessed": 4,
+   "n_unassessed": 2,
+   "risk": {
+    "den": 13,
+    "display": "55.8",
+    "exact_rounding_tie": false,
+    "num": 725
+   },
+   "state": "computed",
+   "upper_bound": {
+    "den": 21,
+    "display": "72.6",
+    "exact_rounding_tie": false,
+    "num": 1525
+   }
+  },
+  "SR": {
+   "coverage": {
+    "den": 12,
+    "display": "58.3",
+    "exact_rounding_tie": false,
+    "num": 700
+   },
+   "eci": {
+    "den": 105,
+    "display": "40.0",
+    "exact_rounding_tie": false,
+    "num": 4200
+   },
+   "group": "SR",
+   "n_applicable": 3,
+   "n_assessed": 2,
+   "n_unassessed": 1,
+   "risk": {
+    "den": 7,
+    "display": "75.0",
+    "exact_rounding_tie": false,
+    "num": 525
+   },
+   "state": "computed",
+   "upper_bound": {
+    "den": 12,
+    "display": "85.4",
+    "exact_rounding_tie": false,
+    "num": 1025
+   }
+  },
+  "personal_data": {
+   "coverage": null,
+   "eci": null,
+   "group": "personal_data",
+   "n_applicable": null,
+   "n_assessed": null,
+   "n_unassessed": null,
+   "risk": null,
+   "state": "undetermined",
+   "upper_bound": null
+  },
+  "security": {
+   "coverage": {
+    "den": 85,
+    "display": "78.8",
+    "exact_rounding_tie": false,
+    "num": 6700
+   },
+   "eci": {
+    "den": 1005,
+    "display": "43.5",
+    "exact_rounding_tie": false,
+    "num": 43700
+   },
+   "group": "security",
+   "n_applicable": 23,
+   "n_assessed": 19,
+   "n_unassessed": 4,
+   "risk": {
+    "den": 67,
+    "display": "58.2",
+    "exact_rounding_tie": false,
+    "num": 3900
+   },
+   "state": "computed",
+   "upper_bound": {
+    "den": 85,
+    "display": "67.1",
+    "exact_rounding_tie": false,
+    "num": 5700
+   }
+  }
+ },
+ "indicators": [
+  {
+   "domain": "PD",
+   "evidence": null,
+   "gap": null,
+   "id": "PD-01",
+   "justification": null,
+   "note": null,
+   "relationship_note": "Article 5(1)(c) sets data minimisation, and Article 25(2) applies it by default",
+   "relationship_term": "Supports",
+   "s": null,
+   "scope": "personal_data",
+   "sources": {
+    "csa_ccm_v4_1": [
+     "DSP-07 (Data Protection by Design and Default)"
+    ],
+    "gdpr": [
+     "Art. 5(1)(c)",
+     "Art. 25(2)"
+    ],
+    "nist_csf_2_0": [],
+    "nist_privacy_framework": [
+     "CT.DP-P4",
+     "CT.DP-P2"
+    ]
+   },
+   "status": "excluded_undetermined",
+   "weight": 4
+  },
+  {
+   "domain": "PD",
+   "evidence": null,
+   "gap": null,
+   "id": "PD-02",
+   "justification": null,
+   "note": null,
+   "relationship_note": "Article 5(1)(e) sets storage limitation",
+   "relationship_term": "Supports",
+   "s": null,
+   "scope": "personal_data",
+   "sources": {
+    "csa_ccm_v4_1": [
+     "DSP-16 (Data Retention and Deletion)",
+     "DSP-02 (Secure Disposal)"
+    ],
+    "gdpr": [
+     "Art. 5(1)(e)",
+     "Art. 25(2)"
+    ],
+    "nist_csf_2_0": [],
+    "nist_privacy_framework": [
+     "CT.DM-P5",
+     "CT.PO-P2"
+    ]
+   },
+   "status": "excluded_undetermined",
+   "weight": 4
+  },
+  {
+   "domain": "PD",
+   "evidence": null,
+   "gap": null,
+   "id": "PD-03",
+   "justification": null,
+   "note": null,
+   "relationship_note": "Article 5(1)(d) sets accuracy and the correction or erasure of inaccurate data. The rights of individuals to rectification and erasure are set in other provisions outside the selection and are not assessed",
+   "relationship_term": "Supports",
+   "s": null,
+   "scope": "personal_data",
+   "sources": {
+    "csa_ccm_v4_1": [
+     "DSP-11 (Personal Data Access, Reversal, Rectification and Deletion)"
+    ],
+    "gdpr": [
+     "Art. 5(1)(d)"
+    ],
+    "nist_csf_2_0": [],
+    "nist_privacy_framework": [
+     "CT.DM-P1",
+     "CT.DM-P3",
+     "CT.DM-P4"
+    ]
+   },
+   "status": "excluded_undetermined",
+   "weight": 3
+  },
+  {
+   "domain": "PD",
+   "evidence": null,
+   "gap": null,
+   "id": "PD-04",
+   "justification": null,
+   "note": null,
+   "relationship_note": "Articles 25(1) and 32(1)(a) name pseudonymisation, and Article 32(1)(a) names encryption",
+   "relationship_term": "Supports",
+   "s": null,
+   "scope": "personal_data",
+   "sources": {
+    "csa_ccm_v4_1": [
+     "DSP-17 (Sensitive Data Protection)",
+     "CEK-03 (Data Protection)"
+    ],
+    "gdpr": [
+     "Art. 32(1)(a)",
+     "Art. 25(1)"
+    ],
+    "nist_csf_2_0": [],
+    "nist_privacy_framework": [
+     "CT.DP-P2",
+     "PR.DS-P1",
+     "PR.DS-P2"
+    ]
+   },
+   "status": "excluded_undetermined",
+   "weight": 4
+  },
+  {
+   "domain": "PD",
+   "evidence": null,
+   "gap": null,
+   "id": "PD-05",
+   "justification": null,
+   "note": null,
+   "relationship_note": "Article 25(2) supports limiting the accessibility of personal data by default, and Article 5(1)(f) addresses integrity and confidentiality. The role-based access restriction itself is supported mainly by the CCM controls",
+   "relationship_term": "Supports",
+   "s": null,
+   "scope": "personal_data",
+   "sources": {
+    "csa_ccm_v4_1": [
+     "IAM-05 (Least Privilege)",
+     "DSP-17 (Sensitive Data Protection)"
+    ],
+    "gdpr": [
+     "Art. 25(2)",
+     "Art. 5(1)(f)"
+    ],
+    "nist_csf_2_0": [],
+    "nist_privacy_framework": [
+     "PR.AC-P4"
+    ]
+   },
+   "status": "excluded_undetermined",
+   "weight": 5
+  },
+  {
+   "domain": "PD",
+   "evidence": null,
+   "gap": null,
+   "id": "PD-06",
+   "justification": null,
+   "note": null,
+   "relationship_note": "The GDPR references cover only the security of processing against personal data breaches. The notification part is mapped to the Privacy Framework and the CCM only, because the GDPR notification provisions are outside the selected articles",
+   "relationship_term": "Partial",
+   "s": null,
+   "scope": "personal_data",
+   "sources": {
+    "csa_ccm_v4_1": [
+     "SEF-08 (Security Breach Notification)"
+    ],
+    "gdpr": [
+     "Art. 5(1)(f)",
+     "Art. 32(2)"
+    ],
+    "nist_csf_2_0": [],
+    "nist_privacy_framework": [
+     "CM.AW-P7"
+    ]
+   },
+   "status": "excluded_undetermined",
+   "weight": 3
+  },
+  {
+   "domain": "PG",
+   "evidence": null,
+   "gap": null,
+   "id": "PG-01",
+   "justification": null,
+   "note": null,
+   "relationship_note": "The Privacy Framework and CCM items cover the inventory. Article 5(2) is partial, because it places accountability on the controller and does not itself prescribe an inventory",
+   "relationship_term": "Supports",
+   "s": null,
+   "scope": "personal_data",
+   "sources": {
+    "csa_ccm_v4_1": [
+     "DSP-03 (Data Inventory)",
+     "DSP-05 (Data Flow Documentation)",
+     "DSP-19 (Data Location)"
+    ],
+    "gdpr": [
+     "Art. 5(2)"
+    ],
+    "nist_csf_2_0": [],
+    "nist_privacy_framework": [
+     "ID.IM-P4",
+     "ID.IM-P5",
+     "ID.IM-P6",
+     "ID.IM-P7"
+    ]
+   },
+   "status": "excluded_undetermined",
+   "weight": 4
+  },
+  {
+   "domain": "PG",
+   "evidence": null,
+   "gap": null,
+   "id": "PG-02",
+   "justification": null,
+   "note": null,
+   "relationship_note": "Article 5(1)(a) and (b) set transparency and purpose limitation. The lawful bases for processing are set in a provision outside the selection and are not assessed",
+   "relationship_term": "Supports",
+   "s": null,
+   "scope": "personal_data",
+   "sources": {
+    "csa_ccm_v4_1": [
+     "DSP-12 (Limitation of Purpose in Personal Data Processing)"
+    ],
+    "gdpr": [
+     "Art. 5(1)(a)",
+     "Art. 5(1)(b)"
+    ],
+    "nist_csf_2_0": [],
+    "nist_privacy_framework": [
+     "ID.IM-P5",
+     "CM.PO-P1"
+    ]
+   },
+   "status": "excluded_undetermined",
+   "weight": 4
+  },
+  {
+   "domain": "PG",
+   "evidence": null,
+   "gap": null,
+   "id": "PG-03",
+   "justification": null,
+   "note": null,
+   "relationship_note": "The Privacy Framework and CCM items cover responsibilities and requirements. Article 5(2) is partial, because it places accountability on the controller and does not itself assign privacy responsibilities",
+   "relationship_term": "Supports",
+   "s": null,
+   "scope": "personal_data",
+   "sources": {
+    "csa_ccm_v4_1": [
+     "GRC-07 (Information System Regulatory Mapping)",
+     "DSP-06 (Data Ownership and Stewardship)"
+    ],
+    "gdpr": [
+     "Art. 5(2)"
+    ],
+    "nist_csf_2_0": [],
+    "nist_privacy_framework": [
+     "GV.PO-P3",
+     "GV.PO-P5"
+    ]
+   },
+   "status": "excluded_undetermined",
+   "weight": 3
+  },
+  {
+   "domain": "PG",
+   "evidence": null,
+   "gap": null,
+   "id": "PG-04",
+   "justification": null,
+   "note": null,
+   "relationship_note": "The indicator corresponds to data protection by design and by default in Article 25",
+   "relationship_term": "Supports",
+   "s": null,
+   "scope": "personal_data",
+   "sources": {
+    "csa_ccm_v4_1": [
+     "DSP-07 (Data Protection by Design and Default)",
+     "DSP-08 (Data Privacy by Design and Default)"
+    ],
+    "gdpr": [
+     "Art. 25(1)",
+     "Art. 25(2)"
+    ],
+    "nist_csf_2_0": [],
+    "nist_privacy_framework": [
+     "GV.PO-P2",
+     "CT.PO-P4"
+    ]
+   },
+   "status": "excluded_undetermined",
+   "weight": 3
+  },
+  {
+   "domain": "PG",
+   "evidence": null,
+   "gap": null,
+   "id": "PG-05",
+   "justification": null,
+   "note": null,
+   "relationship_note": "Article 35 sets when an impact assessment is required, and the indicator assesses readiness to carry one out",
+   "relationship_term": "Supports",
+   "s": null,
+   "scope": "personal_data",
+   "sources": {
+    "csa_ccm_v4_1": [
+     "DSP-09 (Data Protection Impact Assessment)"
+    ],
+    "gdpr": [
+     "Art. 35(1)",
+     "Art. 35(3)",
+     "Art. 35(7)"
+    ],
+    "nist_csf_2_0": [],
+    "nist_privacy_framework": [
+     "ID.RA-P3",
+     "ID.RA-P4"
+    ]
+   },
+   "status": "excluded_undetermined",
+   "weight": 3
+  },
+  {
+   "domain": "PG",
+   "evidence": null,
+   "gap": null,
+   "id": "PG-06",
+   "justification": null,
+   "note": null,
+   "relationship_note": "Article 32(4) concerns processing on instructions, and the indicator also covers training",
+   "relationship_term": "Partial",
+   "s": null,
+   "scope": "personal_data",
+   "sources": {
+    "csa_ccm_v4_1": [
+     "HRS-12 (Personal and Sensitive Data Awareness and Training)"
+    ],
+    "gdpr": [
+     "Art. 32(4)"
+    ],
+    "nist_csf_2_0": [],
+    "nist_privacy_framework": [
+     "GV.AT-P1"
+    ]
+   },
+   "status": "excluded_undetermined",
+   "weight": 2
+  },
+  {
+   "domain": "SC",
+   "eci": {
+    "den": 15,
+    "display": "40.0",
+    "num": 600
+   },
+   "evidence": {
+    "completeness": 1,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 1
+   },
+   "gap": 1,
+   "id": "SC-01",
+   "justification": null,
+   "note": null,
+   "priority": 4,
+   "relationship_note": "Article 32(1)(a) names encryption as an example of an appropriate measure",
+   "relationship_term": "Supports",
+   "s": 6,
+   "scope": "security",
+   "sources": {
+    "csa_ccm_v4_1": [
+     "CEK-03 (Data Protection)"
+    ],
+    "gdpr": [
+     "Art. 32(1)(a)"
+    ],
+    "nist_csf_2_0": [
+     "PR.DS-01"
+    ],
+    "nist_privacy_framework": []
+   },
+   "status": "assessed",
+   "weight": 4
+  },
+  {
+   "domain": "SC",
+   "eci": {
+    "den": 15,
+    "display": "40.0",
+    "num": 600
+   },
+   "evidence": {
+    "completeness": 1,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 1
+   },
+   "gap": 1,
+   "id": "SC-02",
+   "justification": null,
+   "note": null,
+   "priority": 4,
+   "relationship_note": "Article 32(1)(a) names encryption as an example of an appropriate measure",
+   "relationship_term": "Supports",
+   "s": 6,
+   "scope": "security",
+   "sources": {
+    "csa_ccm_v4_1": [
+     "CEK-03 (Data Protection)"
+    ],
+    "gdpr": [
+     "Art. 32(1)(a)"
+    ],
+    "nist_csf_2_0": [
+     "PR.DS-02"
+    ],
+    "nist_privacy_framework": []
+   },
+   "status": "assessed",
+   "weight": 4
+  },
+  {
+   "domain": "SC",
+   "evidence": null,
+   "gap": null,
+   "id": "SC-03",
+   "justification": null,
+   "note": null,
+   "relationship_note": "The CSF items are broader, because the CSF has no key management subcategory. The CCM controls specify the key life cycle",
+   "relationship_term": "Broader",
+   "s": null,
+   "scope": "security",
+   "sources": {
+    "csa_ccm_v4_1": [
+     "CEK-01 (Encryption and Key Management Policy and Procedures)",
+     "CEK-10 (Key Generation)",
+     "CEK-12 (Key Rotation)",
+     "CEK-13 (Key Revocation)",
+     "CEK-21 (Key Inventory Management)"
+    ],
+    "gdpr": [
+     "Art. 32(1)(a)"
+    ],
+    "nist_csf_2_0": [
+     "PR.DS-01",
+     "PR.DS-02"
+    ],
+    "nist_privacy_framework": []
+   },
+   "status": "unassessed",
+   "weight": 5
+  },
+  {
+   "domain": "SC",
+   "eci": {
+    "den": 15,
+    "display": "40.0",
+    "num": 600
+   },
+   "evidence": {
+    "completeness": 1,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 1
+   },
+   "gap": 4,
+   "id": "SC-04",
+   "justification": null,
+   "note": null,
+   "priority": 12,
+   "relationship_note": "The CSF item is broader. The CCM control specifies the customer key management capability",
+   "relationship_term": "Broader",
+   "s": 6,
+   "scope": "security",
+   "sources": {
+    "csa_ccm_v4_1": [
+     "CEK-08 (Service Customer Key Management Capability)"
+    ],
+    "gdpr": [],
+    "nist_csf_2_0": [
+     "PR.DS-01"
+    ],
+    "nist_privacy_framework": []
+   },
+   "status": "assessed",
+   "weight": 3
+  },
+  {
+   "domain": "SG",
+   "eci": {
+    "den": 15,
+    "display": "73.3",
+    "num": 1100
+   },
+   "evidence": {
+    "completeness": 2,
+    "recency": 2,
+    "relevance": 3,
+    "verification": 2
+   },
+   "gap": 1,
+   "id": "SG-01",
+   "justification": null,
+   "note": null,
+   "priority": 3,
+   "relationship_note": "The CSF items and CCM controls together cover establishing and reviewing the policy",
+   "relationship_term": "Supports",
+   "s": 11,
+   "scope": "security",
+   "sources": {
+    "csa_ccm_v4_1": [
+     "GRC-01 (Governance Program Policy and Procedures)",
+     "GRC-03 (Organizational Policy Reviews)"
+    ],
+    "gdpr": [],
+    "nist_csf_2_0": [
+     "GV.PO-01",
+     "GV.PO-02"
+    ],
+    "nist_privacy_framework": []
+   },
+   "status": "assessed",
+   "weight": 3
+  },
+  {
+   "domain": "SG",
+   "eci": {
+    "den": 15,
+    "display": "40.0",
+    "num": 600
+   },
+   "evidence": {
+    "completeness": 1,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 1
+   },
+   "gap": 4,
+   "id": "SG-02",
+   "justification": null,
+   "note": null,
+   "priority": 16,
+   "relationship_note": "The CSF items are broader. The CCM controls specify the ownership of controls between provider and customer",
+   "relationship_term": "Broader",
+   "s": 6,
+   "scope": "security",
+   "sources": {
+    "csa_ccm_v4_1": [
+     "STA-05 (SSRM Control Ownership)",
+     "GRC-06 (Governance Responsibility Model)"
+    ],
+    "gdpr": [],
+    "nist_csf_2_0": [
+     "GV.RR-02",
+     "GV.SC-02"
+    ],
+    "nist_privacy_framework": []
+   },
+   "status": "assessed",
+   "weight": 4
+  },
+  {
+   "domain": "SG",
+   "eci": {
+    "den": 15,
+    "display": "40.0",
+    "num": 600
+   },
+   "evidence": {
+    "completeness": 1,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 1
+   },
+   "gap": 2,
+   "id": "SG-03",
+   "justification": null,
+   "note": null,
+   "priority": 6,
+   "relationship_note": "The indicator assesses whether a risk assessment exists and guides priorities, not its method",
+   "relationship_term": "Supports",
+   "s": 6,
+   "scope": "security",
+   "sources": {
+    "csa_ccm_v4_1": [
+     "GRC-02 (Risk Management Program)"
+    ],
+    "gdpr": [],
+    "nist_csf_2_0": [
+     "ID.RA-05",
+     "ID.RA-06"
+    ],
+    "nist_privacy_framework": []
+   },
+   "status": "assessed",
+   "weight": 3
+  },
+  {
+   "domain": "SG",
+   "eci": {
+    "den": 15,
+    "display": "40.0",
+    "num": 600
+   },
+   "evidence": {
+    "completeness": 1,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 1
+   },
+   "gap": 4,
+   "id": "SG-04",
+   "justification": null,
+   "note": null,
+   "priority": 12,
+   "relationship_note": "The CSF items cover requirements and due diligence, and the CCM controls specify agreement and assurance review",
+   "relationship_term": "Supports",
+   "s": 6,
+   "scope": "security",
+   "sources": {
+    "csa_ccm_v4_1": [
+     "STA-11 (Primary Service and Contractual Agreement)",
+     "STA-13 (Supply Chain Compliance Assessment)"
+    ],
+    "gdpr": [],
+    "nist_csf_2_0": [
+     "GV.SC-05",
+     "GV.SC-06"
+    ],
+    "nist_privacy_framework": []
+   },
+   "status": "assessed",
+   "weight": 3
+  },
+  {
+   "domain": "SG",
+   "eci": {
+    "den": 15,
+    "display": "40.0",
+    "num": 600
+   },
+   "evidence": {
+    "completeness": 1,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 1
+   },
+   "gap": 3,
+   "id": "SG-05",
+   "justification": null,
+   "note": null,
+   "priority": 12,
+   "relationship_note": "One indicator combines the system, service and data inventories of the sources",
+   "relationship_term": "Supports",
+   "s": 6,
+   "scope": "security",
+   "sources": {
+    "csa_ccm_v4_1": [
+     "STA-08 (Supply Chain Inventory)",
+     "DSP-03 (Data Inventory)",
+     "DSP-04 (Data Classification)"
+    ],
+    "gdpr": [],
+    "nist_csf_2_0": [
+     "ID.AM-02",
+     "ID.AM-04",
+     "ID.AM-07"
+    ],
+    "nist_privacy_framework": []
+   },
+   "status": "assessed",
+   "weight": 4
+  },
+  {
+   "domain": "SG",
+   "eci": {
+    "den": 15,
+    "display": "40.0",
+    "num": 600
+   },
+   "evidence": {
+    "completeness": 1,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 1
+   },
+   "gap": 2,
+   "id": "SG-06",
+   "justification": null,
+   "note": null,
+   "priority": 4,
+   "relationship_note": "The items are equivalent in intent",
+   "relationship_term": "Supports",
+   "s": 6,
+   "scope": "security",
+   "sources": {
+    "csa_ccm_v4_1": [
+     "HRS-11 (Security Awareness Training)"
+    ],
+    "gdpr": [],
+    "nist_csf_2_0": [
+     "PR.AT-01"
+    ],
+    "nist_privacy_framework": []
+   },
+   "status": "assessed",
+   "weight": 2
+  },
+  {
+   "domain": "SI",
+   "eci": {
+    "den": 15,
+    "display": "73.3",
+    "num": 1100
+   },
+   "evidence": {
+    "completeness": 2,
+    "recency": 2,
+    "relevance": 3,
+    "verification": 2
+   },
+   "gap": 1,
+   "id": "SI-01",
+   "justification": null,
+   "note": null,
+   "priority": 4,
+   "relationship_note": "The CCM controls specify unique identities, credentials and identity inventory",
+   "relationship_term": "Supports",
+   "s": 11,
+   "scope": "security",
+   "sources": {
+    "csa_ccm_v4_1": [
+     "IAM-12 (Unique Identities)",
+     "IAM-14 (Credentials Management)",
+     "IAM-03 (Identity Inventory)"
+    ],
+    "gdpr": [],
+    "nist_csf_2_0": [
+     "PR.AA-01"
+    ],
+    "nist_privacy_framework": []
+   },
+   "status": "assessed",
+   "weight": 4
+  },
+  {
+   "domain": "SI",
+   "eci": {
+    "den": 15,
+    "display": "40.0",
+    "num": 600
+   },
+   "evidence": {
+    "completeness": 1,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 1
+   },
+   "gap": 2,
+   "id": "SI-02",
+   "justification": null,
+   "note": null,
+   "priority": 10,
+   "relationship_note": "The CSF item is broader. The CCM control specifies strong authentication",
+   "relationship_term": "Broader",
+   "s": 6,
+   "scope": "security",
+   "sources": {
+    "csa_ccm_v4_1": [
+     "IAM-13 (Strong Authentication)"
+    ],
+    "gdpr": [],
+    "nist_csf_2_0": [
+     "PR.AA-03"
+    ],
+    "nist_privacy_framework": []
+   },
+   "status": "assessed",
+   "weight": 5
+  },
+  {
+   "domain": "SI",
+   "eci": {
+    "den": 15,
+    "display": "40.0",
+    "num": 600
+   },
+   "evidence": {
+    "completeness": 1,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 1
+   },
+   "gap": 2,
+   "id": "SI-03",
+   "justification": null,
+   "note": null,
+   "priority": 10,
+   "relationship_note": "The CSF item is broader. The CCM controls specify least privilege, separation of duties and privileged roles, which the indicator combines",
+   "relationship_term": "Broader",
+   "s": 6,
+   "scope": "security",
+   "sources": {
+    "csa_ccm_v4_1": [
+     "IAM-05 (Least Privilege)",
+     "IAM-04 (Separation of Duties)",
+     "IAM-10 (Management of Privileged Access Roles)"
+    ],
+    "gdpr": [],
+    "nist_csf_2_0": [
+     "PR.AA-05"
+    ],
+    "nist_privacy_framework": []
+   },
+   "status": "assessed",
+   "weight": 5
+  },
+  {
+   "domain": "SI",
+   "eci": {
+    "den": 15,
+    "display": "40.0",
+    "num": 600
+   },
+   "evidence": {
+    "completeness": 1,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 1
+   },
+   "gap": 3,
+   "id": "SI-04",
+   "justification": null,
+   "note": null,
+   "priority": 9,
+   "relationship_note": "The CSF item is broader. The CCM controls specify access review and revocation",
+   "relationship_term": "Broader",
+   "s": 6,
+   "scope": "security",
+   "sources": {
+    "csa_ccm_v4_1": [
+     "IAM-08 (Access Review)",
+     "IAM-07 (Access Changes and Revocation)"
+    ],
+    "gdpr": [],
+    "nist_csf_2_0": [
+     "PR.AA-05"
+    ],
+    "nist_privacy_framework": []
+   },
+   "status": "assessed",
+   "weight": 3
+  },
+  {
+   "domain": "SO",
+   "eci": {
+    "den": 15,
+    "display": "40.0",
+    "num": 600
+   },
+   "evidence": {
+    "completeness": 1,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 1
+   },
+   "gap": 3,
+   "id": "SO-01",
+   "justification": null,
+   "note": null,
+   "priority": 12,
+   "relationship_note": "The items together cover logging scope, monitoring and the response to alerts",
+   "relationship_term": "Supports",
+   "s": 6,
+   "scope": "security",
+   "sources": {
+    "csa_ccm_v4_1": [
+     "LOG-07 (Logging Scope)",
+     "LOG-03 (Security Monitoring and Alerting)",
+     "LOG-05 (Audit Logs Monitoring and Response)"
+    ],
+    "gdpr": [],
+    "nist_csf_2_0": [
+     "PR.PS-04",
+     "DE.CM-01",
+     "DE.CM-09",
+     "DE.AE-02"
+    ],
+    "nist_privacy_framework": []
+   },
+   "status": "assessed",
+   "weight": 4
+  },
+  {
+   "domain": "SO",
+   "evidence": null,
+   "gap": null,
+   "id": "SO-02",
+   "justification": null,
+   "note": null,
+   "relationship_note": "The CCM controls specify identification and remediation scheduling",
+   "relationship_term": "Supports",
+   "s": null,
+   "scope": "security",
+   "sources": {
+    "csa_ccm_v4_1": [
+     "TVM-03 (Vulnerability Identification)",
+     "TVM-08 (Vulnerability Remediation Schedule)"
+    ],
+    "gdpr": [],
+    "nist_csf_2_0": [
+     "ID.RA-01",
+     "PR.PS-02"
+    ],
+    "nist_privacy_framework": []
+   },
+   "status": "unassessed",
+   "weight": 4
+  },
+  {
+   "domain": "SO",
+   "eci": {
+    "den": 15,
+    "display": "40.0",
+    "num": 600
+   },
+   "evidence": {
+    "completeness": 1,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 1
+   },
+   "gap": 2,
+   "id": "SO-03",
+   "justification": null,
+   "note": null,
+   "priority": 8,
+   "relationship_note": "The CCM controls specify the change policy and the configuration baseline",
+   "relationship_term": "Supports",
+   "s": 6,
+   "scope": "security",
+   "sources": {
+    "csa_ccm_v4_1": [
+     "CCC-01 (Change Management Policy and Procedures)",
+     "CCC-06 (Change Management Baseline)"
+    ],
+    "gdpr": [],
+    "nist_csf_2_0": [
+     "PR.PS-01",
+     "ID.RA-07"
+    ],
+    "nist_privacy_framework": []
+   },
+   "status": "assessed",
+   "weight": 4
+  },
+  {
+   "domain": "SO",
+   "evidence": null,
+   "gap": null,
+   "id": "SO-04",
+   "justification": null,
+   "note": null,
+   "relationship_note": "The CCM controls specify network security and segmentation",
+   "relationship_term": "Supports",
+   "s": null,
+   "scope": "security",
+   "sources": {
+    "csa_ccm_v4_1": [
+     "I&S-03 (Network Security)",
+     "I&S-06 (Segmentation and Segregation)"
+    ],
+    "gdpr": [],
+    "nist_csf_2_0": [
+     "PR.IR-01"
+    ],
+    "nist_privacy_framework": []
+   },
+   "status": "unassessed",
+   "weight": 4
+  },
+  {
+   "domain": "SO",
+   "eci": {
+    "den": 15,
+    "display": "40.0",
+    "num": 600
+   },
+   "evidence": {
+    "completeness": 1,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 1
+   },
+   "gap": 1,
+   "id": "SO-05",
+   "justification": null,
+   "note": null,
+   "priority": 3,
+   "relationship_note": "The CCM controls specify endpoint management and malware protection",
+   "relationship_term": "Supports",
+   "s": 6,
+   "scope": "security",
+   "sources": {
+    "csa_ccm_v4_1": [
+     "UEM-05 (Endpoint Management)",
+     "UEM-09 (Anti-Malware Detection and Prevention)"
+    ],
+    "gdpr": [],
+    "nist_csf_2_0": [
+     "PR.PS-05",
+     "DE.CM-09"
+    ],
+    "nist_privacy_framework": []
+   },
+   "status": "assessed",
+   "weight": 3
+  },
+  {
+   "domain": "SO",
+   "eci": {
+    "den": 15,
+    "display": "40.0",
+    "num": 600
+   },
+   "evidence": {
+    "completeness": 1,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 1
+   },
+   "gap": 3,
+   "id": "SO-06",
+   "justification": null,
+   "note": null,
+   "priority": 6,
+   "relationship_note": "Article 32(1)(d) calls for a process for regularly testing the effectiveness of measures",
+   "relationship_term": "Supports",
+   "s": 6,
+   "scope": "security",
+   "sources": {
+    "csa_ccm_v4_1": [
+     "TVM-07 (Penetration Testing)",
+     "AIS-05 (Application Security Testing)"
+    ],
+    "gdpr": [
+     "Art. 32(1)(d)"
+    ],
+    "nist_csf_2_0": [
+     "ID.IM-02",
+     "ID.RA-01"
+    ],
+    "nist_privacy_framework": []
+   },
+   "status": "assessed",
+   "weight": 2
+  },
+  {
+   "domain": "SR",
+   "eci": {
+    "den": 15,
+    "display": "40.0",
+    "num": 600
+   },
+   "evidence": {
+    "completeness": 1,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 1
+   },
+   "gap": 3,
+   "id": "SR-01",
+   "justification": null,
+   "note": null,
+   "priority": 12,
+   "relationship_note": "The CCM controls specify the plan, its testing and notification",
+   "relationship_term": "Supports",
+   "s": 6,
+   "scope": "security",
+   "sources": {
+    "csa_ccm_v4_1": [
+     "SEF-03 (Incident Response Plans)",
+     "SEF-04 (Incident Response Testing)",
+     "SEF-08 (Security Breach Notification)"
+    ],
+    "gdpr": [],
+    "nist_csf_2_0": [
+     "RS.MA-01",
+     "RS.MA-04",
+     "RS.CO-02",
+     "ID.IM-04"
+    ],
+    "nist_privacy_framework": []
+   },
+   "status": "assessed",
+   "weight": 4
+  },
+  {
+   "domain": "SR",
+   "evidence": null,
+   "gap": null,
+   "id": "SR-02",
+   "justification": null,
+   "note": null,
+   "relationship_note": "Article 32(1)(c) refers to the ability to restore availability and access to personal data",
+   "relationship_term": "Supports",
+   "s": null,
+   "scope": "security",
+   "sources": {
+    "csa_ccm_v4_1": [
+     "BCR-08 (Backup)"
+    ],
+    "gdpr": [
+     "Art. 32(1)(c)"
+    ],
+    "nist_csf_2_0": [
+     "PR.DS-11",
+     "RC.RP-03"
+    ],
+    "nist_privacy_framework": []
+   },
+   "status": "unassessed",
+   "weight": 5
+  },
+  {
+   "domain": "SR",
+   "eci": {
+    "den": 15,
+    "display": "40.0",
+    "num": 600
+   },
+   "evidence": {
+    "completeness": 1,
+    "recency": 1,
+    "relevance": 2,
+    "verification": 1
+   },
+   "gap": 3,
+   "id": "SR-03",
+   "justification": null,
+   "note": null,
+   "priority": 9,
+   "relationship_note": "Article 32(1)(b) and (c) refer to resilience and restoration",
+   "relationship_term": "Supports",
+   "s": 6,
+   "scope": "security",
+   "sources": {
+    "csa_ccm_v4_1": [
+     "BCR-04 (Business Continuity Planning)",
+     "BCR-09 (Disaster Response Plan)",
+     "BCR-10 (Response Plan Exercise)"
+    ],
+    "gdpr": [
+     "Art. 32(1)(b)",
+     "Art. 32(1)(c)"
+    ],
+    "nist_csf_2_0": [
+     "RC.RP-01",
+     "PR.IR-03"
+    ],
+    "nist_privacy_framework": []
+   },
+   "status": "assessed",
+   "weight": 3
+  }
+ ],
+ "notice": "Decision support that requires human review. The output supports a readiness assessment and makes no claim of legal compliance.",
+ "ranking": [
+  {
+   "gap": 4,
+   "id": "SG-02",
+   "position": 1,
+   "priority": 16,
+   "weight": 4
+  },
+  {
+   "gap": 4,
+   "id": "SC-04",
+   "position": 2,
+   "priority": 12,
+   "weight": 3
+  },
+  {
+   "gap": 4,
+   "id": "SG-04",
+   "position": 3,
+   "priority": 12,
+   "weight": 3
+  },
+  {
+   "gap": 3,
+   "id": "SG-05",
+   "position": 4,
+   "priority": 12,
+   "weight": 4
+  },
+  {
+   "gap": 3,
+   "id": "SO-01",
+   "position": 5,
+   "priority": 12,
+   "weight": 4
+  },
+  {
+   "gap": 3,
+   "id": "SR-01",
+   "position": 6,
+   "priority": 12,
+   "weight": 4
+  },
+  {
+   "gap": 2,
+   "id": "SI-02",
+   "position": 7,
+   "priority": 10,
+   "weight": 5
+  },
+  {
+   "gap": 2,
+   "id": "SI-03",
+   "position": 8,
+   "priority": 10,
+   "weight": 5
+  },
+  {
+   "gap": 3,
+   "id": "SI-04",
+   "position": 9,
+   "priority": 9,
+   "weight": 3
+  },
+  {
+   "gap": 3,
+   "id": "SR-03",
+   "position": 10,
+   "priority": 9,
+   "weight": 3
+  },
+  {
+   "gap": 2,
+   "id": "SO-03",
+   "position": 11,
+   "priority": 8,
+   "weight": 4
+  },
+  {
+   "gap": 2,
+   "id": "SG-03",
+   "position": 12,
+   "priority": 6,
+   "weight": 3
+  },
+  {
+   "gap": 3,
+   "id": "SO-06",
+   "position": 13,
+   "priority": 6,
+   "weight": 2
+  },
+  {
+   "gap": 1,
+   "id": "SC-01",
+   "position": 14,
+   "priority": 4,
+   "weight": 4
+  },
+  {
+   "gap": 1,
+   "id": "SC-02",
+   "position": 15,
+   "priority": 4,
+   "weight": 4
+  },
+  {
+   "gap": 2,
+   "id": "SG-06",
+   "position": 16,
+   "priority": 4,
+   "weight": 2
+  },
+  {
+   "gap": 1,
+   "id": "SI-01",
+   "position": 17,
+   "priority": 4,
+   "weight": 4
+  },
+  {
+   "gap": 1,
+   "id": "SG-01",
+   "position": 18,
+   "priority": 3,
+   "weight": 3
+  },
+  {
+   "gap": 1,
+   "id": "SO-05",
+   "position": 19,
+   "priority": 3,
+   "weight": 3
+  }
+ ],
+ "repository_version": "repo-1.0",
+ "scenario_id": "S5",
+ "scenario_version": "1.0",
+ "synthetic": true
+}

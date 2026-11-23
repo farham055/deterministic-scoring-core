@@ -1,0 +1,142 @@
+{
+ "PD-01": {
+  "indicator": "Only necessary personal data are collected and processed",
+  "question": "Is the personal data collected and processed limited to what is necessary for each stated purpose?"
+ },
+ "PD-02": {
+  "indicator": "Personal data are retained only as long as necessary and then deleted",
+  "question": "Are retention periods defined for personal data, and are data deleted or destroyed when the period ends?"
+ },
+ "PD-03": {
+  "indicator": "Personal data are kept accurate, and inaccurate data are corrected or erased",
+  "question": "Are personal data kept accurate and up to date where necessary, and can inaccurate data be corrected or erased without delay?"
+ },
+ "PD-04": {
+  "indicator": "Personal data are pseudonymised or encrypted where appropriate",
+  "question": "Are personal data pseudonymised or encrypted where this is appropriate to the risk?"
+ },
+ "PD-05": {
+  "indicator": "Access to personal data is limited to those who need it",
+  "question": "Is access to personal data restricted to the roles that need it for their tasks?"
+ },
+ "PD-06": {
+  "indicator": "Personal data breaches can be detected, handled and communicated",
+  "question": "Is there a procedure to detect and handle a personal data breach and to inform the affected individuals and relevant parties?"
+ },
+ "PG-01": {
+  "indicator": "Personal data processing is inventoried and mapped",
+  "question": "Does the organization record which personal data it processes, for what purposes, in which systems and locations, and which third parties are involved?"
+ },
+ "PG-02": {
+  "indicator": "Purposes of processing are documented and communicated",
+  "question": "Is the purpose of each processing activity documented and communicated to the individuals concerned in a transparent way?"
+ },
+ "PG-03": {
+  "indicator": "Privacy responsibilities and legal requirements are assigned and understood",
+  "question": "Are privacy responsibilities assigned, and are the legal and contractual privacy requirements that apply to the system identified?"
+ },
+ "PG-04": {
+  "indicator": "Data protection is built into design and defaults",
+  "question": "When systems or processes that handle personal data are designed or changed, are data protection measures and privacy-friendly default settings considered?"
+ },
+ "PG-05": {
+  "indicator": "A data protection impact assessment is carried out where required",
+  "question": "Where processing is likely to result in a high risk to individuals, is an impact assessment carried out before the processing starts?"
+ },
+ "PG-06": {
+  "indicator": "Staff handling personal data are aware of their duties",
+  "question": "Are staff who handle personal data trained on their duties and instructed to process personal data only as authorized?"
+ },
+ "SC-01": {
+  "indicator": "Data at rest is encrypted",
+  "question": "Is data stored in the assessed system encrypted at rest using approved cryptographic algorithms?"
+ },
+ "SC-02": {
+  "indicator": "Data in transit is encrypted",
+  "question": "Is data transmitted between users, services and cloud components protected by encryption in transit?"
+ },
+ "SC-03": {
+  "indicator": "Cryptographic keys are managed through their life cycle",
+  "question": "Are encryption keys generated, stored, rotated, revoked and inventoried under a documented key management policy?"
+ },
+ "SC-04": {
+  "indicator": "The organization controls its own encryption keys where the service allows it",
+  "question": "Where a used cloud service offers customer-managed keys, does the organization manage its own encryption keys?"
+ },
+ "SG-01": {
+  "indicator": "Cybersecurity policy is documented and maintained",
+  "question": "Does the organization have a written cybersecurity policy for the assessed system that is approved, communicated to staff and reviewed when requirements or technology change?"
+ },
+ "SG-02": {
+  "indicator": "Security responsibilities, including the division between the organization and the cloud provider, are defined",
+  "question": "Are cybersecurity roles defined, and is it documented which security responsibilities belong to the organization and which to the cloud provider for each service used?"
+ },
+ "SG-03": {
+  "indicator": "Cloud security risks are assessed and recorded",
+  "question": "Are threats, vulnerabilities and their potential impact for the assessed system assessed, recorded and used to prioritize security actions?"
+ },
+ "SG-04": {
+  "indicator": "Cloud providers and other suppliers are assessed and bound by security requirements",
+  "question": "Before using a cloud provider or other supplier, does the organization check its security assurances and include security requirements in the agreement?"
+ },
+ "SG-05": {
+  "indicator": "Systems, services and data are inventoried",
+  "question": "Is there a current inventory of the systems, cloud services and data types of the assessed system, including services provided by suppliers?"
+ },
+ "SG-06": {
+  "indicator": "Staff receive security awareness training",
+  "question": "Do staff with access to the assessed system receive regular security awareness training?"
+ },
+ "SI-01": {
+  "indicator": "Users and services have unique identities and managed credentials",
+  "question": "Does every user and service use a unique identity, and are credentials issued, stored, changed and revoked under defined rules?"
+ },
+ "SI-02": {
+  "indicator": "Strong authentication protects access",
+  "question": "Is multi-factor or equivalent strong authentication required for administrative access and for remote access to the system?"
+ },
+ "SI-03": {
+  "indicator": "Access follows least privilege, separation of duties and controlled privileged roles",
+  "question": "Are access rights limited to what each role needs, are conflicting duties separated, and are privileged roles managed and restricted?"
+ },
+ "SI-04": {
+  "indicator": "Access is reviewed and revoked promptly",
+  "question": "Is user access reviewed periodically and removed promptly when a person changes role or leaves?"
+ },
+ "SO-01": {
+  "indicator": "Security-relevant events are logged and monitored",
+  "question": "Are security-relevant events in applications and cloud infrastructure logged, protected and monitored, with alerts that are reviewed?"
+ },
+ "SO-02": {
+  "indicator": "Vulnerabilities are identified and remediated",
+  "question": "Are vulnerabilities in systems and software identified and remediated within defined timeframes?"
+ },
+ "SO-03": {
+  "indicator": "Configuration and changes are controlled",
+  "question": "Are secure baseline configurations defined for cloud resources, and are changes approved, tested and recorded?"
+ },
+ "SO-04": {
+  "indicator": "Networks and cloud resources are protected from unauthorized access",
+  "question": "Is network access to cloud resources restricted and segmented so that only intended services and users can reach them?"
+ },
+ "SO-05": {
+  "indicator": "Endpoints used to access the system are protected",
+  "question": "Are devices used to administer or access the system managed and protected against malware?"
+ },
+ "SO-06": {
+  "indicator": "Security measures are tested regularly",
+  "question": "Are security measures, such as vulnerability scans, penetration tests or configuration reviews, tested regularly, and are findings tracked to closure?"
+ },
+ "SR-01": {
+  "indicator": "An incident response plan exists and is tested",
+  "question": "Is there a documented incident response plan that covers escalation and notification of relevant parties and that has been tested?"
+ },
+ "SR-02": {
+  "indicator": "Backups are created, protected and tested",
+  "question": "Is data backed up, are backups protected from unauthorized change or deletion, and is restoration tested?"
+ },
+ "SR-03": {
+  "indicator": "A business continuity and disaster recovery plan exists",
+  "question": "Is there a business continuity and disaster recovery plan for the assessed system that defines recovery priorities and is exercised?"
+ }
+}

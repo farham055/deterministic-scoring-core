@@ -1,0 +1,14 @@
+{
+ "frozen_at_utc": "2026-11-23T14:01:52+00:00",
+ "sha256": {
+  "repository.json": "bf1ce4e52e17cc8accfca69fafd1dbb9e5f93c6cd3f21c9f820135542fdee125",
+  "scenarios/S1.json": "0f0e37f0d718a254079c2705012d31737d2373a3d51f8cad3fab0be471da2c35",
+  "scenarios/S2.json": "fba98d428ec15b4e4f4ef183267f462259075616aaf964b7173c639566960813",
+  "scenarios/S3.json": "47476d94ff51377235e01cd79da67f7d841cc466f018bec192eb9bd3f8e3f681",
+  "scenarios/S4.json": "8dcba28ac6d0a084ec477d7a28f2b542348a3bfa66bb3eaa1d90f491c7198af9",
+  "scenarios/S5.json": "a3f5baa418f84d3dc66ee9c1667b543a4efe688a8ceb79cb85d574cd7403f195",
+  "scenarios/S6.json": "a0daa72b3e0cd5bd8ce45155b990cbca8360bdd8a757001020a4b403f3b9d074",
+  "scenarios/S7.json": "36c77ffaba49ba5c210284ec760db3208bb89078a040b6cc9e8668a304cb6b76",
+  "scenarios/S8.json": "87551182056aa42e1f534b91252bf0f87442b58bcf8466df4f5286f672d05100"
+ }
+}
